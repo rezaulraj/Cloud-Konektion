@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import {
   FaRocket,
   FaChartLine,
@@ -6,13 +7,16 @@ import {
   FaUserTie,
   FaLightbulb,
 } from "react-icons/fa";
-import bgimage from "../../assets/home/dot.svg?url"; // Your SVG background image
+import bgimage from "../../assets/home/dot.svg?url";
 
-// Inline SVG dot pattern
+// Animated DotPattern component
 const DotPattern = () => (
-  <svg
+  <motion.svg
     className="absolute inset-0 w-full h-full opacity-10 z-0"
     xmlns="http://www.w3.org/2000/svg"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 0.1 }}
+    transition={{ duration: 1.5 }}
   >
     <pattern
       id="dotPattern"
@@ -25,10 +29,20 @@ const DotPattern = () => (
       <circle cx="10" cy="10" r="1" fill="#00BCFF" />
     </pattern>
     <rect x="0" y="0" width="100%" height="100%" fill="url(#dotPattern)" />
-  </svg>
+  </motion.svg>
 );
 
 const CompanyOverview = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
   const stats = [
     {
       icon: <FaGlobeAsia className="text-3xl text-[#00BCFF]" />,
@@ -52,56 +66,134 @@ const CompanyOverview = () => {
     },
   ];
 
+  // Animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
+  const slideIn = {
+    hidden: { x: -50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 15,
+        stiffness: 100,
+      },
+    },
+  };
+
+  const float = {
+    hidden: { y: 0 },
+    visible: {
+      y: [-10, 0, -10],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const floatDelay = {
+    hidden: { y: 0 },
+    visible: {
+      y: [10, 0, 10],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 2,
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
+      ref={ref}
       className="relative overflow-hidden bg-gray-50"
       style={{
         backgroundImage: `url(${bgimage})`,
         backgroundRepeat: "repeat",
         backgroundSize: "auto",
         backgroundPosition: "center",
-        opacity: 1,
       }}
+      initial="hidden"
+      animate={controls}
+      variants={container}
     >
-      {/* Inline Dot Pattern */}
       <DotPattern />
 
-      {/* Content */}
       <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
-          <div className="space-y-8">
-            <div className="flex items-center space-x-3">
+          <motion.div className="space-y-8" variants={container}>
+            <motion.div className="flex items-center space-x-3" variants={item}>
               <div className="w-12 h-1 bg-[#00BCFF]"></div>
               <span className="text-sm font-semibold tracking-wider text-[#00BCFF] uppercase">
                 Industry Leaders
               </span>
-            </div>
+            </motion.div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+              variants={item}
+            >
               The Leader of the Technology Headhunting Space in{" "}
               <span className="text-[#00BCFF]">APAC</span> and{" "}
               <span className="text-[#00BCFF]">MENA</span>
-            </h2>
+            </motion.h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <motion.p
+              className="text-lg text-gray-600 leading-relaxed"
+              variants={item}
+            >
               Founded in 2002 and headquartered in Singapore, JB Hired is
               dedicated to its clients' success and uses a consulting approach
               mixed with high technology systems developed in-house to provide
               the best talents at lightning speed.
-            </p>
+            </motion.p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-6 mt-8">
+            <motion.div
+              className="grid grid-cols-2 gap-6 mt-8"
+              variants={container}
+            >
               {stats.map((stat, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  variants={item}
+                  whileHover={{ scale: 1.03 }}
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="p-3 bg-[#00BCFF]/10 rounded-full">
+                    <motion.div
+                      className="p-3 bg-[#00BCFF]/10 rounded-full"
+                      whileHover={{ rotate: 15 }}
+                    >
                       {stat.icon}
-                    </div>
+                    </motion.div>
                     <div>
                       <p className="text-2xl font-bold text-gray-900">
                         {stat.value}
@@ -109,14 +201,18 @@ const CompanyOverview = () => {
                       <p className="text-sm text-gray-500">{stat.label}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column - Visual */}
-          <div className="relative">
-            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-50 to-cyan-50">
+          <motion.div className="relative" variants={slideIn}>
+            <motion.div
+              className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-50 to-cyan-50"
+              whileInView={{ scale: [0.95, 1] }}
+              transition={{ duration: 0.8 }}
+            >
               {/* Abstract SVG inside box */}
               <div className="absolute inset-0 opacity-30">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -143,9 +239,28 @@ const CompanyOverview = () => {
                 </svg>
               </div>
 
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8 backdrop-blur-sm bg-white/80 rounded-xl max-w-md mx-auto border border-white/20">
-                  <FaRocket className="text-5xl text-[#00BCFF] mx-auto mb-4 animate-pulse" />
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+              >
+                <motion.div
+                  className="text-center p-8 backdrop-blur-sm bg-white/80 rounded-xl max-w-md mx-auto border border-white/20"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <motion.div
+                    animate={{
+                      y: [-5, 0, -5],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <FaRocket className="text-5xl text-[#00BCFF] mx-auto mb-4" />
+                  </motion.div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     Lightning Fast Recruitment
                   </h3>
@@ -153,45 +268,23 @@ const CompanyOverview = () => {
                     Our proprietary AI matching system delivers qualified
                     candidates 3x faster than industry average.
                   </p>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
             {/* Floating Blur Elements */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-[#00BCFF]/10 blur-xl animate-float"></div>
-            <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-full bg-[#0066FF]/10 blur-xl animate-float-delay"></div>
-          </div>
+            <motion.div
+              className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-[#00BCFF]/10 blur-xl"
+              variants={float}
+            />
+            <motion.div
+              className="absolute -bottom-6 -right-6 w-40 h-40 rounded-full bg-[#0066FF]/10 blur-xl"
+              variants={floatDelay}
+            />
+          </motion.div>
         </div>
       </div>
-
-      {/* Floating Animations */}
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        @keyframes float-delay {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(10px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        .animate-float-delay {
-          animation: float-delay 6s ease-in-out infinite 2s;
-        }
-      `}</style>
-    </div>
+    </motion.div>
   );
 };
 

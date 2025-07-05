@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import heroImage from "../../assets/home/herohome.webp";
 import {
   FaSearch,
@@ -7,7 +8,46 @@ import {
   FaChartLine,
   FaUserTie,
 } from "react-icons/fa";
+
 const HeroHome = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
+  const statsVariants = {
+    offscreen: { y: 100, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Hero Section with Background Image */}
@@ -16,30 +56,68 @@ const HeroHome = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <motion.div
+          className="absolute inset-0 bg-black/50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 1 }}
+        />
 
         {/* Glassy Text Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 ">
-          <div className="text-center space-y-8">
+        <motion.div
+          className="relative z-10 max-w-7xl mx-auto px-6 py-20"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          <motion.div className="text-center space-y-8">
             {/* Subheading with icon */}
-            <div className="flex items-center justify-center space-x-2">
+            <motion.div
+              className="flex items-center justify-center space-x-2"
+              variants={itemVariants}
+            >
               <FaGlobeAmericas className="text-[#00BCFF] text-xl" />
               <span className="text-white font-medium tracking-wider">
                 GLOBAL RECRUITMENT SOLUTIONS
               </span>
-            </div>
+            </motion.div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-              <span className="block">World Class</span>
-              <span className="block text-[#00BCFF]">
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold text-white leading-tight"
+              variants={itemVariants}
+            >
+              <motion.span className="block" variants={itemVariants}>
+                World Class
+              </motion.span>
+              <motion.span
+                className="block text-[#00BCFF]"
+                variants={itemVariants}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+              >
                 Executive Recruitment
-              </span>
-              <span className="block">& Headhunting</span>
-            </h1>
+              </motion.span>
+              <motion.span
+                className="block"
+                variants={itemVariants}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                & Headhunting
+              </motion.span>
+            </motion.h1>
 
             {/* Tagline */}
-            <div className="relative inline-block">
+            <motion.div
+              className="relative inline-block"
+              variants={itemVariants}
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.6 }}
+            >
               <p className="text-lg md:text-xl text-white bg-black/40 px-4 py-2 rounded-lg inline-block">
                 We are{" "}
                 <span className="font-bold text-[#00BCFF]">
@@ -47,39 +125,74 @@ const HeroHome = () => {
                 </span>
               </p>
               <div className="absolute -bottom-1 left-0 right-0 h-1 bg-[#00BCFF]/50 blur-sm"></div>
-            </div>
+            </motion.div>
 
             {/* Description */}
-            <p className="text-white/90 max-w-3xl mx-auto text-lg leading-relaxed">
+            <motion.p
+              className="text-white/90 max-w-3xl mx-auto text-lg leading-relaxed"
+              variants={itemVariants}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.9 }}
+              transition={{ delay: 0.7 }}
+            >
               Securing senior level talents globally for high growth tech
               companies, SaaS firms, multinational companies and more
-            </p>
+            </motion.p>
 
             {/* Buttons with Smooth Effects */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-              <button className="relative overflow-hidden group px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <motion.div
+              className="flex flex-col sm:flex-row justify-center gap-4 pt-4"
+              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative overflow-hidden group px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <FaSearch className="text-lg" />
                   <span>Discover Jobs</span>
                 </span>
                 <span className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
-              </button>
+              </motion.button>
 
-              <button className="relative overflow-hidden group px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:-translate-y-1">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative overflow-hidden group px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:-translate-y-1"
+              >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <FaHeadset className="text-lg" />
                   <span>Free Consultation</span>
                 </span>
                 <span className="absolute inset-0 bg-white/10 group-hover:bg-white/0 transition-all duration-300 rounded-lg"></span>
-              </button>
-            </div>
-          </div>
-        </div>
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Stats Bar */}
-        {/* <div className="absolute bottom-10 left-0 right-0">
+        {/* <motion.div
+          className="absolute bottom-10 left-0 right-0"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <motion.div
+              className="grid grid-cols-2 md:grid-cols-4 gap-4"
+              variants={{
+                offscreen: {},
+                onscreen: {
+                  transition: {
+                    staggerChildren: 0.2,
+                  },
+                },
+              }}
+            >
               {[
                 {
                   icon: <FaUserTie className="text-3xl text-[#00BCFF]" />,
@@ -102,20 +215,22 @@ const HeroHome = () => {
                   label: "Response Time",
                 },
               ].map((stat, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={statsVariants}
                   className="backdrop-blur-sm bg-white/10 p-4 rounded-lg border border-white/20 text-center hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                  whileHover={{ y: -5 }}
                 >
                   <div className="flex justify-center">{stat.icon}</div>
                   <p className="text-2xl font-bold text-white mt-2">
                     {stat.value}
                   </p>
                   <p className="text-white/80 text-sm">{stat.label}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </div> */}
+        </motion.div> */}
       </div>
     </div>
   );

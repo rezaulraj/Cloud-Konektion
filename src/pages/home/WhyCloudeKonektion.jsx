@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaUserTie,
   FaDatabase,
@@ -67,99 +68,206 @@ const WhyCloudeKonektion = () => {
     },
   ];
 
+  // Animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 50, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
+  const float = {
+    hidden: { y: 0, x: 0, scale: 1 },
+    animate: {
+      y: [-20, 0, 20, 0],
+      x: [10, 20, 10, 0],
+      scale: [1.05, 1, 0.95, 1],
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <motion.div
+      className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={container}
+    >
       {/* Floating background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
-          <div
+          <motion.div
             key={i}
-            className="absolute rounded-full bg-[#00BCFF] animate-float"
+            className="absolute rounded-full bg-[#00BCFF]"
             style={{
               width: `${Math.random() * 200 + 50}px`,
               height: `${Math.random() * 200 + 50}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDuration: `${Math.random() * 30 + 20}s`,
-              animationDelay: `${Math.random() * 10}s`,
               filter: "blur(60px)",
             }}
-          ></div>
+            variants={float}
+            initial="hidden"
+            animate="animate"
+          />
         ))}
       </div>
 
       <div className="relative max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <motion.div className="text-center mb-16" variants={item}>
+          <motion.h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            whileHover={{ scale: 1.02 }}
+          >
             Why <span className="text-[#00BCFF]">Cloud Konektion</span>?
-          </h2>
-          <div className="w-20 h-1 bg-[#00BCFF] mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.div
+            className="w-20 h-1 bg-[#00BCFF] mx-auto mb-6"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.8 }}
+          />
+          <motion.p
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            whileHover={{ scale: 1.01 }}
+          >
             Discover how our specialized approach sets us apart in tech
             recruitment
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Reasons Grid */}
-        <div className="space-y-16">
+        <motion.div className="space-y-16" variants={container}>
           {reasons.map((reason, index) => (
-            <div
+            <motion.div
               key={index}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+              variants={item}
+              whileHover={{ y: -5 }}
             >
               {/* Number and Icon */}
-              <div className="lg:col-span-2 flex flex-col items-center">
+              <motion.div
+                className="lg:col-span-2 flex flex-col items-center"
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className="relative mb-6">
                   <span className="text-8xl font-bold text-gray-200">
                     {reason.number}
                   </span>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <motion.div
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    whileHover={{ rotate: 15 }}
+                  >
                     {reason.icon}
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Content */}
-              <div className="lg:col-span-10 bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <motion.div
+                className="lg:col-span-10 bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                whileHover={{
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                  borderColor: "#00BCFF",
+                }}
+              >
+                <motion.h3
+                  className="text-2xl font-bold text-gray-900 mb-4"
+                  whileHover={{ color: "#00BCFF" }}
+                >
                   {reason.title}
-                </h3>
+                </motion.h3>
 
                 {reason.description.map((paragraph, i) => (
-                  <p key={i} className="text-gray-600 mb-4">
+                  <motion.p
+                    key={i}
+                    className="text-gray-600 mb-4"
+                    whileHover={{ x: 5 }}
+                  >
                     {paragraph}
-                  </p>
+                  </motion.p>
                 ))}
 
                 {/* Features/Highlights/Benefits */}
-                <div className="mt-6">
+                <motion.div
+                  className="mt-6"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
                   {reason.features && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <motion.div
+                      className="grid grid-cols-2 md:grid-cols-4 gap-4"
+                      variants={container}
+                    >
                       {reason.features.map((feature, i) => (
-                        <div key={i} className="flex items-center space-x-2">
+                        <motion.div
+                          key={i}
+                          className="flex items-center space-x-2"
+                          variants={item}
+                          whileHover={{ scale: 1.05 }}
+                        >
                           {feature.icon}
                           <span className="text-gray-700">{feature.text}</span>
-                        </div>
+                        </motion.div>
                       ))}
-                    </div>
+                    </motion.div>
                   )}
 
                   {reason.highlights && (
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <motion.ul
+                      className="grid grid-cols-1 md:grid-cols-2 gap-2"
+                      variants={container}
+                    >
                       {reason.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start">
+                        <motion.li
+                          key={i}
+                          className="flex items-start"
+                          variants={item}
+                          whileHover={{ x: 5 }}
+                        >
                           <span className="text-[#00BCFF] mr-2">•</span>
                           <span className="text-gray-700">{highlight}</span>
-                        </li>
+                        </motion.li>
                       ))}
-                    </ul>
+                    </motion.ul>
                   )}
 
                   {reason.benefits && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <motion.div
+                      className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                      variants={container}
+                    >
                       {reason.benefits.map((benefit, i) => (
-                        <div key={i} className="flex items-start">
+                        <motion.div
+                          key={i}
+                          className="flex items-start"
+                          variants={item}
+                          whileHover={{ scale: 1.02 }}
+                        >
                           <div className="flex-shrink-0 h-6 w-6 text-[#00BCFF] mr-2">
                             <svg
                               className="h-full w-full"
@@ -174,36 +282,17 @@ const WhyCloudeKonektion = () => {
                             </svg>
                           </div>
                           <span className="text-gray-700">{benefit}</span>
-                        </div>
+                        </motion.div>
                       ))}
-                    </div>
+                    </motion.div>
                   )}
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-
-      {/* Animation styles */}
-      <style jsx global>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) translateX(0) scale(1);
-          }
-          25% {
-            transform: translateY(-20px) translateX(10px) scale(1.05);
-          }
-          50% {
-            transform: translateY(0) translateX(20px) scale(1);
-          }
-          75% {
-            transform: translateY(20px) translateX(10px) scale(0.95);
-          }
-        }
-      `}</style>
-    </div>
+    </motion.div>
   );
 };
 

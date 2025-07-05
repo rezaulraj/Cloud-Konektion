@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import client1 from "../../assets/home/cl1.avif?url";
 import client2 from "../../assets/home/cl2.avif?url";
 import client3 from "../../assets/home/cl3.avif?url";
@@ -36,6 +37,9 @@ const ClientHome = () => {
   // Duplicate the array to create seamless looping
   const duplicatedClients = [...clients, ...clients];
   const marqueeRef = useRef(null);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.5 });
+  const controls = useAnimation();
 
   useEffect(() => {
     const marquee = marqueeRef.current;
@@ -78,24 +82,80 @@ const ClientHome = () => {
     };
   }, []);
 
-  return (
-    <div className="py-16 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-          Trusted by Leading Companies
-        </h2>
+  // Scroll animation trigger
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
 
-        <div className="relative h-32 overflow-hidden">
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "backOut",
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      className="py-16 bg-gray-50 overflow-hidden"
+      ref={containerRef}
+      initial="hidden"
+      animate={controls}
+      variants={containerVariants}
+    >
+      <div className="container mx-auto px-4">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+          variants={itemVariants}
+        >
+          Trusted by Leading Companies
+        </motion.h2>
+
+        <motion.div
+          className="relative h-32 overflow-hidden"
+          variants={itemVariants}
+        >
           {/* Marquee Container */}
-          <div
+          <motion.div
             ref={marqueeRef}
             className="absolute top-0 left-0 flex items-center h-full will-change-transform"
+            initial={{ x: 0 }}
+            transition={{ duration: 0.3 }}
           >
             {duplicatedClients.map((client, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="mx-8 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:opacity-100"
                 style={{ opacity: 0.7, filter: "grayscale(30%)" }}
+                whileHover={{
+                  scale: 1.15,
+                  opacity: 1,
+                  filter: "grayscale(0%)",
+                  transition: { duration: 0.3 },
+                }}
               >
                 <img
                   src={client}
@@ -103,16 +163,26 @@ const ClientHome = () => {
                   className="h-16 object-contain max-w-xs"
                   draggable="false"
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Gradient Fades */}
-          <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
-          <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
-        </div>
+          <motion.div
+            className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          />
+          <motion.div
+            className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          />
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

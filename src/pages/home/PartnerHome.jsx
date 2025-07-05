@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaShieldAlt,
   FaTrophy,
@@ -31,92 +32,162 @@ const PartnerHome = () => {
     },
   ];
 
+  // Animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 50, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
+  const float = {
+    hidden: { y: 0, x: 0, scale: 1 },
+    animate: {
+      y: [-20, 0, 20, 0],
+      x: [10, 20, 10, 0],
+      scale: [1.05, 1, 0.95, 1],
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-4 sm:px-6 lg:px-8">
+    <motion.div
+      className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-4 sm:px-6 lg:px-8"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={container}
+    >
       {/* Floating background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(10)].map((_, i) => (
-          <div
+          <motion.div
             key={i}
-            className="absolute rounded-full bg-[#00BCFF] animate-float"
+            className="absolute rounded-full bg-[#00BCFF]"
             style={{
               width: `${Math.random() * 200 + 50}px`,
               height: `${Math.random() * 200 + 50}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDuration: `${Math.random() * 30 + 20}s`,
-              animationDelay: `${Math.random() * 10}s`,
               filter: "blur(60px)",
             }}
-          ></div>
+            variants={float}
+            initial="hidden"
+            animate="animate"
+          />
         ))}
       </div>
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-semibold mb-6">
+        <motion.div className="text-center mb-16" variants={container}>
+          <motion.div
+            className="inline-flex items-center px-4 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-semibold mb-6"
+            variants={item}
+            whileHover={{ scale: 1.05 }}
+          >
             <span>DIGITAL TALENT SOLUTIONS</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          </motion.div>
+
+          <motion.h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+            variants={item}
+            whileHover={{ scale: 1.01 }}
+          >
             The Premier Executive Recruitment Partner{" "}
             <br className="hidden lg:block" /> For{" "}
             <span className="text-[#00BCFF]">Digital Talent</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          </motion.h1>
+
+          <motion.p
+            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            variants={item}
+            whileHover={{ x: 5 }}
+          >
             Our tech talent equips your company with everything you need to
             compete, protect your business, triumph in the marketplace and
             maximize profitability.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          variants={container}
+        >
           {benefits.map((benefit, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-white/20"
+              variants={item}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+                borderColor: "#00BCFF",
+              }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="p-4 bg-[#00BCFF]/10 rounded-full mb-4">
+                <motion.div
+                  className="p-4 bg-[#00BCFF]/10 rounded-full mb-4"
+                  whileHover={{ rotate: 15 }}
+                >
                   {benefit.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                </motion.div>
+                <motion.h3
+                  className="text-xl font-bold text-gray-900 mb-2"
+                  whileHover={{ color: "#00BCFF" }}
+                >
                   {benefit.title}
-                </h3>
+                </motion.h3>
                 <p className="text-gray-600">{benefit.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA */}
-        <div className="text-center">
-          <button className="group inline-flex items-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg text-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg">
+        <motion.div className="text-center" variants={item}>
+          <motion.button
+            className="group inline-flex items-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg text-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <span>LEARN MORE</span>
-            <FaArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-        </div>
+            <motion.span
+              className="ml-3"
+              animate={{ x: [0, 5, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              <FaArrowRight />
+            </motion.span>
+          </motion.button>
+        </motion.div>
       </div>
-
-      {/* Animation styles */}
-      <style jsx global>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) translateX(0) scale(1);
-          }
-          25% {
-            transform: translateY(-20px) translateX(10px) scale(1.05);
-          }
-          50% {
-            transform: translateY(0) translateX(20px) scale(1);
-          }
-          75% {
-            transform: translateY(20px) translateX(10px) scale(0.95);
-          }
-        }
-      `}</style>
-    </div>
+    </motion.div>
   );
 };
 
