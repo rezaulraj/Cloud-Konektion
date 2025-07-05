@@ -65,7 +65,7 @@ const HeroHome = () => {
 
         {/* Glassy Text Container */}
         <motion.div
-          className="relative z-10 max-w-7xl mx-auto px-6 py-20"
+          className="relative z-10 max-w-7xl mx-auto px-6 py-32"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
