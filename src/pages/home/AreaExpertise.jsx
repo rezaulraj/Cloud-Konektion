@@ -1,49 +1,51 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaUserTie,
+  FaHotel,
+  FaHardHat,
+  FaTools,
+  FaTree,
+  FaUtensils,
   FaRobot,
-  FaUsers,
-  FaLaptopCode,
-  FaChartBar,
 } from "react-icons/fa";
 import { GiArtificialIntelligence } from "react-icons/gi";
 
 const AreaExpertise = () => {
   const expertiseAreas = [
     {
-      icon: <FaUserTie className="text-4xl text-[#00BCFF]" />,
-      title: "CxO From Top Tech Companies",
+      icon: <FaHotel className="text-4xl text-[#00BCFF]" />,
+      title: "Hospitality Team Buildup",
       description:
-        "Discover and recruit experienced executives with backgrounds in digital and technology.",
+        "Build dedicated service teams for hotels, resorts, and tourism-based businesses.",
     },
     {
-      icon: <FaLaptopCode className="text-4xl text-[#00BCFF]" />,
-      title: "Digital Transformation Talent Sourcing",
+      icon: <FaHardHat className="text-4xl text-[#00BCFF]" />,
+      title: "Construction Workforce Solutions",
       description:
-        "We provide you with the right talents who can help you innovate and adapt.",
+        "Recruit engineers, project managers, and skilled laborers to support your construction goals.",
     },
     {
-      icon: <FaUsers className="text-4xl text-[#00BCFF]" />,
-      title: "Tech Team Buildup",
+      icon: <FaTools className="text-4xl text-[#00BCFF]" />,
+      title: "Welding & Metal Work Experts",
       description:
-        "Build successful tech teams that align with your business goals.",
+        "Hire certified welders and metal fabricators for industrial and commercial projects.",
+    },
+    {
+      icon: <FaTree className="text-4xl text-[#00BCFF]" />,
+      title: "Woodwork & Carpentry Talent",
+      description:
+        "Skilled carpenters and craftsmen for furniture, interior, and construction woodwork.",
+    },
+    {
+      icon: <FaUtensils className="text-4xl text-[#00BCFF]" />,
+      title: "Crockery & Kitchen Staff Hiring",
+      description:
+        "Sourcing kitchenware specialists and support staff for food service and hospitality sectors.",
     },
     {
       icon: <FaRobot className="text-4xl text-[#00BCFF]" />,
       title: "Digital Talent Recruitment",
       description: "Essential digital-related roles for your online presence.",
-    },
-    {
-      icon: <GiArtificialIntelligence className="text-4xl text-[#00BCFF]" />,
-      title: "AI Talent Acquisition",
-      description:
-        "Specialists including machine learning engineers and data scientists.",
-    },
-    {
-      icon: <FaChartBar className="text-4xl text-[#00BCFF]" />,
-      title: "Data Science Recruitment",
-      description: "Experts capable of generating insights from your data.",
     },
   ];
 
