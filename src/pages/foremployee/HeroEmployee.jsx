@@ -4,7 +4,7 @@ import heroImage from "../../assets/employee/heroemp.jpg";
 
 const HeroEmployee = () => {
   return (
-    <div className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
+    <div className="relative h-[70vh] min-h-[400px] w-full overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -19,11 +19,12 @@ const HeroEmployee = () => {
       <div className="relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Looking to <span className="text-[#00BCFF]">hire?</span>
+            We’re <span className="text-[#00BCFF]"> Hiring </span> <br /> Join
+            Us!
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Find the perfect digital talent to drive your business forward with
-            our specialized recruitment solutions.
+            We connect you with great job opportunities to help you grow faster
+            in your career.
           </p>
 
           {/* Stats */}

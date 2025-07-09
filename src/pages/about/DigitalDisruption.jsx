@@ -36,7 +36,7 @@ const DigitalDisruption = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-semibold mb-6">
-              Since 2002
+              Since 2015
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -45,13 +45,13 @@ const DigitalDisruption = () => {
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              At Cloud Konektion Hired, we're a team of tech enthusiasts and
-              industry experts who are passionate about helping businesses find
-              the right talent to drive their growth and innovation. Founded in
-              2002 by a group of seasoned professionals with over 20 years of
-              combined experience in technology and leadership-related
-              positions, Cloud Konektion Hired has been at the forefront of the
-              tech recruitment industry from the start.
+              At Cloud Konektion Hired, we’re a team of passionate professionals
+              and industry veterans dedicated to helping businesses find the
+              right talent to fuel their growth and success. Founded in 2015 by
+              a group of experienced leaders with decades of combined expertise
+              in recruitment and organizational development, Cloud Konektion
+              Hired has been a trusted name in executive and specialist hiring
+              from the very beginning.
             </p>
 
             {/* Stats Grid */}
@@ -69,7 +69,7 @@ const DigitalDisruption = () => {
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
                 <div className="flex items-center space-x-3">
                   <FaUserTie className="text-2xl text-[#00BCFF]" />
-                  <span className="text-2xl font-bold text-gray-900">20+</span>
+                  <span className="text-2xl font-bold text-gray-900">15+</span>
                 </div>
                 <p className="text-sm text-gray-500 mt-2">Years Experience</p>
               </div>

@@ -23,50 +23,49 @@ const FAQ = () => {
     {
       question: "Where do you recruit?",
       answer:
-        "We have placed candidates globally, but our main focus area is APAC and MENA. We have a strong presence and network in these regions and know the talent market incredibly well.",
+        "We have placed candidates globally, Our European market expertise enables us to deliver recruitment solutions tailored to local regulations and culture.",
       icon: <FaGlobeAmericas className="text-[#00BCFF] text-xl" />,
     },
     {
-      question:
-        "Why are you considered the leading tech headhunting agency in APAC and MENA?",
+      question: "What makes you a leading headhunting agency?",
       answer:
-        "We are considered the leading tech headhunting agency in APAC and MENA because we have a deep understanding of the digital and technology sectors and the talent market in these regions.\n\nWe have successfully placed hundreds of C-level and senior executives for high-growth organizations, consulting firms and multinational companies across those regions. We have a network of world-class candidates from local and international markets who are ready to join your team and help you succeed in a digital world.\n\nFinally, we offer a fast and efficient hiring process that enables you to hire world-class executives faster than your competition.",
+        "Our niche focus, proven placements of senior and C-level executives, and a fast, data-driven process set us apart. We help you hire top talent faster than the competition.",
       icon: <FaTrophy className="text-[#00BCFF] text-xl" />,
     },
     {
       question: "How do you find candidates?",
       answer:
-        "We find candidates by leveraging our database of tech talents - one of the largest of its kind globally, as well as actively sourcing candidates based on your requirements.\n\nThis combined with very strong profiling and candidates evaluations processes guarantees the best fit for your organization.",
+        "We combine our global talent database with proactive headhunting, precision profiling, and candidate evaluation to ensure the best fit for your business.",
       icon: <FaSearch className="text-[#00BCFF] text-xl" />,
     },
     {
       question: "Where do your candidates come from?",
       answer:
-        "Our candidates come from a variety of sources and backgrounds. We have the best local candidates who are familiar with the culture and market of your region. We also have candidates from all levels from the top tech hubs such as Silicon Valley, who bring their expertise and experience to your team.",
+        "Our talent pool spans across the world, including local professionals and international candidates. Each is carefully selected to align with your company’s culture, goals, and hiring needs.",
       icon: <FaUserFriends className="text-[#00BCFF] text-xl" />,
     },
     {
       question: "What are your core industries?",
       answer:
-        "We are industry agnostic and we can work on anything related to digital and technology. We have experience in finding and placing world-class CxOs for startup companies, building tech teams for fast-growing companies and supporting digital transformation for telecoms or banks, and much more.",
+        "We’re flexible across industries. From emerging startups to established enterprises, we’ve successfully built high-performing teams across a wide range of sectors.",
       icon: <FaIndustry className="text-[#00BCFF] text-xl" />,
     },
     {
       question: "How fast is your time to fill?",
       answer:
-        "Our time to fill is one of the fastest in the industry. We understand that our clients need to hire urgently and we are committed to finding and placing the best candidates for their roles as soon as possible.\n\nOn average, we are able to fill roles in 10 days on urgent requests, from the initial contact to the final offer. We achieve this by using our proprietary technology, our extensive database of tech-related candidates and our proactive sourcing and screening methods.\n\nWe also have a streamlined hiring process that ensures a smooth and efficient communication between us, our clients and our candidates.",
+        "Our time to fill positions is among the fastest in the industry. We understand the urgency of your hiring needs and are dedicated to finding and placing the best candidates quickly and efficiently.\n\nOn average, we fill urgent roles within 10 days—from the initial contact to the final offer. This speed is made possible through our extensive candidate network, proactive sourcing, and thorough screening processes.\n\nAdditionally, our streamlined hiring approach ensures smooth and efficient communication between you, our team, and the candidates, making the entire recruitment experience seamless.",
       icon: <FaClock className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "How do you charge for your services?",
+      question: "What’s your pricing model?",
       answer:
-        "We charge a contingency fee based on the successful placement of a candidate. This means that you only pay us when we find and place the right talent for your position. There are no upfront costs or hidden fees to start a search with us, and you are not obligated to hire any of the candidates we present to you. Our fee is a percentage of the candidate's salary, and it can vary depending on the level and complexity of the position.",
+        "We work on a contingency basis meaning you only pay when we deliver. No upfront costs, no hidden fees",
       icon: <FaMoneyBillWave className="text-[#00BCFF] text-xl" />,
     },
     {
       question: "What guarantees do you offer?",
       answer:
-        "At JB Hired, we are confident in our ability to source world-class talent for our clients.\n\nHowever, we also understand that sometimes things don't work out as expected. That's why we offer a refund guarantee if the hired candidate leaves or if you consider he is not a fit during a defined timeframe after joining.\n\nThis way, you can rest assured that you are getting the best value for your investment when you partner with us.",
+        "Yes. If a hire doesn’t work out within a set timeframe, we offer a refund or replacement with no questions asked.",
       icon: <FaShieldAlt className="text-[#00BCFF] text-xl" />,
     },
   ];

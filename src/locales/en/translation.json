@@ -1,5 +1,20 @@
 {
   "headers": {
-    "home": "Home"
+    "home": "Home",
+    "employee": "For Employers",
+    "candiated": "For Candidates",
+    "aboutus": "About Us",
+    "joinus": "Join Us",
+    "contact": "Contact"
+  },
+  "homepage": {
+    "herotag1": "GLOBAL RECRUITMENT SOLUTIONS",
+    "heroheading1": "World Class",
+    "heroheading2": "Executive Recruitment",
+    "heroheading3": "& Headhunting",
+    "herotag2": "#1 Executive Search Partner",
+    "herop": "We specialize in securing top-tier senior talent for high-growth companies and global enterprises helping you lead, scale, and stay ahead.",
+    "button1": "Discover Our Expertise",
+    "button2": "Free Consultation"
   }
 }

@@ -50,11 +50,12 @@ const TalentExperts = () => {
                   <FaUserTie className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Digital Talent Expertise
+                  Global Reach. Career-Changing Opportunities.
                 </h3>
                 <p className="text-gray-600">
-                  Our recruiters are consultants with unmatched digital and
-                  technology talent knowledge with in-depth market insights.
+                  We don’t just connect you with jobs—we match you with the
+                  right opportunities. Our team understands the market and what
+                  candidates like you need to succeed.
                 </p>
               </div>
 
@@ -64,12 +65,12 @@ const TalentExperts = () => {
                   <FaGlobe className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Find the best tech talent anywhere
+                  Explore Opportunities Around the World
                 </h3>
                 <p className="text-gray-600">
-                  JB Hired has a global network of tech talent that can help you
-                  fill your digital and technology roles with world-class
-                  candidates from local and international markets.
+                  Whether you're seeking local roles or global placements, we
+                  help you find positions that align with your skills, goals,
+                  and values.
                 </p>
               </div>
 
@@ -79,11 +80,12 @@ const TalentExperts = () => {
                   <FaClock className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  10 days to placement
+                  Need a Job Fast? We've Got You
                 </h3>
                 <p className="text-gray-600">
-                  We are able to fill openings in 10 days on average for urgent
-                  roles.
+                  Our team moves quickly. On average, we help candidates land
+                  roles in 10 days—connecting you to the right opportunity,
+                  right on time.
                 </p>
               </div>
             </div>
@@ -97,13 +99,13 @@ const TalentExperts = () => {
                   Find Your Next Top Talent.
                 </h3>
                 <p className="text-gray-600">
-                  At Cloud Konektion Hired, we make it easy for you to find
-                  top-tier talent that aligns with your organization's goals and
-                  culture.
+                  At Cloud Konektion, we connect businesses like yours with
+                  high-performing professionals who align perfectly with your
+                  organization’s vision, values, and operational goals.
                 </p>
                 <p className="text-gray-600 mt-2">
-                  Simply fill out our form to get started and let us help you
-                  build the dream team for your organization.
+                  Just fill out our form to get started, and let us help you
+                  build the dream team that drives your success.
                 </p>
               </div>
 

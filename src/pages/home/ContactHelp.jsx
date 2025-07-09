@@ -55,7 +55,10 @@ const ContactHelp = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div
+      id="contact"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
@@ -89,14 +92,14 @@ const ContactHelp = () => {
               variants={item}
               whileHover={{ scale: 1.02 }}
             >
-              Have a <span className="text-[#00BCFF]">question</span>?
+              Got A <span className="text-[#00BCFF]">question</span>?
             </motion.h2>
             <motion.p
               className="text-xl md:text-2xl mb-8 opacity-90"
               variants={item}
               whileHover={{ x: 5 }}
             >
-              We would love to help
+              We’re here to help. Let’s talk
             </motion.p>
             <motion.div className="space-y-4" variants={container}>
               {[

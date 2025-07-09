@@ -29,13 +29,13 @@ const HeroJoinUs = () => {
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-lg">
-              Join a team of innovators shaping the future of cloud technology.
-              Grow your career while doing meaningful work.
+              Join a global team driving innovation in cloud solutions. Advance
+              your career while making a real impact.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="flex items-center gap-2 bg-[#00BCFF] text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Explore Opportunities
+                Connect With Us
               </button>
               <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all duration-300 hover:shadow-lg">
                 Meet Our Team
@@ -71,7 +71,6 @@ const HeroJoinUs = () => {
                 className="rounded-2xl border-4 border-white shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
               />
 
-
               {/* Decorative Elements */}
               <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-400 rounded-full opacity-10 -z-10"></div>
               <div className="absolute -top-8 -right-8 w-24 h-24 bg-yellow-400 rounded-full opacity-10 -z-10"></div>
@@ -79,8 +78,6 @@ const HeroJoinUs = () => {
           </div>
         </div>
       </div>
-
-    
     </section>
   );
 };

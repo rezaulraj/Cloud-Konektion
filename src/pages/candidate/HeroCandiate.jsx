@@ -77,18 +77,18 @@ const HeroCandidate = () => {
             <div className="flex items-center gap-3 mb-6">
               <FaHandshake className="text-[#00BCFF] text-3xl" />
               <span className="font-semibold bg-white/10 px-4 py-1 rounded-full">
-                Trusted by Tech Professionals
+                Trusted by High-Growth Companies
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-[#00BCFF]">Elevate</span> Your Career in
-              Tech
+              <span className="text-[#00BCFF]">Elevate</span> Your Career with
+              Confidence
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 max-w-lg opacity-90">
-              Connect with top tech companies and land your dream role 3x faster
-              with our AI-powered matching.
+              Get matched with leading companies and secure your next role 3x
+              faster powered by smart AI matching and expert support.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -101,12 +101,12 @@ const HeroCandidate = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-md">
               {[
                 { value: "10,000+", label: "Candidates Hired" },
-                { value: "85%", label: "Interview Success" },
-                { value: "4.9/5", label: "Satisfaction Rate" },
+                { value: "80%", label: "Interview Success" },
+                { value: "4/5", label: "Candidate Satisfaction" },
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/20 transition"
+                  className="bg-white/10 p-4 rounded-xl backdrop-blur-sm space-y-2 hover:bg-white/20 transition"
                 >
                   <p className="text-2xl font-bold text-[#00BCFF]">
                     {stat.value}
@@ -135,7 +135,7 @@ const HeroCandidate = () => {
         {/* Auto-scrolling clients */}
         <div className="mt-24 lg:mt-32 relative">
           <h3 className="text-center text-white text-xl mb-8 font-medium">
-            Trusted by leading tech companies worldwide
+            Trusted by leading companies worldwide
           </h3>
 
           <div className="relative overflow-hidden py-4">

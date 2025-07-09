@@ -20,9 +20,9 @@ const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const languages = [
     { code: "US", name: "English", countryCode: "US" },
-    { code: "GB", name: "English (UK)", countryCode: "GB" },
-    { code: "DE", name: "Deutsch", countryCode: "DE" },
-    { code: "FR", name: "Français", countryCode: "FR" },
+    { code: "MT", name: "Malta", countryCode: "MT" },
+    { code: "SI", name: "Serbia", countryCode: "SI" },
+    { code: "HR", name: "Croatia", countryCode: "HR" },
     { code: "ES", name: "Español", countryCode: "ES" },
   ];
 

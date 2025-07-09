@@ -1,34 +1,83 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaHotel,
-  FaHardHat,
+  FaTruckMoving,
+  FaBuilding,
+  FaIndustry,
   FaTools,
+  FaConciergeBell,
   FaTree,
-  FaUtensils,
-  FaRobot,
 } from "react-icons/fa";
-import { GiArtificialIntelligence } from "react-icons/gi";
 
 const AreaExpertise = () => {
+  // const expertiseAreas = [
+  //   {
+  //     icon: <FaHotel className="text-4xl text-[#00BCFF]" />,
+  //     title: "Hospitality Team Buildup",
+  //     description:
+  //       "Build dedicated service teams for hotels, resorts, and tourism-based businesses.",
+  //   },
+  //   {
+  //     icon: <FaHardHat className="text-4xl text-[#00BCFF]" />,
+  //     title: "Construction Workforce Solutions",
+  //     description:
+  //       "Recruit engineers, project managers, and skilled laborers to support your construction goals.",
+  //   },
+  //   {
+  //     icon: <FaTools className="text-4xl text-[#00BCFF]" />,
+  //     title: "Welding & Metal Work Experts",
+  //     description:
+  //       "Hire certified welders and metal fabricators for industrial and commercial projects.",
+  //   },
+  //   {
+  //     icon: <FaTree className="text-4xl text-[#00BCFF]" />,
+  //     title: "Woodwork & Carpentry Talent",
+  //     description:
+  //       "Skilled carpenters and craftsmen for furniture, interior, and construction woodwork.",
+  //   },
+  //   {
+  //     icon: <FaUtensils className="text-4xl text-[#00BCFF]" />,
+  //     title: "Crockery & Kitchen Staff Hiring",
+  //     description:
+  //       "Sourcing kitchenware specialists and support staff for food service and hospitality sectors.",
+  //   },
+  //   {
+  //     icon: <FaRobot className="text-4xl text-[#00BCFF]" />,
+  //     title: "Digital Talent Recruitment",
+  //     description: "Essential digital-related roles for your online presence.",
+  //   },
+  // ];
+
   const expertiseAreas = [
     {
-      icon: <FaHotel className="text-4xl text-[#00BCFF]" />,
-      title: "Hospitality Team Buildup",
+      icon: <FaBuilding className="text-4xl text-[#00BCFF]" />,
+      title: "Construction & Infrastructure",
       description:
-        "Build dedicated service teams for hotels, resorts, and tourism-based businesses.",
+        "Reliable manpower for residential, commercial, and civil construction projects ensuring quality, safety, and timely delivery.",
     },
     {
-      icon: <FaHardHat className="text-4xl text-[#00BCFF]" />,
-      title: "Construction Workforce Solutions",
+      icon: <FaIndustry className="text-4xl text-[#00BCFF]" />,
+      title: "Manufacturing & Industrial",
       description:
-        "Recruit engineers, project managers, and skilled laborers to support your construction goals.",
+        "Operators, technicians, and supervisors who keep production lines running smoothly across various industries.",
+    },
+    {
+      icon: <FaTruckMoving className="text-4xl text-[#00BCFF]" />,
+      title: "Logistics & Transportation",
+      description:
+        "From warehouse staff to licensed drivers, we provide the backbone of efficient supply chain and delivery operations.",
     },
     {
       icon: <FaTools className="text-4xl text-[#00BCFF]" />,
-      title: "Welding & Metal Work Experts",
+      title: "Facility Management & Maintenance",
       description:
-        "Hire certified welders and metal fabricators for industrial and commercial projects.",
+        "Skilled maintenance workers and technicians for the upkeep of buildings, equipment, and large-scale facilities.",
+    },
+    {
+      icon: <FaConciergeBell className="text-4xl text-[#00BCFF]" />,
+      title: "Hospitality & Service Roles",
+      description:
+        "Housekeepers, kitchen staff, cleaners, and other support personnel who ensure smooth day-to-day service operations.",
     },
     {
       icon: <FaTree className="text-4xl text-[#00BCFF]" />,
@@ -36,19 +85,7 @@ const AreaExpertise = () => {
       description:
         "Skilled carpenters and craftsmen for furniture, interior, and construction woodwork.",
     },
-    {
-      icon: <FaUtensils className="text-4xl text-[#00BCFF]" />,
-      title: "Crockery & Kitchen Staff Hiring",
-      description:
-        "Sourcing kitchenware specialists and support staff for food service and hospitality sectors.",
-    },
-    {
-      icon: <FaRobot className="text-4xl text-[#00BCFF]" />,
-      title: "Digital Talent Recruitment",
-      description: "Essential digital-related roles for your online presence.",
-    },
   ];
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -72,7 +109,7 @@ const AreaExpertise = () => {
   };
 
   return (
-    <div className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <div id="our-expertise" className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

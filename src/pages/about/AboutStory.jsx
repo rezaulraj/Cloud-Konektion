@@ -13,17 +13,16 @@ const AboutStory = () => {
           {/* Left Column - Text */}
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-gray-900">
-              Pioneering Tech Recruitment
+              A Proven Approach to Talent Matching
             </h3>
             <div className="w-20 h-1 bg-[#00BCFF]"></div>
             <p className="text-lg text-gray-600">
-              Back then, no one else was doing tech-focused recruitment like we
-              were. We saw an opportunity to bridge the gap between top-tier
-              tech talent and the companies that needed them, and we've been
-              doing just that ever since. Today, we're proud to be the leading
-              tech recruitment agencies in APAC and MENA, with a proven track
-              record of success and a commitment to delivering exceptional
-              results.
+              Our founders identified a critical gap in how organizations
+              sourced top-tier professionals for strategic roles—and created a
+              solution that continues to lead the market. Today, Cloud Konektion
+              is a trusted partner for companies across Europe, APAC, and MENA,
+              helping them build high-impact teams that drive growth,
+              innovation, and long-term success.
             </p>
           </div>
 
@@ -59,19 +58,15 @@ const AboutStory = () => {
           {/* Right Column - Text */}
           <div className="space-y-6 lg:order-2 order-1">
             <h3 className="text-3xl font-bold text-gray-900">
-              Proven Track Record
+              Trusted by Industry Leaders
             </h3>
             <div className="w-20 h-1 bg-[#00BCFF]"></div>
             <p className="text-lg text-gray-600">
-              Over the years, we've placed hundreds of C-level executives in all
-              industries, and we're proud to say that our clients have seen
-              significant growth and success as a result. We believe that our
-              success is a reflection of our commitment to our clients, our
-              passion for the tech industry, and our deep understanding of what
-              it takes to build successful teams in today's fast-paced business
-              world. Whether you're a business looking for top-tier talent, or a
-              tech professional looking for your next challenge, we're here to
-              help.
+              From C-suite placements to building entire innovation teams, we’ve
+              placed hundreds of senior professionals across sectors. Our impact
+              is measured not just in hires, but in long-term business growth.
+              We bring together strategy, speed, and precision ensuring the
+              right fit every time.
             </p>
             <button className="inline-flex items-center px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors mt-4">
               <FaSearch className="mr-3" />

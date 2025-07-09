@@ -17,20 +17,19 @@ const Footer = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "For Employers", href: "/employers" },
-    { name: "For Candidates", href: "/candidates" },
-    { name: "About Us", href: "/about" },
-    { name: "Join Us", href: "/join" },
-    { name: "Contact", href: "/contact" },
+    { name: "For Employers", href: "/for-employers" },
+    { name: "For Candidates", href: "/for-candidates" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Join Us", href: "/join-us" },
   ];
 
   const services = [
-    "Executive Search",
-    "Tech Recruitment",
-    "Digital Transformation",
-    "AI Talent Acquisition",
-    "Data Science Hiring",
-    "Leadership Placement",
+    "Construction & Infrastructure",
+    "Manufacturing & Industrial",
+    "Logistics & Transportation",
+    "Facility Management & Maintenance",
+    "Hospitality & Service Roles",
+    "Woodwork & Carpentry Talent",
   ];
 
   const handleSubmit = (e) => {

@@ -28,7 +28,7 @@ const PartnerHome = () => {
     {
       icon: <FaLightbulb className="text-3xl text-[#00BCFF]" />,
       title: "Innovate Faster",
-      description: "Accelerate development with world-class engineers",
+      description: "Accelerate development with top-tier digital talent",
     },
   ];
 
@@ -106,7 +106,7 @@ const PartnerHome = () => {
             variants={item}
             whileHover={{ scale: 1.05 }}
           >
-            <span>DIGITAL TALENT SOLUTIONS</span>
+            <span>Comprehensive Talent Solutions</span>
           </motion.div>
 
           <motion.h1
@@ -114,7 +114,7 @@ const PartnerHome = () => {
             variants={item}
             whileHover={{ scale: 1.01 }}
           >
-            The Premier Executive Recruitment Partner{" "}
+            Your Trusted Executive Search Partner
             <br className="hidden lg:block" /> For{" "}
             <span className="text-[#00BCFF]">Digital Talent</span>
           </motion.h1>
@@ -124,9 +124,9 @@ const PartnerHome = () => {
             variants={item}
             whileHover={{ x: 5 }}
           >
-            Our tech talent equips your company with everything you need to
-            compete, protect your business, triumph in the marketplace and
-            maximize profitability.
+            Our expert hires give your company the competitive edge helping you
+            innovate faster, protect your business, outperform the competition,
+            and boost profitability
           </motion.p>
         </motion.div>
 

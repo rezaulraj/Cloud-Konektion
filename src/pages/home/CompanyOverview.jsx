@@ -46,23 +46,23 @@ const CompanyOverview = () => {
   const stats = [
     {
       icon: <FaGlobeAsia className="text-3xl text-[#00BCFF]" />,
-      value: "2",
-      label: "Regions Covered",
+      value: "1",
+      label: "Strategic Regions",
     },
     {
       icon: <FaUserTie className="text-3xl text-[#00BCFF]" />,
-      value: "500+",
-      label: "Executives Placed",
+      value: "300+",
+      label: "Top-Tier Executives Placed",
     },
     {
       icon: <FaChartLine className="text-3xl text-[#00BCFF]" />,
-      value: "95%",
+      value: "93%",
       label: "Success Rate",
     },
     {
       icon: <FaLightbulb className="text-3xl text-[#00BCFF]" />,
-      value: "20+",
-      label: "Years Experience",
+      value: "10+",
+      label: "Years Of Recruitment Excellence",
     },
   ];
 
@@ -160,19 +160,19 @@ const CompanyOverview = () => {
               className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
               variants={item}
             >
-              The Leader of the Technology Headhunting Space in{" "}
-              <span className="text-[#00BCFF]">APAC</span> and{" "}
-              <span className="text-[#00BCFF]">MENA</span>
+              <span className="text-[#00BCFF]">Malta’s </span>
+              Leading Executive Search
+              <span className="text-[#00BCFF]"> Partner</span>
             </motion.h2>
 
             <motion.p
               className="text-lg text-gray-600 leading-relaxed"
               variants={item}
             >
-              Founded in 2002 and headquartered in Singapore, JB Hired is
-              dedicated to its clients' success and uses a consulting approach
-              mixed with high technology systems developed in-house to provide
-              the best talents at lightning speed.
+              Cloud Konektion leads the way in executive recruitment across
+              Malta’s dynamic business landscape. <br /> With a consultative
+              approach and smart recruitment tools, we help ambitious companies
+              attract and hire top-tier talent faster and more efficiently.
             </motion.p>
 
             {/* Stats */}

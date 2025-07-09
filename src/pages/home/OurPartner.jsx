@@ -11,41 +11,39 @@ const OurPartner = () => {
     {
       id: 1,
       quote:
-        "JB Hired has been instrumental in helping us secure top talent for our financial and other services. Their expertise helped us identify and place strong leaders in critical positions like CPO and CTO, bringing fresh insights and innovation to our teams. JB Hired's strategic approach to talent acquisition has made a significant difference in our leadership structure.",
+        "Cloud Konektion played a key role in helping us secure outstanding leadership talent across financial services and other sectors. Their consultative approach enabled us to fill critical roles like Chief Product Officer and Chief Operating Officer, bringing fresh strategic perspective to our leadership team.",
       name: "Ivonny Liemantika",
-      position:
-        "Executive Head of Talent Acquisition FS and Fintech at Sinarmas BCE",
+      position: "Executive Head of Talent Acquisition at Sinarmas BCE",
       image: partner1,
     },
     {
       id: 2,
       quote:
-        "JB Hired has transformed our C-Level recruitment process. Their global reach and access to top talent worldwide is unparalleled. They've successfully brought in exceptional executives from Silicon Valley and other major tech hubs, significantly impacting our organization.",
+        "Partnering with Cloud Konektion transformed our leadership recruitment. From sourcing top-tier candidates to ensuring alignment with our business strategy, their precision and dedication have fueled our continued growth.",
       name: "William Twining",
-      position:
-        "Director, Talent Resources & Development at Charoen Pokphand Group (CP)",
+      position: "Director, Talent Resources at Charoen Pokphand Group (CP)",
       image: partner2,
     },
     {
       id: 3,
       quote:
-        "JB Hired has been instrumental in helping us build a strong technical team. They've brought in top talent for key roles such as Lead Engineer, Senior Android Engineer, Backend Software Engineer (Golang), and Senior iOS Engineer.",
+        "Their team helped us build a high-performing division by delivering exceptional professionals for key roles. Cloud Konektion’s commitment to quality has been instrumental in driving our growth and success.",
       name: "Frederick Loy",
-      position: "Senior Talent Acquisition Manager at Foodpanda",
+      position: "Group Recruitment Manager at Foodpanda",
       image: partner3,
     },
     {
       id: 4,
       quote:
-        "JB Hired's expertise in the tech industry is unparalleled. As a CTO, finding the right talent is crucial for our success. Their team took the time to understand our unique needs and consistently delivered high-caliber candidates.",
+        "Finding the right talent is critical. Cloud Konektion took the time to understand our goals and delivered candidates who not only met the role requirements but also fit seamlessly with our culture. They've become a trusted hiring partner.",
       name: "Yassine Bel Mamoun",
-      position: "CTO at Manatal",
+      position: "Chief Operating Officer at Manatal",
       image: partner4,
     },
     {
       id: 5,
       quote:
-        "Working with JB Hired has completely elevated our executive recruitment strategy. Their ability to source elite talent for crucial roles such as CTO, and Head of Sales has helped us accelerate our company's expansion.",
+        "Our experience has been nothing short of exceptional. Cloud Konektion delivered high-caliber candidates for specialized roles, enabling us to scale with confidence and clarity.",
       name: "Juliette Gimenez",
       position: "Founder & CEO at Goxip",
       image: partner5,

@@ -119,9 +119,9 @@ const HeroHome = () => {
               transition={{ delay: 0.6 }}
             >
               <p className="text-lg md:text-xl text-white bg-black/40 px-4 py-2 rounded-lg inline-block">
-                We are{" "}
+                Malta’s{" "}
                 <span className="font-bold text-[#00BCFF]">
-                  #1 IN the market
+                  #1 Executive Search Partner
                 </span>
               </p>
               <div className="absolute -bottom-1 left-0 right-0 h-1 bg-[#00BCFF]/50 blur-sm"></div>
@@ -135,8 +135,9 @@ const HeroHome = () => {
               animate={{ opacity: 0.9 }}
               transition={{ delay: 0.7 }}
             >
-              Securing senior level talents globally for high growth tech
-              companies, SaaS firms, multinational companies and more
+              We specialize in securing top-tier senior talent for high-growth
+              companies and global enterprises helping you lead, scale, and stay
+              ahead.
             </motion.p>
 
             {/* Buttons with Smooth Effects */}
@@ -148,21 +149,29 @@ const HeroHome = () => {
               transition={{ delay: 0.8 }}
             >
               <motion.button
+                onClick={() => {
+                  const section = document.querySelector("#our-expertise");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative overflow-hidden group px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="relative cursor-pointer overflow-hidden group px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <FaSearch className="text-lg" />
-                  <span>Discover Jobs</span>
+                  <span>Discover Our Expertise</span>
                 </span>
                 <span className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
               </motion.button>
 
               <motion.button
+                onClick={() => {
+                  const section = document.querySelector("#contact");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative overflow-hidden group px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:-translate-y-1"
+                className="relative cursor-pointer overflow-hidden group px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:-translate-y-1"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <FaHeadset className="text-lg" />

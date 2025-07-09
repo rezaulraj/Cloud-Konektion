@@ -121,7 +121,7 @@ const BenefitsSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: "3x", label: "Faster Hiring Process" },
-              { value: "92%", label: "Interview Success Rate" },
+              { value: "80%", label: "Interview Success Rate" },
               { value: "25%", label: "Higher Salaries" },
               { value: "10K+", label: "Candidates Placed" },
             ].map((stat, index) => (

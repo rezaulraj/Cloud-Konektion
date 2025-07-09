@@ -2,12 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   FaUserTie,
-  FaDatabase,
+  FaBuilding,
+  FaGlobeAmericas,
   FaHandshake,
-  FaCloud,
-  FaShieldAlt,
-  FaRobot,
-  FaChartLine,
+  FaTruckMoving,
+  FaHardHat,
+  FaUsersCog,
+  FaChartBar,
 } from "react-icons/fa";
 
 const WhyCloudeKonektion = () => {
@@ -15,55 +16,58 @@ const WhyCloudeKonektion = () => {
     {
       number: "1",
       icon: <FaUserTie className="text-4xl text-[#00BCFF]" />,
-      title: "Digital Talent Expertise",
+      title: "Top Talent, Delivered with Precision",
       description: [
-        "Thanks to our extensive expertise in digital positions, we understand the challenges and opportunities of hiring in a highly competitive and dynamic environment.",
-        "Our recruitment services cover a wide range of technology-related roles, including engineering, cloud computing, cybersecurity, artificial intelligence, IoT, marketing, sales, and more. Our consultants are highly knowledgeable in all things tech and can help you find the best talent to fit your needs.",
+        "With deep expertise in workforce recruitment, we understand what it takes to find the right people in today’s fast-moving and competitive industries.",
+        "We provide tailored hiring solutions across a wide range of roles — from skilled labor and operations to hospitality, logistics, and team supervision.",
       ],
       features: [
         {
-          icon: <FaCloud className="text-[#00BCFF]" />,
-          text: "Cloud Computing",
+          icon: <FaBuilding className="text-[#00BCFF]" />,
+          text: "Construction & Infrastructure",
         },
         {
-          icon: <FaShieldAlt className="text-[#00BCFF]" />,
-          text: "Cybersecurity",
+          icon: <FaTruckMoving className="text-[#00BCFF]" />,
+          text: "Logistics & Transportation",
         },
-        { icon: <FaRobot className="text-[#00BCFF]" />, text: "AI & IoT" },
         {
-          icon: <FaChartLine className="text-[#00BCFF]" />,
-          text: "Tech Sales & Marketing",
+          icon: <FaUsersCog className="text-[#00BCFF]" />,
+          text: "Facility & Maintenance Staff",
+        },
+        {
+          icon: <FaChartBar className="text-[#00BCFF]" />,
+          text: "Service & Admin Roles",
         },
       ],
     },
     {
       number: "2",
-      icon: <FaDatabase className="text-4xl text-[#00BCFF]" />,
-      title: "Largest Tech Talent Database",
+      icon: <FaGlobeAmericas className="text-4xl text-[#00BCFF]" />,
+      title: "Unmatched Access to Skilled Workers",
       description: [
-        "With access to the largest database of tech-related candidates worldwide, we can provide you with not only the best local talent but also candidates from major tech hubs such as Silicon Valley.",
-        "Our proprietary technology enables us to measure crucial metrics such as the position & candidate matching rate allowing us to source candidates faster than any of your competitors.",
+        "Gain access to one of the most reliable labor networks across multiple regions. From local candidates to workers in high-demand global sectors, we deliver talent quickly and efficiently.",
+        "Our smart matching process ensures that every placement meets your business needs in terms of skills, availability, and long-term fit.",
       ],
       highlights: [
-        "Global talent pool",
-        "Silicon Valley connections",
-        "AI-powered matching",
-        "Fast candidate sourcing",
+        "Global candidate reach",
+        "High-volume workforce supply",
+        "Skill-based matching system",
+        "Fast, reliable sourcing",
       ],
     },
     {
       number: "3",
       icon: <FaHandshake className="text-4xl text-[#00BCFF]" />,
-      title: "Consultative Approach to Recruitment",
+      title: "Strategic & Consultative Recruitment",
       description: [
-        "Thanks to our extensive candidates' database and our industry knowledge, we are able to source and place the ideal candidates for your business.",
-        "In addition, our consultative recruitment approach involves providing advice on the best practices and strategies to attract and retain top tech talent. We ensure that every candidate we recommend is a perfect fit for your position and company culture.",
+        "We go beyond basic staffing — we build resilient and adaptable teams tailored to your industry’s requirements.",
+        "Our consultative approach includes market insights, workforce planning, and retention strategies to ensure your operations run smoothly.",
       ],
       benefits: [
-        "Cultural fit assessment",
-        "Retention strategies",
-        "Market salary analysis",
-        "Competitor benchmarking",
+        "Long-term workforce planning",
+        "Retention-focused hiring",
+        "Industry-specific insights",
+        "Flexible hiring strategies",
       ],
     },
   ];
@@ -154,7 +158,7 @@ const WhyCloudeKonektion = () => {
             className="text-xl text-gray-600 max-w-3xl mx-auto"
             whileHover={{ scale: 1.01 }}
           >
-            Discover how our specialized approach sets us apart in tech
+            Discover how our specialized approach sets us apart in executive
             recruitment
           </motion.p>
         </motion.div>
