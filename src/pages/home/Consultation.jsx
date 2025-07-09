@@ -139,7 +139,7 @@ const Consultation = () => {
                 {
                   icon: <FaMapMarkerAlt />,
                   title: "Visit Us",
-                  text: "Singapore",
+                  text: "ISLA, Malta",
                 },
               ].map((option, index) => (
                 <motion.div

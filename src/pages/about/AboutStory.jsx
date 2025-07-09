@@ -90,13 +90,13 @@ const AboutStory = () => {
               <FaBuilding className="text-2xl text-[#00BCFF] mt-1" />
               <div>
                 <p className="text-lg font-medium text-gray-900">
-                  JB Hired Singapore
+                  Cloud Konektion Hired Malta
                 </p>
-                <p className="text-gray-600">160 Robinson Road, #24-09</p>
-                <p className="text-gray-600">
+                <p className="text-gray-600">60, ST. JOSEPH STREET, ISLA</p>
+                {/* <p className="text-gray-600">
                   Spore Business Federation Centre
-                </p>
-                <p className="text-gray-600">Singapore</p>
+                </p> */}
+                <p className="text-gray-600">Malta</p>
               </div>
             </div>
           </div>

@@ -301,8 +301,8 @@ const ContactPageCandidate = () => {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-gray-600">123 Tech Street</p>
-                    <p className="text-gray-600">San Francisco, CA 94107</p>
+                    <p className="text-gray-600">60, ST. JOSEPH STREET,</p>
+                    <p className="text-gray-600">ISLA, Malta</p>
                   </div>
                 </div>
 
@@ -367,9 +367,10 @@ const ContactPageCandidate = () => {
             </div>
 
             {/* Map Embed */}
+
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.158578379365!2d-122.4194155846824!3d37.77492997975938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3231.8883193835154!2d14.513150775680367!3d35.90075081788424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x130e452977901537%3A0x18a22beaac790ffc!2s60%20St.Joseph&#39;s%20Street%2C%20Il-Belt%20Valletta%2C%20Malta!3m2!1d35.9007465!2d14.515725699999999!4m0!5e0!3m2!1sen!2sbd!4v1752040902403!5m2!1sen!2sbd"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

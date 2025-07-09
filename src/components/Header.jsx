@@ -10,7 +10,8 @@ import {
 import { MdOutlineHome } from "react-icons/md";
 import { TbUsersPlus } from "react-icons/tb";
 import ContactForm from "./ContactForm";
-
+import logo2 from "/logo2.png";
+import logo3 from "/logo3.png";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -69,12 +70,20 @@ const Header = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo - Left */}
           <div className="flex items-center">
-            <h1
+            {/* <h1
               className="text-3xl font-bold transition-colors duration-500"
               style={{ color: "#00BCFF" }}
             >
               Cloud Konektion
-            </h1>
+            </h1> */}
+
+            <a href="/">
+              {scrolled ? (
+                <img src={logo2} alt="" className="h-14" />
+              ) : (
+                <img src={logo3} alt="" className="h-14" />
+              )}
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -195,19 +204,19 @@ const Header = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div
-            className={`md:hidden bg-white shadow-xl transition-all duration-500 ${
+            className={`md:hidden bg-white h-screen shadow-xl transition-all duration-500 ${
               mobileMenuOpen
                 ? "max-h-screen overflow-y-scroll opacity-100"
-                : "max-h-0 opacity-0"
+                : "max-h-0 opacity-0 overflow-y-scroll"
             }`}
           >
-            <div className="container mx-auto px-4 py-6">
-              <nav className="flex flex-col space-y-2">
+            <div className="container mx-auto px-4 py-2">
+              <nav className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <a
                     key={item.path}
                     href={item.path}
-                    className="flex items-center space-x-4 text-2xl font-medium text-gray-800 py-3 border-b border-gray-100 hover:text-[#00BCFF] transition-colors duration-300"
+                    className="flex items-center space-x-4 text-lg font-medium text-gray-800 py-2 border-b border-gray-100 hover:text-[#00BCFF] transition-colors duration-300"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="text-[#00BCFF]">{item.icon}</span>
@@ -216,7 +225,7 @@ const Header = () => {
                 ))}
               </nav>
 
-              <div className="mt-8 pt-6 border-t border-gray-200">
+              <div className="mt-4 pt-4 border-t border-gray-200">
                 <h4 className="text-gray-500 text-xl mb-4 font-medium">
                   Select Language
                 </h4>

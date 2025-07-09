@@ -119,14 +119,13 @@ const HeroCandidate = () => {
 
           {/* Right side - Image with hover effect */}
           <div className="lg:w-1/2 relative mt-12 lg:mt-0">
-            <div className="relative w-full max-w-xl mx-auto">
+            <div className="relative w-full max-w-xl mx-auto overflow-hidden">
               <img
                 src={candidateImage}
                 alt="Successful candidate"
                 className="rounded-2xl border-4 border-white shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
               />
 
-              {/* Decorative elements */}
               <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-400 rounded-full opacity-10 -z-10"></div>
               <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#00BCFF] rounded-full opacity-10 -z-10"></div>
             </div>

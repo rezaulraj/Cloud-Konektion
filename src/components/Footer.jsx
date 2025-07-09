@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaLinkedin,
   FaTwitter,
@@ -8,9 +8,13 @@ import {
   FaPhone,
   FaEnvelope,
   FaChevronRight,
+  FaCheckCircle,
 } from "react-icons/fa";
-
+import logo3 from "/logo3.png";
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "For Employers", href: "/employers" },
@@ -29,16 +33,31 @@ const Footer = () => {
     "Leadership Placement",
   ];
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setShowSuccess(true);
+      setIsSubmitting(false);
+      setEmail("");
+
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 3000);
+    }, 1000);
+  };
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold">
-              <span className="text-[#00BCFF]">Cloud</span> Konektion
-            </h3>
-            <p className="text-gray-400">
+          <div className="space-y-6 ">
+            <a href="/">
+              <img src={logo3} alt="" className="h-20" />
+            </a>
+            <p className="text-gray-400 mt-4">
               The premier executive recruitment partner for digital talent in
               APAC and MENA regions.
             </p>
@@ -113,9 +132,9 @@ const Footer = () => {
               <div className="flex items-start">
                 <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
                 <p className="text-gray-400">
-                  123 Tech Street
+                  60, ST. JOSEPH STREET,
                   <br />
-                  Singapore 123456
+                  ISLA, Malta
                 </p>
               </div>
               <div className="flex items-center">
@@ -141,7 +160,18 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="bg-gray-800 rounded-xl p-8 mb-12">
+        <div className="bg-gray-800 rounded-xl p-8 mb-12 relative overflow-hidden">
+          <div
+            className={`absolute top-0 left-0 right-0 bg-green-600/90 text-white transition-all duration-500 ease-in-out ${
+              showSuccess ? "translate-y-0" : "-translate-y-full"
+            }`}
+          >
+            <div className="max-w-3xl mx-auto flex items-center justify-center py-3 px-4">
+              <FaCheckCircle className="text-xl mr-2" />
+              <span className="font-medium">Thank you for subscribing!</span>
+            </div>
+          </div>
+
           <div className="max-w-3xl mx-auto text-center">
             <h4 className="text-xl font-semibold mb-4">
               Subscribe to our Newsletter
@@ -149,16 +179,56 @@ const Footer = () => {
             <p className="text-gray-400 mb-6">
               Stay updated with the latest industry trends and job opportunities
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+            >
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
-                className="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00BCFF]"
+                className="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00BCFF] placeholder-gray-400"
+                required
               />
-              <button className="px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors">
-                Subscribe
+              <button
+                type="submit"
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center min-w-[120px] ${
+                  isSubmitting
+                    ? "bg-[#00a2d6] cursor-not-allowed"
+                    : "bg-[#00BCFF] hover:bg-[#0095cc] hover:shadow-lg"
+                }`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <svg
+                      className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  "Subscribe"
+                )}
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
