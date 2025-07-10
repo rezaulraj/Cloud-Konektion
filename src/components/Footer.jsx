@@ -9,8 +9,12 @@ import {
   FaEnvelope,
   FaChevronRight,
   FaCheckCircle,
+  FaTiktok,
+  FaYoutube,
+  FaPinterest,
 } from "react-icons/fa";
 import logo3 from "/logowhite.png";
+import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
@@ -63,28 +67,54 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/107980266/admin/dashboard/"
+                target="_blank"
                 className="text-gray-400 hover:text-[#00BCFF] transition-colors"
               >
                 <FaLinkedin className="text-xl" />
               </a>
               <a
-                href="#"
+                href="https://x.com/cloudkonektion
+"
+                target="_blank"
                 className="text-gray-400 hover:text-[#00BCFF] transition-colors"
               >
-                <FaTwitter className="text-xl" />
+                <FaXTwitter className="text-xl" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/cloudkonektion/"
+                target="_blank"
                 className="text-gray-400 hover:text-[#00BCFF] transition-colors"
               >
                 <FaFacebook className="text-xl" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/cloudkonektion/"
+                target="_blank"
                 className="text-gray-400 hover:text-[#00BCFF] transition-colors"
               >
                 <FaInstagram className="text-xl" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@cloudkonektion"
+                target="_blank"
+                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+              >
+                <FaTiktok className="text-xl" />
+              </a>
+              <a
+                href="https://www.youtube.com/@cloudkonektion0"
+                target="_blank"
+                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+              >
+                <FaYoutube className="text-xl" />
+              </a>
+              <a
+                href="https://www.pinterest.com/cloudkonektion/"
+                target="_blank"
+                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+              >
+                <FaPinterest className="text-xl" />
               </a>
             </div>
           </div>
