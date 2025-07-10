@@ -10,23 +10,23 @@ const HowWeWork = () => {
   const steps = [
     {
       icon: <FaSearch className="text-2xl text-[#00BCFF]" />,
-      title: "Research",
-      description: "Understand your business goals and talent needs",
+      title: "Discover",
+      description: "We align with your goals, culture, and hiring needs.",
     },
     {
       icon: <FaUserFriends className="text-2xl text-[#00BCFF]" />,
-      title: "Sourcing",
-      description: "Leverage our extensive tech candidate database",
+      title: "Source",
+      description: "We identify top talent through targeted outreach and our global network.",
     },
     {
       icon: <FaComments className="text-2xl text-[#00BCFF]" />,
       title: "Interview",
-      description: "Coordinate and facilitate the interview process",
+      description: "We manage the entire interview process for speed and efficiency.",
     },
     {
       icon: <FaHandshake className="text-2xl text-[#00BCFF]" />,
-      title: "Hire & Retain",
-      description: "Assist with offers and post-hire support",
+      title: "Hire & Support",
+      description: "We assist with offer negotiation and ensure smooth onboarding and retention.",
     },
   ];
 

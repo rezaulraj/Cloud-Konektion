@@ -7,6 +7,10 @@ import {
   FaUser,
   FaEnvelope,
   FaComment,
+  FaBriefcase,
+  FaChartLine,
+  FaHandshake,
+  FaCheck,
 } from "react-icons/fa";
 
 const TalentExperts = () => {
@@ -37,9 +41,15 @@ const TalentExperts = () => {
           <div className="space-y-12">
             <div className="text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                <span className="text-[#00BCFF]">Talent</span> Experts
+                <span className="text-[#00BCFF]">Talent</span> Acquisition
+                Experts
               </h2>
               <div className="w-20 h-1 bg-[#00BCFF] mx-auto lg:mx-0 mb-8"></div>
+              <p className="text-lg text-gray-600 mb-6">
+                We bridge the gap between exceptional talent and
+                forward-thinking companies, creating perfect matches that drive
+                business success.
+              </p>
             </div>
 
             {/* Expertise Cards */}
@@ -50,13 +60,24 @@ const TalentExperts = () => {
                   <FaUserTie className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Global Reach. Career-Changing Opportunities.
+                  Executive & Specialized Hiring
                 </h3>
-                <p className="text-gray-600">
-                  We don’t just connect you with jobs—we match you with the
-                  right opportunities. Our team understands the market and what
-                  candidates like you need to succeed.
+                <p className="text-gray-600 mb-4">
+                  Our proprietary methodology identifies top-tier candidates for
+                  leadership and hard-to-fill technical roles through
+                  comprehensive vetting and competency-based assessments.
                 </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    C-level placements
+                  </span>
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    Technical specialists
+                  </span>
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    Cultural alignment
+                  </span>
+                </div>
               </div>
 
               {/* Card 2 */}
@@ -65,13 +86,24 @@ const TalentExperts = () => {
                   <FaGlobe className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Explore Opportunities Around the World
+                  Global Talent Network
                 </h3>
-                <p className="text-gray-600">
-                  Whether you're seeking local roles or global placements, we
-                  help you find positions that align with your skills, goals,
-                  and values.
+                <p className="text-gray-600 mb-4">
+                  Access our curated database of pre-vetted professionals across
+                  20+ countries, with specialized knowledge of regional markets
+                  and compliance requirements.
                 </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    International hiring
+                  </span>
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    Local market expertise
+                  </span>
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    Visa/immigration support
+                  </span>
+                </div>
               </div>
 
               {/* Card 3 */}
@@ -80,13 +112,24 @@ const TalentExperts = () => {
                   <FaClock className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Need a Job Fast? We've Got You
+                  Rapid Placement Solutions
                 </h3>
-                <p className="text-gray-600">
-                  Our team moves quickly. On average, we help candidates land
-                  roles in 10 days—connecting you to the right opportunity,
-                  right on time.
+                <p className="text-gray-600 mb-4">
+                  Our expedited recruitment process delivers qualified
+                  candidates in as little as 72 hours for urgent roles, with a
+                  90-day replacement guarantee.
                 </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    Time-to-fill: 10 days avg.
+                  </span>
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    Temp-to-perm options
+                  </span>
+                  <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
+                    Guaranteed placements
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -95,25 +138,50 @@ const TalentExperts = () => {
           <div className="bg-white rounded-xl shadow-xl overflow-hidden">
             <div className="p-8 md:p-10">
               <div className="text-center mb-8">
+                <div className="inline-flex items-center px-6 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-medium mb-4">
+                  <FaHandshake className="mr-2" />
+                  Talent Solutions
+                </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Find Your Next Top Talent.
+                  Build Your Dream Team
                 </h3>
                 <p className="text-gray-600">
-                  At Cloud Konektion, we connect businesses like yours with
-                  high-performing professionals who align perfectly with your
-                  organization’s vision, values, and operational goals.
+                  Complete this form to access our exclusive talent pool and
+                  receive:
                 </p>
-                <p className="text-gray-600 mt-2">
-                  Just fill out our form to get started, and let us help you
-                  build the dream team that drives your success.
-                </p>
+                <ul className="mt-4 space-y-2 text-left text-gray-600">
+                  <li className="flex items-start">
+                    <FaCheck className="text-[#00BCFF] mt-1 mr-2 flex-shrink-0" />
+                    <span>Customized candidate shortlists within 48 hours</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-[#00BCFF] mt-1 mr-2 flex-shrink-0" />
+                    <span>Market salary benchmarking</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-[#00BCFF] mt-1 mr-2 flex-shrink-0" />
+                    <span>Dedicated recruitment consultant</span>
+                  </li>
+                </ul>
               </div>
 
               <form className="space-y-6">
-                <h4 className="text-lg font-semibold text-gray-900 flex items-center">
-                  <FaSearch className="text-[#00BCFF] mr-2" />
-                  Send us a message
-                </h4>
+                <div className="space-y-1">
+                  <label
+                    htmlFor="company"
+                    className="block text-gray-700 font-medium flex items-center"
+                  >
+                    <FaBriefcase className="text-gray-400 mr-2 text-sm" />
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
+                    placeholder="Your organization"
+                    required
+                  />
+                </div>
 
                 <div className="space-y-1">
                   <label
@@ -121,13 +189,14 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaUser className="text-gray-400 mr-2 text-sm" />
-                    Your name
+                    Your Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
                     placeholder="John Doe"
+                    required
                   />
                 </div>
 
@@ -137,14 +206,37 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaEnvelope className="text-gray-400 mr-2 text-sm" />
-                    Your email
+                    Work Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                    placeholder="john@example.com"
+                    placeholder="john@company.com"
+                    required
                   />
+                </div>
+
+                <div className="space-y-1">
+                  <label
+                    htmlFor="hiring-needs"
+                    className="block text-gray-700 font-medium flex items-center"
+                  >
+                    <FaChartLine className="text-gray-400 mr-2 text-sm" />
+                    Hiring Needs
+                  </label>
+                  <select
+                    id="hiring-needs"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition bg-white"
+                    required
+                  >
+                    <option value="">Select your hiring needs</option>
+                    <option value="executive">Executive/C-level</option>
+                    <option value="technical">Technical Specialists</option>
+                    <option value="professional">Professional Staff</option>
+                    <option value="contract">Contract/Temporary</option>
+                    <option value="multiple">Multiple Positions</option>
+                  </select>
                 </div>
 
                 <div className="space-y-1">
@@ -153,21 +245,21 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaComment className="text-gray-400 mr-2 text-sm" />
-                    How can we help?
+                    Specific Requirements
                   </label>
                   <textarea
                     id="message"
                     rows="4"
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                    placeholder="Tell us about your hiring needs..."
+                    placeholder="Tell us about your ideal candidates, required skills, timeline, etc."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#00BCFF] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-[#00BCFF] to-[#0077FF] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
                 >
-                  <span>Get Started</span>
+                  <span>Request Talent Consultation</span>
                   <FaSearch className="ml-2" />
                 </button>
               </form>

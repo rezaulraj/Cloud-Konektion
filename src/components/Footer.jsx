@@ -17,6 +17,7 @@ const Footer = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const quickLinks = [
     { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
     { name: "For Employers", href: "/for-employers" },
     { name: "For Candidates", href: "/for-candidates" },
     { name: "About Us", href: "/about-us" },
@@ -57,8 +58,8 @@ const Footer = () => {
               <img src={logo3} alt="" className="h-20" />
             </a>
             <p className="text-gray-400 mt-4">
-              The premier executive recruitment partner for digital talent in
-              APAC and MENA regions.
+              Partnering with ambitious organizations in Europe, APAC, and MENA
+              to build future-ready digital teams.
             </p>
             <div className="flex space-x-4">
               <a

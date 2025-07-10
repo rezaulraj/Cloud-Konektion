@@ -97,10 +97,11 @@ const DigitalDisruption = () => {
             <div className="text-center p-8 backdrop-blur-sm bg-white/80 rounded-xl max-w-md mx-auto border border-white/20">
               <FaRocket className="text-5xl text-[#00BCFF] mx-auto mb-4 animate-pulse" />
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Pioneers in Tech Recruitment
+                Leaders in High-Impact Talent Acquisition
               </h3>
               <p className="text-gray-600">
-                Leading the digital talent revolution since 2002
+                We help businesses grow by finding the right people for the
+                roles that matter most.
               </p>
             </div>
           </div>

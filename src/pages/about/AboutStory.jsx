@@ -2,7 +2,7 @@ import React from "react";
 import { FaBuilding, FaHandshake, FaSearch } from "react-icons/fa";
 import rosaliePhoto from "../../assets/about/img1.avif?url";
 import maximePhoto from "../../assets/about/img2.avif?url";
-import location from "../../assets/about/office.avif?url";
+import location from "../../assets/about/office.jpg?url";
 
 const AboutStory = () => {
   return (

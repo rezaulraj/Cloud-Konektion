@@ -20,22 +20,22 @@ const HowItWorks = () => {
     },
     {
       icon: <FaSearch className="text-4xl" />,
-      title: "Smart Matching",
+      title: "Intelligent Matching",
       description:
         "Our AI matches you with ideal jobs based on your skills and preferences",
       accentColor: "from-purple-400 to-purple-600",
     },
     {
       icon: <FaHandshake className="text-4xl" />,
-      title: "Get Interview Requests",
+      title: "Receive Interview Requests",
       description:
-        "Employers reach out directly when interested in your profile",
+        "Hiring managers reach out directly when your profile fits their role.",
       accentColor: "from-green-400 to-green-600",
     },
     {
       icon: <FaBriefcase className="text-4xl" />,
-      title: "Land Your Dream Job",
-      description: "Accept offers from top companies with better compensation",
+      title: "Secure the Right Offer",
+      description: "Accept job offers from top-tier companies with competitive pay and clear growth paths.",
       accentColor: "from-yellow-400 to-yellow-600",
     },
   ];

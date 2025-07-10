@@ -158,7 +158,7 @@ const ContactPageCandidate = () => {
                       <option value="">Select Subject</option>
                       <option value="Job Application">Job Application</option>
                       <option value="General Inquiry">General Inquiry</option>
-                      <option value="Partnership">Partnership</option>
+                      {/* <option value="Partnership">Partnership</option> */}
                       <option value="Other">Other</option>
                     </select>
                   </div>
