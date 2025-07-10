@@ -317,7 +317,7 @@ const AllServices = () => {
               Schedule Consultation
             </button>
             <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors duration-300">
-              Call Now: +356 1234 5678
+              Email Now: help@cloudkonektion.eu
             </button>
           </div>
         </motion.div>

@@ -1,6 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaEnvelope,
+} from "react-icons/fa";
 import bgimage from "../../assets/home/map.avif";
 
 const Consultation = () => {
@@ -111,7 +116,7 @@ const Consultation = () => {
               className="inline-flex items-center justify-center w-20 h-20 bg-[#00BCFF] rounded-full mb-6"
               whileHover={{ rotate: 15, scale: 1.1 }}
             >
-              <FaPhoneAlt className="text-2xl text-white" />
+              <FaEnvelope className="text-2xl text-white" />
             </motion.div>
             <motion.h3
               className="text-2xl font-bold text-gray-900 mb-6"
@@ -127,9 +132,9 @@ const Consultation = () => {
             >
               {[
                 {
-                  icon: <FaPhoneAlt />,
-                  title: "Call Us",
-                  text: "+356 1234 5678",
+                  icon: <FaEnvelope />,
+                  title: "Email Us",
+                  text: "help@cloudkonektion.eu",
                 },
                 {
                   icon: <FaCalendarAlt />,
@@ -139,7 +144,7 @@ const Consultation = () => {
                 {
                   icon: <FaMapMarkerAlt />,
                   title: "Visit Us",
-                  text: "ISLA, Malta",
+                  text: "60, ST. JOSEPH STREET,ISLA, Malta",
                 },
               ].map((option, index) => (
                 <motion.div

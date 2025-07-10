@@ -12,6 +12,7 @@ import {
   FaTiktok,
   FaInstagram,
   FaFacebook,
+  FaCalendar,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineWork, MdOutlineMessage } from "react-icons/md";
@@ -320,17 +321,16 @@ const ContactPageCandidate = () => {
                     <FaEnvelope className="h-5 w-5 text-blue-500" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-gray-600">info@cloudkonektion.com</p>
-                    <p className="text-gray-600">careers@cloudkonektion.com</p>
+                    <p className="text-gray-600">help@cloudkonektion.eu</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <FaPhone className="h-5 w-5 text-blue-500" />
+                    <FaCalendar className="h-5 w-5 text-blue-500" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    {/* <p className="text-gray-600">+1 (555) 123-4567</p> */}
                     <p className="text-gray-600">Mon-Fri, 9am-5pm PST</p>
                   </div>
                 </div>

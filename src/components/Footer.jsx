@@ -12,6 +12,7 @@ import {
   FaTiktok,
   FaYoutube,
   FaPinterest,
+  FaCalendar,
 } from "react-icons/fa";
 import logo3 from "/logowhite.png";
 import { FaXTwitter } from "react-icons/fa6";
@@ -167,14 +168,13 @@ const Footer = () => {
                   ISLA, Malta
                 </p>
               </div>
-              <div className="flex items-center">
-                <FaPhone className="text-[#00BCFF] mr-3" />
-                <a
-                  href="tel:+6512345678"
-                  className="text-gray-400 hover:text-[#00BCFF] transition-colors"
-                >
-                  +356 1234 5678
-                </a>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <FaCalendar className="h-5 w-5 text-[#00BCFF]" />
+                </div>
+                <div className="ml-3">
+                  <p className="text-gray-400">Mon-Fri, 9am-5pm PST</p>
+                </div>
               </div>
               <div className="flex items-center">
                 <FaEnvelope className="text-[#00BCFF] mr-3" />
@@ -182,7 +182,7 @@ const Footer = () => {
                   href="mailto:info@cloudkonektion.com"
                   className="text-gray-400 hover:text-[#00BCFF] transition-colors"
                 >
-                  info@cloudkonektion.com
+                  help@cloudkonektion.eu
                 </a>
               </div>
             </div>

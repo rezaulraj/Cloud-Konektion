@@ -98,7 +98,7 @@ const HeroService = () => {
   ];
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden py-8 md:py-32">
+    <div className="relative min-h-screen w-full overflow-hidden py-8 md:py-36">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
