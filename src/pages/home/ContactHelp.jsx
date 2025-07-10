@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaComment } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaComment, FaTimes } from "react-icons/fa";
 import contact from "../../assets/home/contact.jpg";
 
 const ContactHelp = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -54,11 +61,100 @@ const ContactHelp = () => {
     },
   };
 
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setShowPopup(true);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div
       id="contact"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <motion.div
+            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <FaTimes className="text-xl" />
+            </button>
+            <div className="text-center">
+              <motion.div
+                className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <svg
+                  className="h-6 w-6 text-green-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </motion.div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                Successful submission!
+              </h3>
+              <p className="text-gray-600 mb-6">We will connect you shortly.</p>
+              <div className="flex justify-center space-x-4">
+                <motion.button
+                  onClick={closePopup}
+                  className="px-4 py-2 bg-[#00BCFF] text-white rounded-lg hover:bg-[#0095D9] transition"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Close
+                </motion.button>
+                <motion.button
+                  onClick={() => {
+                    console.log("Cancelled");
+                    closePopup();
+                  }}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Cancel
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
@@ -99,7 +195,7 @@ const ContactHelp = () => {
               variants={item}
               whileHover={{ x: 5 }}
             >
-              We’re here to help. Let’s talk
+              We're here to help. Let's talk
             </motion.p>
             <motion.div className="space-y-4" variants={container}>
               {[
@@ -155,7 +251,7 @@ const ContactHelp = () => {
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
             }}
           >
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {[
                 {
                   icon: <FaUser />,
@@ -208,6 +304,9 @@ const ContactHelp = () => {
                         rows="4"
                         className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
                         placeholder={field.placeholder}
+                        value={formData[field.id]}
+                        onChange={handleChange}
+                        required
                       />
                     ) : (
                       <input
@@ -215,6 +314,9 @@ const ContactHelp = () => {
                         id={field.id}
                         className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
                         placeholder={field.placeholder}
+                        value={formData[field.id]}
+                        onChange={handleChange}
+                        required
                       />
                     )}
                   </div>
