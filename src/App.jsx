@@ -7,6 +7,7 @@ import EmployeePage from "./pages/foremployee/EmployeePage";
 import AboutPage from "./pages/about/AboutPage";
 import CandidatePage from "./pages/candidate/CandidatePage";
 import JoinUsPage from "./pages/joinus/JoinUsPage";
+import ServicePage from "./pages/service/ServicePage";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
           <Route path="about-us" element={<AboutPage />} />
           <Route path="for-candidates" element={<CandidatePage />} />
           <Route path="join-us" element={<JoinUsPage />} />
+          <Route path="serivces" element={<ServicePage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

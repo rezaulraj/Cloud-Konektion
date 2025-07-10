@@ -10,43 +10,7 @@ import {
 } from "react-icons/fa";
 
 const AreaExpertise = () => {
-  // const expertiseAreas = [
-  //   {
-  //     icon: <FaHotel className="text-4xl text-[#00BCFF]" />,
-  //     title: "Hospitality Team Buildup",
-  //     description:
-  //       "Build dedicated service teams for hotels, resorts, and tourism-based businesses.",
-  //   },
-  //   {
-  //     icon: <FaHardHat className="text-4xl text-[#00BCFF]" />,
-  //     title: "Construction Workforce Solutions",
-  //     description:
-  //       "Recruit engineers, project managers, and skilled laborers to support your construction goals.",
-  //   },
-  //   {
-  //     icon: <FaTools className="text-4xl text-[#00BCFF]" />,
-  //     title: "Welding & Metal Work Experts",
-  //     description:
-  //       "Hire certified welders and metal fabricators for industrial and commercial projects.",
-  //   },
-  //   {
-  //     icon: <FaTree className="text-4xl text-[#00BCFF]" />,
-  //     title: "Woodwork & Carpentry Talent",
-  //     description:
-  //       "Skilled carpenters and craftsmen for furniture, interior, and construction woodwork.",
-  //   },
-  //   {
-  //     icon: <FaUtensils className="text-4xl text-[#00BCFF]" />,
-  //     title: "Crockery & Kitchen Staff Hiring",
-  //     description:
-  //       "Sourcing kitchenware specialists and support staff for food service and hospitality sectors.",
-  //   },
-  //   {
-  //     icon: <FaRobot className="text-4xl text-[#00BCFF]" />,
-  //     title: "Digital Talent Recruitment",
-  //     description: "Essential digital-related roles for your online presence.",
-  //   },
-  // ];
+  
 
   const expertiseAreas = [
     {

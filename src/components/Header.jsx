@@ -12,6 +12,7 @@ import { TbUsersPlus } from "react-icons/tb";
 import ContactForm from "./ContactForm";
 import logo2 from "/logo2.png";
 import logo3 from "/logo3.png";
+import { RiServiceFill, RiServiceLine } from "react-icons/ri";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,6 +29,11 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", path: "/", icon: <MdOutlineHome className="text-xl" /> },
+    {
+      label: "Services",
+      path: "/services",
+      icon: <RiServiceLine className="text-xl" />,
+    },
     {
       label: "For Employers",
       path: "/for-employers",
