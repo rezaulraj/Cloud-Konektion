@@ -129,7 +129,7 @@ const Consultation = () => {
                 {
                   icon: <FaPhoneAlt />,
                   title: "Call Us",
-                  text: "+65 1234 5678",
+                  text: "+356 1234 5678",
                 },
                 {
                   icon: <FaCalendarAlt />,

@@ -114,7 +114,7 @@ const Footer = () => {
               {services.map((service, index) => (
                 <li key={index}>
                   <a
-                    href="#"
+                    href="services"
                     className="flex items-center text-gray-400 hover:text-[#00BCFF] transition-colors"
                   >
                     <FaChevronRight className="text-xs mr-2 text-[#00BCFF]" />
