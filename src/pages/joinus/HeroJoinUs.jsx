@@ -43,8 +43,14 @@ const HeroJoinUs = () => {
               >
                 Connect With Us
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all duration-300 hover:shadow-lg">
-                Meet Our Culture
+              <button
+                onClick={() => {
+                  const section = document.querySelector("#meet-team");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all duration-300 hover:shadow-lg"
+              >
+                Meet Our Team
               </button>
             </div>
 

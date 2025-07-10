@@ -54,7 +54,10 @@ const JoinUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
+    <section
+      id="meet-team"
+      className="py-20 bg-gradient-to-b from-gray-50 to-white relative"
+    >
       <div className="container mx-auto px-6">
         {/* Hero Header */}
         <div className="text-center mb-20">
