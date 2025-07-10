@@ -92,7 +92,13 @@ const HeroCandidate = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="flex items-center gap-2 bg-[#00BCFF] text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button
+                onClick={() => {
+                  const section = document.querySelector("#how-it-work");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="flex items-center gap-2 bg-[#00BCFF] text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
                 How It Works <FaArrowRight />
               </button>
             </div>

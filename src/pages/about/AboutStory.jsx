@@ -68,7 +68,13 @@ const AboutStory = () => {
               We bring together strategy, speed, and precision ensuring the
               right fit every time.
             </p>
-            <button className="inline-flex items-center px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors mt-4">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#contact");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="inline-flex items-center px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors mt-4"
+            >
               <FaSearch className="mr-3" />
               Learn more about our processes
             </button>

@@ -164,6 +164,10 @@ const Consultation = () => {
 
             {/* CTA Button */}
             <motion.button
+              onClick={() => {
+                const section = document.querySelector("#contact");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="inline-flex items-center justify-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

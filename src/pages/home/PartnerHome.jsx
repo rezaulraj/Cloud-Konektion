@@ -167,7 +167,8 @@ const PartnerHome = () => {
 
         {/* CTA */}
         <motion.div className="text-center" variants={item}>
-          <motion.button
+          <motion.a
+            href="about-us"
             className="group inline-flex items-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg text-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -184,7 +185,7 @@ const PartnerHome = () => {
             >
               <FaArrowRight />
             </motion.span>
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </motion.div>

@@ -7,11 +7,10 @@ import {
   FaTools,
   FaConciergeBell,
   FaTree,
+  FaArrowRight,
 } from "react-icons/fa";
 
 const AreaExpertise = () => {
-  
-
   const expertiseAreas = [
     {
       icon: <FaBuilding className="text-4xl text-[#00BCFF]" />,
@@ -118,6 +117,27 @@ const AreaExpertise = () => {
           ))}
         </motion.div>
       </div>
+      <motion.div className="text-center mt-8" variants={item}>
+        <motion.a
+          href="services"
+          className="group inline-flex items-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg text-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>Explore Your Services</span>
+          <motion.span
+            className="ml-3"
+            animate={{ x: [0, 5, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+          >
+            <FaArrowRight />
+          </motion.span>
+        </motion.a>
+      </motion.div>
     </div>
   );
 };

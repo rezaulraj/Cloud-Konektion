@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaUsers,
   FaLightbulb,
@@ -6,11 +7,15 @@ import {
   FaChartLine,
   FaLaugh,
   FaGlobe,
+  FaTimes,
 } from "react-icons/fa";
 import { GiGrowth, GiEarthAmerica } from "react-icons/gi";
 import { IoMdHeart } from "react-icons/io";
+import { FaCirclePlay } from "react-icons/fa6";
 
 const JoinUs = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   const coreValues = [
     {
       icon: <FaLightbulb className="text-4xl" />,
@@ -49,7 +54,7 @@ const JoinUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
       <div className="container mx-auto px-6">
         {/* Hero Header */}
         <div className="text-center mb-20">
@@ -78,29 +83,20 @@ const JoinUs = () => {
                 creativity thrives and people feel empowered to do their best
                 work. Watch our team in action:
               </p>
-              <button className="flex items-center gap-2 px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00bbffe5] transition-colors">
+              <button
+                onClick={() => setIsVideoOpen(true)}
+                className="flex items-center gap-2 px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00bbffe5] transition-colors"
+              >
+                <FaCirclePlay />
                 Play Culture Video
               </button>
             </div>
             <div className="bg-gray-100 min-h-[300px] flex items-center justify-center">
-              <div className="relative w-full h-full">
-                <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-8 h-8 text-[#00BCFF]"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path>
-                    </svg>
-                  </div>
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="Team collaborating"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                alt="Team collaborating"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -169,6 +165,39 @@ const JoinUs = () => {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-3xl bg-black rounded-xl overflow-hidden"
+            >
+              <button
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute top-3 right-3 z-10 text-white text-2xl bg-black/40 p-2 rounded-full hover:bg-black/70 transition"
+              >
+                <FaTimes />
+              </button>
+              <video
+                src="https://videos.pexels.com/video-files/3246359/3246359-uhd_2560_1440_25fps.mp4"
+                controls
+                autoPlay
+                className="w-full h-[400px] object-cover"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

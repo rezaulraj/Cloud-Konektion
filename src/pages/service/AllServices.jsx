@@ -254,7 +254,13 @@ const AllServices = () => {
                   </div>
                 </div>
 
-                <button className="px-6 py-3 bg-[#00BCFF] text-white font-medium rounded-lg hover:bg-[#0095D6] transition-colors duration-300 shadow-md">
+                <button
+                  onClick={() => {
+                    const section = document.querySelector("#contact");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="px-6 py-3 bg-[#00BCFF] text-white font-medium rounded-lg hover:bg-[#0095D6] transition-colors duration-300 shadow-md"
+                >
                   Request {service.title.split("&")[0]} Staff
                 </button>
               </div>
@@ -301,11 +307,17 @@ const AllServices = () => {
             business.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-4 bg-white text-[#00BCFF] font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#contact");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-8 py-4 bg-white text-[#00BCFF] font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md"
+            >
               Schedule Consultation
             </button>
             <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors duration-300">
-              Call Now: (123) 456-7890
+              Call Now: +356 1234 5678
             </button>
           </div>
         </motion.div>

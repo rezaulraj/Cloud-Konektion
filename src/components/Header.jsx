@@ -10,8 +10,8 @@ import {
 import { MdOutlineHome } from "react-icons/md";
 import { TbUsersPlus } from "react-icons/tb";
 import ContactForm from "./ContactForm";
-import logo2 from "/logo2.png";
-import logo3 from "/logo3.png";
+import logo2 from "/logoblack.png";
+import logo3 from "/logowhite.png";
 import { RiServiceFill, RiServiceLine } from "react-icons/ri";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);

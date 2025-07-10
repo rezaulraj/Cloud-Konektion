@@ -10,7 +10,7 @@ import {
   FaChevronRight,
   FaCheckCircle,
 } from "react-icons/fa";
-import logo3 from "/logo3.png";
+import logo3 from "/logowhite.png";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
@@ -143,7 +143,7 @@ const Footer = () => {
                   href="tel:+6512345678"
                   className="text-gray-400 hover:text-[#00BCFF] transition-colors"
                 >
-                  +65 1234 5678
+                  +356 1234 5678
                 </a>
               </div>
               <div className="flex items-center">

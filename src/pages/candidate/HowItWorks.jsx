@@ -35,13 +35,17 @@ const HowItWorks = () => {
     {
       icon: <FaBriefcase className="text-4xl" />,
       title: "Secure the Right Offer",
-      description: "Accept job offers from top-tier companies with competitive pay and clear growth paths.",
+      description:
+        "Accept job offers from top-tier companies with competitive pay and clear growth paths.",
       accentColor: "from-yellow-400 to-yellow-600",
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section
+      id="how-it-work"
+      className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+    >
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -108,7 +112,13 @@ const HowItWorks = () => {
                 </p>
               </div>
               <div className="lg:w-1/2 flex justify-center lg:justify-end">
-                <button className="flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <button
+                  onClick={() => {
+                    const section = document.querySelector("#get-in-touch");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
                   <GiProgression className="text-xl" />
                   <span>Start Your Journey Now</span>
                 </button>
