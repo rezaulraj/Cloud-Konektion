@@ -13,6 +13,7 @@ import {
   FaInstagram,
   FaFacebook,
   FaCalendar,
+  FaTimes,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineWork, MdOutlineMessage } from "react-icons/md";
@@ -29,7 +30,7 @@ const ContactPageCandidate = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +56,7 @@ const ContactPageCandidate = () => {
     setTimeout(() => {
       console.log("Form submitted:", formData);
       setIsSubmitting(false);
-      setSubmitSuccess(true);
+      setShowPopup(true);
       setFormData({
         name: "",
         email: "",
@@ -65,10 +66,11 @@ const ContactPageCandidate = () => {
         cv: null,
         motivationLetter: null,
       });
-
-      // Hide success message after 5 seconds
-      setTimeout(() => setSubmitSuccess(false), 5000);
     }, 1500);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -76,6 +78,58 @@ const ContactPageCandidate = () => {
       id="get-in-touch"
       className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8"
     >
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <FaTimes className="text-xl" />
+            </button>
+            <div className="text-center">
+              <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <svg
+                  className="h-6 w-6 text-green-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                Successful submission!
+              </h3>
+              <p className="text-gray-600 mb-6">We will connect you shortly.</p>
+              <div className="flex justify-center space-x-4">
+                <button
+                  onClick={closePopup}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                >
+                  Close
+                </button>
+                <button
+                  onClick={() => {
+                    console.log("Cancelled");
+                    closePopup();
+                  }}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -96,13 +150,6 @@ const ContactPageCandidate = () => {
                 <MdOutlineMessage className="text-blue-500" />
                 Contact Form
               </h2>
-
-              {submitSuccess && (
-                <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg flex items-center">
-                  <IoMdCheckmarkCircle className="text-xl mr-2" />
-                  Thank you! Your message has been sent successfully.
-                </div>
-              )}
 
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 gap-6">
@@ -168,7 +215,6 @@ const ContactPageCandidate = () => {
                       <option value="">Select Subject</option>
                       <option value="Job Application">Job Application</option>
                       <option value="General Inquiry">General Inquiry</option>
-                      {/* <option value="Partnership">Partnership</option> */}
                       <option value="Other">Other</option>
                     </select>
                   </div>
@@ -206,6 +252,7 @@ const ContactPageCandidate = () => {
                         onChange={handleFileChange}
                         className="hidden"
                         accept=".pdf,.doc,.docx"
+                        required
                       />
                     </label>
                   </div>
@@ -330,7 +377,6 @@ const ContactPageCandidate = () => {
                     <FaCalendar className="h-5 w-5 text-blue-500" />
                   </div>
                   <div className="ml-3">
-                    {/* <p className="text-gray-600">+1 (555) 123-4567</p> */}
                     <p className="text-gray-600">Mon-Fri, 9am-5pm PST</p>
                   </div>
                 </div>
@@ -346,6 +392,7 @@ const ContactPageCandidate = () => {
                 <a
                   href="https://www.linkedin.com/company/107980266/admin/dashboard/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaLinkedin className="text-xl" />
@@ -353,6 +400,7 @@ const ContactPageCandidate = () => {
                 <a
                   href="https://x.com/cloudkonektion"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaXTwitter className="text-xl" />
@@ -360,6 +408,7 @@ const ContactPageCandidate = () => {
                 <a
                   href="https://www.facebook.com/cloudkonektion/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaFacebook className="text-xl" />
@@ -367,6 +416,7 @@ const ContactPageCandidate = () => {
                 <a
                   href="https://www.instagram.com/cloudkonektion/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaInstagram className="text-xl" />
@@ -374,6 +424,7 @@ const ContactPageCandidate = () => {
                 <a
                   href="https://www.tiktok.com/@cloudkonektion"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaTiktok className="text-xl" />
@@ -381,6 +432,7 @@ const ContactPageCandidate = () => {
                 <a
                   href="https://www.youtube.com/@cloudkonektion0"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaYoutube className="text-xl" />
@@ -388,6 +440,7 @@ const ContactPageCandidate = () => {
                 <a
                   href="https://www.pinterest.com/cloudkonektion/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaPinterest className="text-xl" />
@@ -396,7 +449,6 @@ const ContactPageCandidate = () => {
             </div>
 
             {/* Map Embed */}
-
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3231.8883193835154!2d14.513150775680367!3d35.90075081788424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x130e452977901537%3A0x18a22beaac790ffc!2s60%20St.Joseph&#39;s%20Street%2C%20Il-Belt%20Valletta%2C%20Malta!3m2!1d35.9007465!2d14.515725699999999!4m0!5e0!3m2!1sen!2sbd!4v1752040902403!5m2!1sen!2sbd"

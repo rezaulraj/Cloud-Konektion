@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaUserTie,
   FaGlobe,
@@ -11,11 +11,100 @@ import {
   FaChartLine,
   FaHandshake,
   FaCheck,
+  FaTimes,
 } from "react-icons/fa";
 
 const TalentExperts = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    company: "",
+    name: "",
+    email: "",
+    "hiring-needs": "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you would typically send the form data to your backend
+    console.log("Form submitted:", formData);
+    setShowPopup(true);
+    // Reset form if needed
+    setFormData({
+      company: "",
+      name: "",
+      email: "",
+      "hiring-needs": "",
+      message: "",
+    });
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <FaTimes className="text-xl" />
+            </button>
+            <div className="text-center">
+              <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <svg
+                  className="h-6 w-6 text-green-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                Successful submission!
+              </h3>
+              <p className="text-gray-600 mb-6">We will connect you shortly.</p>
+              <div className="flex justify-center space-x-4">
+                <button
+                  onClick={closePopup}
+                  className="px-4 py-2 bg-[#00BCFF] text-white rounded-lg hover:bg-[#0095D9] transition"
+                >
+                  Close
+                </button>
+                <button
+                  onClick={() => {
+                    console.log("Cancelled");
+                    closePopup();
+                  }}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Floating background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
@@ -165,7 +254,7 @@ const TalentExperts = () => {
                 </ul>
               </div>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="space-y-1">
                   <label
                     htmlFor="company"
@@ -180,6 +269,8 @@ const TalentExperts = () => {
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
                     placeholder="Your organization"
                     required
+                    value={formData.company}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -197,6 +288,8 @@ const TalentExperts = () => {
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
                     placeholder="John Doe"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -214,6 +307,8 @@ const TalentExperts = () => {
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
                     placeholder="john@company.com"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -229,6 +324,8 @@ const TalentExperts = () => {
                     id="hiring-needs"
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition bg-white"
                     required
+                    value={formData["hiring-needs"]}
+                    onChange={handleChange}
                   >
                     <option value="">Select your hiring needs</option>
                     <option value="executive">Executive/C-level</option>
@@ -252,6 +349,8 @@ const TalentExperts = () => {
                     rows="4"
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
                     placeholder="Tell us about your ideal candidates, required skills, timeline, etc."
+                    value={formData.message}
+                    onChange={handleChange}
                   ></textarea>
                 </div>
 

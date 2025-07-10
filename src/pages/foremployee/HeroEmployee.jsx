@@ -26,33 +26,6 @@ const HeroEmployee = () => {
             We connect you with great job opportunities to help you grow faster
             in your career.
           </p>
-
-          {/* Stats */}
-          {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-              <div className="flex items-center justify-center space-x-3">
-                <FaSearch className="text-2xl text-[#00BCFF]" />
-                <span className="text-3xl font-bold text-white">500+</span>
-              </div>
-              <p className="text-gray-300 mt-2">Successful Placements</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-              <div className="flex items-center justify-center space-x-3">
-                <FaUserTie className="text-2xl text-[#00BCFF]" />
-                <span className="text-3xl font-bold text-white">95%</span>
-              </div>
-              <p className="text-gray-300 mt-2">Retention Rate</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-              <div className="flex items-center justify-center space-x-3">
-                <FaChartLine className="text-2xl text-[#00BCFF]" />
-                <span className="text-3xl font-bold text-white">24h</span>
-              </div>
-              <p className="text-gray-300 mt-2">Average Response Time</p>
-            </div>
-          </div> */}
         </div>
       </div>
 
