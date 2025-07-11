@@ -109,7 +109,7 @@ const DigitalDisruption = () => {
       </div>
 
       {/* Animation styles */}
-      <style jsx global>{`
+      <style jsx="true" global="true">{`
         @keyframes float {
           0%,
           100% {
