@@ -1,20 +1,14 @@
 import React from "react";
 import { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import client1 from "../../assets/home/cl1.avif?url";
-import client2 from "../../assets/home/cl2.avif?url";
-import client3 from "../../assets/home/cl3.avif?url";
-import client4 from "../../assets/home/cl4.avif?url";
-import client5 from "../../assets/home/cl5.png?url";
-import client6 from "../../assets/home/cl6.avif?url";
-import client7 from "../../assets/home/cl7.avif?url";
-import client8 from "../../assets/home/cl8.avif?url";
-import client9 from "../../assets/home/cl9.avif?url";
-import client10 from "../../assets/home/cl10.avif?url";
-import client11 from "../../assets/home/cl11.avif?url";
-import client12 from "../../assets/home/cl12.avif?url";
-import client13 from "../../assets/home/cl13.avif?url";
-import client14 from "../../assets/home/cl14.avif?url";
+import client1 from "../../assets/about/cl1.png?url";
+import client2 from "../../assets/about/cl2.png?url";
+import client3 from "../../assets/about/cl3.png?url";
+import client4 from "../../assets/about/cl4.png?url";
+import client5 from "../../assets/about/cl5.png?url";
+import client6 from "../../assets/about/cl6.png?url";
+import client7 from "../../assets/about/cl7.png?url";
+import client8 from "../../assets/about/cl8.png?url";
 
 const ClientHome = () => {
   const clients = [
@@ -26,12 +20,6 @@ const ClientHome = () => {
     client6,
     client7,
     client8,
-    client9,
-    client10,
-    client11,
-    client12,
-    client13,
-    client14,
   ];
 
   // Duplicate the array to create seamless looping

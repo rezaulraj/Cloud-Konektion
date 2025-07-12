@@ -2,22 +2,16 @@ import React, { useEffect } from "react";
 import heroImage from "../../assets/candidate/heroc.jpg";
 import candidateImage from "../../assets/candidate/candidiate.jpg";
 import { FaHandshake, FaArrowRight } from "react-icons/fa";
-import bgImage from "../../assets/employee/heroemp.jpg";
+
 // Import all client images
-import client1 from "../../assets/home/cl1.avif";
-import client2 from "../../assets/home/cl2.avif";
-import client3 from "../../assets/home/cl3.avif";
-import client4 from "../../assets/home/cl4.avif";
-import client5 from "../../assets/home/cl5.png";
-import client6 from "../../assets/home/cl6.avif";
-import client7 from "../../assets/home/cl7.avif";
-import client8 from "../../assets/home/cl8.avif";
-import client9 from "../../assets/home/cl9.avif";
-import client10 from "../../assets/home/cl10.avif";
-import client11 from "../../assets/home/cl11.avif";
-import client12 from "../../assets/home/cl12.avif";
-import client13 from "../../assets/home/cl13.avif";
-import client14 from "../../assets/home/cl14.avif";
+import client1 from "../../assets/about/cl1.png?url";
+import client2 from "../../assets/about/cl2.png?url";
+import client3 from "../../assets/about/cl3.png?url";
+import client4 from "../../assets/about/cl4.png?url";
+import client5 from "../../assets/about/cl5.png?url";
+import client6 from "../../assets/about/cl6.png?url";
+import client7 from "../../assets/about/cl7.png?url";
+import client8 from "../../assets/about/cl8.png?url";
 
 const HeroCandidate = () => {
   const clients = [
@@ -29,12 +23,6 @@ const HeroCandidate = () => {
     client6,
     client7,
     client8,
-    client9,
-    client10,
-    client11,
-    client12,
-    client13,
-    client14,
   ];
 
   // Auto-scrolling effect for clients
@@ -87,8 +75,8 @@ const HeroCandidate = () => {
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 max-w-lg opacity-90">
-              Get matched with leading companies and secure your next role 3x
-              faster powered by smart AI matching and expert support.
+              Connect with leading employers and secure your next opportunity
+              faster, with expert support.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">

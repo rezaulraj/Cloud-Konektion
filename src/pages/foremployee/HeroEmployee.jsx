@@ -23,8 +23,8 @@ const HeroEmployee = () => {
             Us!
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            We connect you with great job opportunities to help you grow faster
-            in your career.
+            Our mission is to match you with exceptional candidates who will
+            accelerate your business success.
           </p>
         </div>
       </div>

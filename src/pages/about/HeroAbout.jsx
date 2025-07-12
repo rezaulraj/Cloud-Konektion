@@ -1,20 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { FaHandshake } from "react-icons/fa";
 import bgimage from "../../assets/employee/heroemp.jpg";
-import client1 from "../../assets/home/cl1.avif";
-import client2 from "../../assets/home/cl2.avif";
-import client3 from "../../assets/home/cl3.avif";
-import client4 from "../../assets/home/cl4.avif";
-import client5 from "../../assets/home/cl5.png";
-import client6 from "../../assets/home/cl6.avif";
-import client7 from "../../assets/home/cl7.avif";
-import client8 from "../../assets/home/cl8.avif";
-import client9 from "../../assets/home/cl9.avif";
-import client10 from "../../assets/home/cl10.avif";
-import client11 from "../../assets/home/cl11.avif";
-import client12 from "../../assets/home/cl12.avif";
-import client13 from "../../assets/home/cl13.avif";
-import client14 from "../../assets/home/cl14.avif";
+import client1 from "../../assets/about/cl1.png?url";
+import client2 from "../../assets/about/cl2.png?url";
+import client3 from "../../assets/about/cl3.png?url";
+import client4 from "../../assets/about/cl4.png?url";
+import client5 from "../../assets/about/cl5.png?url";
+import client6 from "../../assets/about/cl6.png?url";
+import client7 from "../../assets/about/cl7.png?url";
+import client8 from "../../assets/about/cl8.png?url";
 
 const HeroAbout = () => {
   const clients = [
@@ -26,12 +20,6 @@ const HeroAbout = () => {
     client6,
     client7,
     client8,
-    client9,
-    client10,
-    client11,
-    client12,
-    client13,
-    client14,
   ];
   const marqueeRef = useRef(null);
 
@@ -98,7 +86,8 @@ const HeroAbout = () => {
             today
           </h1>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Build the best team for your organization's success.
+            Build a high-performing team tailored to your organization’s vision
+            and goals.
           </p>
         </div>
 
@@ -115,7 +104,7 @@ const HeroAbout = () => {
                 className="mx-8 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:opacity-100"
                 style={{
                   opacity: 0.8,
-                  filter: "grayscale(100%) brightness(0) invert(1)",
+                  // filter: "grayscale(100%) brightness(0) invert(1)",
                 }}
               >
                 <img

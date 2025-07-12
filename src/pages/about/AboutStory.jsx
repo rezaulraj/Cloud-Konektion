@@ -1,8 +1,8 @@
 import React from "react";
 import { FaBuilding, FaHandshake, FaSearch } from "react-icons/fa";
-import rosaliePhoto from "../../assets/about/img1.avif?url";
-import maximePhoto from "../../assets/about/img2.avif?url";
-import location from "../../assets/about/office.jpg?url";
+import rosaliePhoto from "../../assets/about/about1.webp?url";
+import maximePhoto from "../../assets/about/about2.webp?url";
+import location from "../../assets/about/office2.jpg?url";
 
 const AboutStory = () => {
   return (
@@ -33,10 +33,10 @@ const AboutStory = () => {
               alt="Rosalie Thompson"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+            {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
               <p className="text-white font-medium">Rosalie Thompson</p>
               <p className="text-gray-300 text-sm">Co-Founder & CEO</p>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -49,10 +49,10 @@ const AboutStory = () => {
               alt="Maxime Ferreira"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+            {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
               <p className="text-white font-medium">Maxime Ferreira</p>
               <p className="text-gray-300 text-sm">Head of Recruitment</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Text */}
