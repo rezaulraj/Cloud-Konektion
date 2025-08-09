@@ -8,6 +8,7 @@ import {
   FaLightbulb,
 } from "react-icons/fa";
 import bgimage from "../../assets/home/dot.svg?url";
+import { useTranslation } from "react-i18next";
 
 // Animated DotPattern component
 const DotPattern = () => (
@@ -33,6 +34,7 @@ const DotPattern = () => (
 );
 
 const CompanyOverview = () => {
+  const { t } = useTranslation();
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
@@ -47,22 +49,22 @@ const CompanyOverview = () => {
     {
       icon: <FaGlobeAsia className="text-3xl text-[#00BCFF]" />,
       value: "1",
-      label: "Strategic Regions",
+      label: t("homepage.contryn1"),
     },
     {
       icon: <FaUserTie className="text-3xl text-[#00BCFF]" />,
       value: "300+",
-      label: "Top-Tier Executives Placed",
+      label: t("homepage.contryn2"),
     },
     {
       icon: <FaChartLine className="text-3xl text-[#00BCFF]" />,
       value: "93%",
-      label: "Success Rate",
+      label: t("homepage.contryn3"),
     },
     {
       icon: <FaLightbulb className="text-3xl text-[#00BCFF]" />,
       value: "10+",
-      label: "Years Of Recruitment Excellence",
+      label: t("homepage.contryn4"),
     },
   ];
 
@@ -152,7 +154,7 @@ const CompanyOverview = () => {
             <motion.div className="flex items-center space-x-3" variants={item}>
               <div className="w-12 h-1 bg-[#00BCFF]"></div>
               <span className="text-sm font-semibold tracking-wider text-[#00BCFF] uppercase">
-                Industry Leaders
+                {t("homepage.industryleder")}
               </span>
             </motion.div>
 
@@ -160,19 +162,16 @@ const CompanyOverview = () => {
               className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
               variants={item}
             >
-              <span className="text-[#00BCFF]">Malta’s </span>
-              Leading Executive Search
-              <span className="text-[#00BCFF]"> Partner</span>
+              <span className="text-[#00BCFF]">{t("homepage.contry")}</span>
+              {t("homepage.contrysub1")}
+              <span className="text-[#00BCFF]">{t("homepage.contrysub2")}</span>
             </motion.h2>
 
             <motion.p
               className="text-lg text-gray-600 leading-relaxed"
               variants={item}
             >
-              Cloud Konektion leads the way in executive recruitment across
-              Malta’s dynamic business landscape. <br /> With a consultative
-              approach and smart recruitment tools, we help ambitious companies
-              attract and hire top-tier talent faster and more efficiently.
+              {t("homepage.contryp1")} <br /> {t("homepage.contryp2")}
             </motion.p>
 
             {/* Stats */}

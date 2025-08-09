@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaUser, FaEnvelope, FaComment, FaTimes } from "react-icons/fa";
 import contact from "../../assets/home/contact.jpg";
+import { useTranslation } from "react-i18next";
 
 const ContactHelp = () => {
+  const { t } = useTranslation();
   const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -188,31 +190,32 @@ const ContactHelp = () => {
               variants={item}
               whileHover={{ scale: 1.02 }}
             >
-              Got A <span className="text-[#00BCFF]">question</span>?
+              {t("contact.contacth1")}{" "}
+              <span className="text-[#00BCFF]">{t("contact.contacth2")}</span>?
             </motion.h2>
             <motion.p
               className="text-xl md:text-2xl mb-8 opacity-90"
               variants={item}
               whileHover={{ x: 5 }}
             >
-              We're here to help. Let's talk
+              {t("contact.contactp")}
             </motion.p>
             <motion.div className="space-y-4" variants={container}>
               {[
                 {
                   icon: <FaUser />,
-                  title: "Expert Support",
-                  text: "Our specialists are ready to assist you",
+                  title: t("contact.contacticonh1"),
+                  text: t("contact.contacticonp1"),
                 },
                 {
                   icon: <FaEnvelope />,
-                  title: "Quick Response",
-                  text: "Typically reply within 24 hours",
+                  title: t("contact.contacticonh2"),
+                  text: t("contact.contacticonp2"),
                 },
                 {
                   icon: <FaComment />,
-                  title: "Personalized Advice",
-                  text: "Tailored solutions for your needs",
+                  title: t("contact.contacticonh3"),
+                  text: t("contact.contacticonp3"),
                 },
               ].map((feature, index) => (
                 <motion.div
@@ -256,23 +259,23 @@ const ContactHelp = () => {
                 {
                   icon: <FaUser />,
                   id: "name",
-                  label: "Your name",
+                  label: t("contact.name"),
                   type: "text",
                   placeholder: "John Doe",
                 },
                 {
                   icon: <FaEnvelope />,
                   id: "email",
-                  label: "Your email",
+                  label: t("contact.eamil"),
                   type: "email",
                   placeholder: "john@example.com",
                 },
                 {
                   icon: <FaComment />,
                   id: "message",
-                  label: "How can we help?",
+                  label: t("contact.message"),
                   type: "textarea",
-                  placeholder: "Tell us about your needs...",
+                  placeholder: t("contact.messagep"),
                 },
               ].map((field, index) => (
                 <motion.div
@@ -329,7 +332,7 @@ const ContactHelp = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Submit Request
+                {t("contact.submitbtn")}
               </motion.button>
             </form>
           </motion.div>

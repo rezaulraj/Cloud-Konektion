@@ -7,28 +7,30 @@ import {
   FaLightbulb,
   FaArrowRight,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const PartnerHome = () => {
+  const { t } = useTranslation();
   const benefits = [
     {
       icon: <FaShieldAlt className="text-3xl text-[#00BCFF]" />,
-      title: "Protect Your Business",
-      description: "Secure top cybersecurity talent to safeguard your assets",
+      title: t("homepage.cpch1"),
+      description: t("homepage.cpcp1"),
     },
     {
       icon: <FaTrophy className="text-3xl text-[#00BCFF]" />,
-      title: "Triumph in the Marketplace",
-      description: "Outperform competitors with elite tech teams",
+      title: t("homepage.cpch2"),
+      description: t("homepage.cpcp2"),
     },
     {
       icon: <FaChartLine className="text-3xl text-[#00BCFF]" />,
-      title: "Maximize Profitability",
-      description: "Drive revenue growth with strategic hires",
+      title: t("homepage.cpch3"),
+      description: t("homepage.cpcp3"),
     },
     {
       icon: <FaLightbulb className="text-3xl text-[#00BCFF]" />,
-      title: "Innovate Faster",
-      description: "Accelerate development with top-tier digital talent",
+      title: t("homepage.cpch4"),
+      description: t("homepage.cpcp4"),
     },
   ];
 
@@ -102,11 +104,11 @@ const PartnerHome = () => {
       <div className="relative max-w-7xl mx-auto">
         <motion.div className="text-center mb-16" variants={container}>
           <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-semibold mb-6"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-semibold tracking-wider mb-6"
             variants={item}
             whileHover={{ scale: 1.05 }}
           >
-            <span>Comprehensive Talent Solutions</span>
+            <span>{t("homepage.cpartner")}</span>
           </motion.div>
 
           <motion.h1
@@ -114,9 +116,9 @@ const PartnerHome = () => {
             variants={item}
             whileHover={{ scale: 1.01 }}
           >
-            Your Trusted Executive Search Partner
-            <br className="hidden lg:block" /> For{" "}
-            <span className="text-[#00BCFF]">Digital Talent</span>
+            {t("homepage.cpheading1")}
+            <br className="hidden lg:block" /> {t("homepage.cpheading2")}
+            <span className="text-[#00BCFF]">{t("homepage.cpheading3")}</span>
           </motion.h1>
 
           <motion.p
@@ -124,9 +126,7 @@ const PartnerHome = () => {
             variants={item}
             whileHover={{ x: 5 }}
           >
-            Our expert hires give your company the competitive edge helping you
-            innovate faster, protect your business, outperform the competition,
-            and boost profitability
+            {t("homepage.cpp")}
           </motion.p>
         </motion.div>
 
@@ -173,7 +173,7 @@ const PartnerHome = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>LEARN MORE</span>
+            <span>{t("homepage.cpcbtn")}</span>
             <motion.span
               className="ml-3"
               animate={{ x: [0, 5, 0] }}

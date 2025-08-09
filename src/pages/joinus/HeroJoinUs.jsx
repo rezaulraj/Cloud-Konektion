@@ -73,7 +73,7 @@ const HeroJoinUs = () => {
               ))}
             </div>
           </div>
-
+ 
           {/* Right: Team Image with Floating Effect */}
           <div className="lg:w-1/2 relative mt-12 lg:mt-0">
             <div className="relative w-full max-w-xl mx-auto">

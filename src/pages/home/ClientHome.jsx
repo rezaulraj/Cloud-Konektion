@@ -9,8 +9,10 @@ import client5 from "../../assets/about/cl5.png?url";
 import client6 from "../../assets/about/cl6.png?url";
 import client7 from "../../assets/about/cl7.png?url";
 import client8 from "../../assets/about/cl8.png?url";
+import { useTranslation } from "react-i18next";
 
 const ClientHome = () => {
+  const { t } = useTranslation();
   const clients = [
     client1,
     client2,
@@ -119,7 +121,7 @@ const ClientHome = () => {
           className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
           variants={itemVariants}
         >
-          Trusted by Leading Companies
+          {t("homepage.tustedcompany")}
         </motion.h2>
 
         <motion.div

@@ -4,7 +4,10 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import en from "./locales/en/translation.json";
 import mt from "./locales/mt/translation.json";
-// import sl from "./locales/sl/translation.json";
+import hr from "./locales/hr/translation.json";
+import rs from "./locales/rs/translation.json";
+import es from "./locales/es/translation.json";
+// import any other languages you have
 
 const detectCountry = async () => {
   try {
@@ -21,8 +24,14 @@ const initializeI18n = async () => {
   const country = await detectCountry();
 
   const languageMap = {
-    MT: "mt",
-    // SI: "sl",
+    MT: "mt", // Malta
+    RS: "rs", // Serbia
+    HR: "hr", // Croatia
+    ES: "es", // Spain
+    // Add more country codes as needed
+    // US: "en",
+    // GB: "en",
+    // etc.
   };
 
   i18n
@@ -31,8 +40,11 @@ const initializeI18n = async () => {
     .init({
       resources: {
         en: { translation: en },
+        mt: { translation: mt },
         hr: { translation: hr },
-        // sl: { translation: sl },
+        rs: { translation: rs },
+        es: { translation: es },
+        // Add all other languages here
       },
       lng: languageMap[country] || "en",
       fallbackLng: "en",

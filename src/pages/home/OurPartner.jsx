@@ -5,47 +5,43 @@ import partner2 from "../../assets/home/pat2.avif";
 import partner3 from "../../assets/home/pat3.avif";
 import partner4 from "../../assets/home/pat4.avif";
 import partner5 from "../../assets/home/pat5.avif";
+import { useTranslation } from "react-i18next";
 
 const OurPartner = () => {
+  const { t } = useTranslation();
   const testimonials = [
     {
       id: 1,
-      quote:
-        "Cloud Konektion played a key role in helping us secure outstanding leadership talent across financial services and other sectors. Their consultative approach enabled us to fill critical roles like Chief Product Officer and Chief Operating Officer, bringing fresh strategic perspective to our leadership team.",
+      quote: t("homepage.partner1t"),
       name: "Ivonny Liemantika",
-      position: "Executive Head of Talent Acquisition at Sinarmas BCE",
+      position: t("homepage.partner1p"),
       image: partner1,
     },
     {
       id: 2,
-      quote:
-        "Partnering with Cloud Konektion transformed our leadership recruitment. From sourcing top-tier candidates to ensuring alignment with our business strategy, their precision and dedication have fueled our continued growth.",
+      quote: t("homepage.partner2t"),
       name: "William Twining",
-      position: "Director, Talent Resources at Charoen Pokphand Group (CP)",
+      position: t("homepage.partner2p"),
       image: partner2,
     },
     {
       id: 3,
-      quote:
-        "Their team helped us build a high-performing division by delivering exceptional professionals for key roles. Cloud Konektion’s commitment to quality has been instrumental in driving our growth and success.",
+      quote: t("homepage.partner3t"),
       name: "Frederick Loy",
-      position: "Group Recruitment Manager at Foodpanda",
+      position: t("homepage.partner3p"),
       image: partner3,
     },
     {
       id: 4,
-      quote:
-        "Finding the right talent is critical. Cloud Konektion took the time to understand our goals and delivered candidates who not only met the role requirements but also fit seamlessly with our culture. They've become a trusted hiring partner.",
+      quote: t("homepage.partner4t"),
       name: "Yassine Bel Mamoun",
-      position: "Chief Operating Officer at Manatal",
+      position: t("homepage.partner4p"),
       image: partner4,
     },
     {
       id: 5,
-      quote:
-        "Our experience has been nothing short of exceptional. Cloud Konektion delivered high-caliber candidates for specialized roles, enabling us to scale with confidence and clarity.",
-      name: "Juliette Gimenez",
-      position: "Founder & CEO at Goxip",
+      quote: t("homepage.partner5t"),
+      position: t("homepage.partner5p"),
       image: partner5,
     },
   ];
@@ -98,7 +94,8 @@ const OurPartner = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            What our <span className="text-[#00BCFF]">partners say</span>
+            {t("homepage.partnerh1")}{" "}
+            <span className="text-[#00BCFF]">{t("homepage.partnerh2")}</span>
           </h2>
           <div className="w-20 h-1 bg-[#00BCFF] mx-auto mb-6"></div>
         </div>

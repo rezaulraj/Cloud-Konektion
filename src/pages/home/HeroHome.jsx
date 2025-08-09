@@ -8,8 +8,10 @@ import {
   FaChartLine,
   FaUserTie,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const HeroHome = () => {
+  const { t } = useTranslation();
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -78,7 +80,7 @@ const HeroHome = () => {
             >
               <FaGlobeAmericas className="text-[#00BCFF] text-xl" />
               <span className="text-white font-medium tracking-wider">
-                GLOBAL RECRUITMENT SOLUTIONS
+                {t("homepage.herotag1")}
               </span>
             </motion.div>
 
@@ -88,7 +90,7 @@ const HeroHome = () => {
               variants={itemVariants}
             >
               <motion.span className="block" variants={itemVariants}>
-                World Class
+                {t("homepage.heroheading1")}
               </motion.span>
               <motion.span
                 className="block text-[#00BCFF]"
@@ -97,7 +99,7 @@ const HeroHome = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Executive Recruitment
+                {t("homepage.heroheading2")}
               </motion.span>
               <motion.span
                 className="block"
@@ -106,7 +108,7 @@ const HeroHome = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                & Headhunting
+                {t("homepage.heroheading3")}
               </motion.span>
             </motion.h1>
 
@@ -119,9 +121,9 @@ const HeroHome = () => {
               transition={{ delay: 0.6 }}
             >
               <p className="text-lg md:text-xl text-white bg-black/40 px-4 py-2 rounded-lg inline-block">
-                Malta’s{" "}
+                {t("homepage.contry")}
                 <span className="font-bold text-[#00BCFF]">
-                  #1 Executive Search Partner
+                  {t("homepage.herotag2")}
                 </span>
               </p>
               <div className="absolute -bottom-1 left-0 right-0 h-1 bg-[#00BCFF]/50 blur-sm"></div>
@@ -135,9 +137,7 @@ const HeroHome = () => {
               animate={{ opacity: 0.9 }}
               transition={{ delay: 0.7 }}
             >
-              We specialize in securing top-tier senior talent for high-growth
-              companies and global enterprises helping you lead, scale, and stay
-              ahead.
+             {t("homepage.herop")}
             </motion.p>
 
             {/* Buttons with Smooth Effects */}
@@ -159,7 +159,7 @@ const HeroHome = () => {
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <FaSearch className="text-lg" />
-                  <span>Discover Our Expertise</span>
+                  <span>{t("homepage.button1")}</span>
                 </span>
                 <span className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
               </motion.button>
@@ -175,7 +175,7 @@ const HeroHome = () => {
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <FaHeadset className="text-lg" />
-                  <span>Free Consultation</span>
+                  <span>{t("homepage.button2")}</span>
                 </span>
                 <span className="absolute inset-0 bg-white/10 group-hover:bg-white/0 transition-all duration-300 rounded-lg"></span>
               </motion.button>

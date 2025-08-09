@@ -1,6 +1,6 @@
 {
   "headers": {
-    "home": "Home",
+    "home": "hero",
     "employee": "For Employers",
     "candiated": "For Candidates",
     "aboutus": "About Us",
@@ -46,7 +46,6 @@
     "areaexprath1": "Our areas of ",
     "areaexprath2": "expertise",
     "areaexpratp": "Specialized recruitment solutions tailored to your needs",
-    "explorservice": "Explore Your Services",
     "areaexpratch1": "Construction & Infrastructure",
     "areaexpratcp1": "Reliable manpower for residential, commercial, and civil construction projects ensuring quality, safety, and timely delivery.",
     "areaexpratch2": "Manufacturing & Industrial",
@@ -64,7 +63,7 @@
     "consultationh2": "consultation",
     "consultationp": "Let's discuss how we can help you find the perfect digital talent for your business needs.",
     "freech1": "Free Consultation",
-    "freecit1": "Email Us",
+    "freecit1": "Call Us",
     "freecin1": "+65 1234 5678",
     "freecit2": "Schedule",
     "freecin2": "Online Meeting",
@@ -100,7 +99,7 @@
     "whyckc3batch4": "Flexible hiring strategies",
 
     "partnerh1": "What our ",
-    "partnerh2": "partners say",
+    "partnerh1": "partners say",
 
     "partner1t": "Cloud Konektion played a key role in helping us secure outstanding leadership talent across financial services and other sectors. Their consultative approach enabled us to fill critical roles like Chief Product Officer and Chief Operating Officer, bringing fresh strategic perspective to our leadership team.",
     "partner1n": "Ivonny Liemantika",

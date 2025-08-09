@@ -7,8 +7,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import bgimage from "../../assets/home/map.avif";
+import { useTranslation } from "react-i18next";
 
 const Consultation = () => {
+  const { t } = useTranslation();
   // Animation variants
   const container = {
     hidden: { opacity: 0 },
@@ -91,14 +93,17 @@ const Consultation = () => {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
             whileHover={{ scale: 1.02 }}
           >
-            Need a <span className="text-[#00BCFF]">consultation</span>?
+            {t("homepage.consultationh1")}
+            <span className="text-[#00BCFF]">
+              {t("homepage.consultationh2")}
+            </span>
+            ?
           </motion.h2>
           <motion.p
             className="text-xl text-gray-300 max-w-2xl mx-auto"
             whileHover={{ scale: 1.01 }}
           >
-            Let's discuss how we can help you find the perfect digital talent
-            for your business needs.
+            {t("homepage.consultationp")}
           </motion.p>
         </motion.div>
 
@@ -122,28 +127,23 @@ const Consultation = () => {
               className="text-2xl font-bold text-gray-900 mb-6"
               whileHover={{ color: "#00BCFF" }}
             >
-              Free Consultation
+              {t("homepage.freech1")}
             </motion.h3>
 
             {/* Contact Options */}
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
               variants={container}
             >
               {[
                 {
                   icon: <FaEnvelope />,
-                  title: "Email Us",
+                  title: t("homepage.freecit1"),
                   text: "help@cloudkonektion.eu",
                 },
                 {
-                  icon: <FaCalendarAlt />,
-                  title: "Schedule",
-                  text: "Online Meeting",
-                },
-                {
                   icon: <FaMapMarkerAlt />,
-                  title: "Visit Us",
+                  title: t("homepage.freecit3"),
                   text: "60, ST. JOSEPH STREET,ISLA, Malta",
                 },
               ].map((option, index) => (
@@ -177,7 +177,7 @@ const Consultation = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Request Free Consultation</span>
+              <span>{t("homepage.freecibtn")}</span>
               <FaCalendarAlt className="ml-3" />
             </motion.button>
           </div>
