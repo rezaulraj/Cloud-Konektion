@@ -261,12 +261,9 @@ const CompanyOverview = () => {
                     <FaRocket className="text-5xl text-[#00BCFF] mx-auto mb-4" />
                   </motion.div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    Lightning Fast Recruitment
+                    {t("homepage.homeh")}
                   </h3>
-                  <p className="text-gray-600">
-                    Our proprietary AI matching system delivers qualified
-                    candidates 3x faster than industry average.
-                  </p>
+                  <p className="text-gray-600">{t("homepage.homep")}</p>
                 </motion.div>
               </motion.div>
             </motion.div>

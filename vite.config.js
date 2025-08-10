@@ -9,7 +9,6 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "assets",
     emptyOutDir: true,
-    // Add these for better production builds
     minify: true,
     sourcemap: false,
     chunkSizeWarningLimit: 1600,
