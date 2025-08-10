@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaPaperclip,
   FaUser,
@@ -19,6 +20,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineWork, MdOutlineMessage } from "react-icons/md";
 
 const ContactPageCandidate = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -134,11 +136,13 @@ const ContactPageCandidate = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Get in <span className="text-blue-600">Touch</span>
+            {t("forcandidats.candicontacth1")}
+            <span className="text-blue-600">
+              {t("forcandidats.candicontacth2")}
+            </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have questions or want to apply for a position? We'd love to hear
-            from you.
+            {t("forcandidats.candicontactp")}
           </p>
         </div>
 
@@ -148,7 +152,7 @@ const ContactPageCandidate = () => {
             <div className="p-8 sm:p-10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <MdOutlineMessage className="text-blue-500" />
-                Contact Form
+                {t("forcandidats.contactfromh")}
               </h2>
 
               <form onSubmit={handleSubmit}>
@@ -164,7 +168,7 @@ const ContactPageCandidate = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Your Name"
+                      placeholder={t("forcandidats.contactname")}
                       required
                     />
                   </div>
@@ -180,7 +184,7 @@ const ContactPageCandidate = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Email Address"
+                      placeholder={t("forcandidats.contactemail")}
                       required
                     />
                   </div>
@@ -196,7 +200,7 @@ const ContactPageCandidate = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Phone Number (Optional)"
+                      placeholder={t("forcandidats.contactphone")}
                     />
                   </div>
 
@@ -212,10 +216,18 @@ const ContactPageCandidate = () => {
                       className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none bg-white"
                       required
                     >
-                      <option value="">Select Subject</option>
-                      <option value="Job Application">Job Application</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Other">Other</option>
+                      <option value="">
+                        {t("forcandidats.contactopiton1")}
+                      </option>
+                      <option value="Job Application">
+                        {t("forcandidats.contactopiton2")}
+                      </option>
+                      <option value="General Inquiry">
+                        {t("forcandidats.contactopiton3")}
+                      </option>
+                      <option value="Other">
+                        {t("forcandidats.contactopiton4")}
+                      </option>
                     </select>
                   </div>
 
@@ -227,7 +239,7 @@ const ContactPageCandidate = () => {
                       onChange={handleChange}
                       rows="4"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Your Message"
+                      placeholder={t("forcandidats.contactmessage")}
                       required
                     ></textarea>
                   </div>
@@ -240,10 +252,10 @@ const ContactPageCandidate = () => {
                         <p className="text-sm text-gray-600 mb-1">
                           {formData.cv
                             ? formData.cv.name
-                            : "Upload your CV (PDF, DOC, DOCX)"}
+                            : t("forcandidats.contactcv")}
                         </p>
                         <span className="text-sm text-blue-600 font-medium">
-                          Click to browse files
+                          {t("forcandidats.clickcandidate")}
                         </span>
                       </div>
                       <input
@@ -268,7 +280,7 @@ const ContactPageCandidate = () => {
                             : "Upload Motivation Letter (Optional)"}
                         </p>
                         <span className="text-sm text-blue-600 font-medium">
-                          Click to browse files
+                          {t("forcandidats.clickcandidate")}
                         </span>
                       </div>
                       <input
@@ -317,7 +329,7 @@ const ContactPageCandidate = () => {
                       ) : (
                         <>
                           <FaPaperclip className="mr-2" />
-                          Send Message
+                          {t("forcandidats.contactbtn")}
                         </>
                       )}
                     </button>
@@ -332,7 +344,7 @@ const ContactPageCandidate = () => {
             {/* Office Info */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Our Office
+                {t("forcandidats.ouroffice")}
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -386,7 +398,7 @@ const ContactPageCandidate = () => {
             {/* Social Links */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Connect With Us
+                {t("forcandidats.contactwus")}
               </h3>
               <div className="flex flex-wrap space-x-4 space-y-4">
                 <a

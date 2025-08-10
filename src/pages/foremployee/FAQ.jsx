@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaChevronDown,
   FaChevronUp,
@@ -13,6 +14,7 @@ import {
 } from "react-icons/fa";
 
 const FAQ = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -21,51 +23,44 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "Where do you recruit?",
-      answer:
-        "We have placed candidates globally, Our European market expertise enables us to deliver recruitment solutions tailored to local regulations and culture.",
+      question: t("foremployee.faqsq1"),
+      answer: t("foremployee.faqsa1"),
       icon: <FaGlobeAmericas className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "What makes you a leading headhunting agency?",
-      answer:
-        "Our niche focus, proven placements of senior and C-level executives, and a fast, data-driven process set us apart. We help you hire top talent faster than the competition.",
+      question: t("foremployee.faqsq2"),
+      answer: t("foremployee.faqsa2"),
       icon: <FaTrophy className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "How do you find candidates?",
-      answer:
-        "We combine our global talent database with proactive headhunting, precision profiling, and candidate evaluation to ensure the best fit for your business.",
+      question: t("foremployee.faqsq3"),
+      answer: t("foremployee.faqsa3"),
       icon: <FaSearch className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "Where do your candidates come from?",
-      answer:
-        "Our talent pool spans across the world, including local professionals and international candidates. Each is carefully selected to align with your company’s culture, goals, and hiring needs.",
+      question: t("foremployee.faqsq4"),
+      answer: t("foremployee.faqsa4"),
       icon: <FaUserFriends className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "What are your core industries?",
-      answer:
-        "We’re flexible across industries. From emerging startups to established enterprises, we’ve successfully built high-performing teams across a wide range of sectors.",
+      question: t("foremployee.faqsq5"),
+      answer: t("foremployee.faqsa5"),
       icon: <FaIndustry className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "How fast is your time to fill?",
-      answer:
-        "Our time to fill positions is among the fastest in the industry. We understand the urgency of your hiring needs and are dedicated to finding and placing the best candidates quickly and efficiently.\n\nOn average, we fill urgent roles within 10 days—from the initial contact to the final offer. This speed is made possible through our extensive candidate network, proactive sourcing, and thorough screening processes.\n\nAdditionally, our streamlined hiring approach ensures smooth and efficient communication between you, our team, and the candidates, making the entire recruitment experience seamless.",
+      question: t("foremployee.faqsq6"),
+      answer: t("foremployee.faqsa6"),
       icon: <FaClock className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "What’s your pricing model?",
-      answer:
-        "We work on a contingency basis meaning you only pay when we deliver. No upfront costs, no hidden fees",
+      question: t("foremployee.faqsq7"),
+      answer: t("foremployee.faqsa7"),
       icon: <FaMoneyBillWave className="text-[#00BCFF] text-xl" />,
     },
     {
-      question: "What guarantees do you offer?",
+      question: t("foremployee.faqsq8"),
       answer:
-        "Yes. If a hire doesn’t work out within a set timeframe, we offer a refund or replacement with no questions asked.",
+        t("foremployee.faqsa8"),
       icon: <FaShieldAlt className="text-[#00BCFF] text-xl" />,
     },
   ];
@@ -76,11 +71,11 @@ const FAQ = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            <span className="text-[#00BCFF]">FAQ</span>
+            <span className="text-[#00BCFF]">{t("foremployee.faqsh")}</span>
           </h2>
           <div className="w-20 h-1 bg-[#00BCFF] mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Things people often ask about our services
+            {t("foremployee.faqsp")}
           </p>
         </div>
 

@@ -12,8 +12,10 @@ import client5 from "../../assets/about/cl5.png?url";
 import client6 from "../../assets/about/cl6.png?url";
 import client7 from "../../assets/about/cl7.png?url";
 import client8 from "../../assets/about/cl8.png?url";
+import { useTranslation } from "react-i18next";
 
 const HeroCandidate = () => {
+  const { t } = useTranslation();
   const clients = [
     client1,
     client2,
@@ -65,18 +67,19 @@ const HeroCandidate = () => {
             <div className="flex items-center gap-3 mb-6">
               <FaHandshake className="text-[#00BCFF] text-3xl" />
               <span className="font-semibold bg-white/10 px-4 py-1 rounded-full">
-                Trusted by High-Growth Companies
+                {t("forcandidats.candidateherobatch")}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-[#00BCFF]">Elevate</span> Your Career with
-              Confidence
+              <span className="text-[#00BCFF]">
+                {t("forcandidats.candidateheroh1")}
+              </span>
+              {t("forcandidats.candidateheroh2")}
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 max-w-lg opacity-90">
-              Connect with leading employers and secure your next opportunity
-              faster, with expert support.
+              {t("forcandidats.candidateherop")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -87,16 +90,19 @@ const HeroCandidate = () => {
                 }}
                 className="flex items-center gap-2 bg-[#00BCFF] text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
-                How It Works <FaArrowRight />
+                {t("forcandidats.candidateherobtn")} <FaArrowRight />
               </button>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-md">
               {[
-                { value: "10,000+", label: "Candidates Hired" },
-                { value: "80%", label: "Interview Success" },
-                { value: "4/5", label: "Candidate Satisfaction" },
+                {
+                  value: "10,000+",
+                  label: t("forcandidats.candidateherocard1p"),
+                },
+                { value: "80%", label: t("forcandidats.candidateherocard2p") },
+                { value: "4/5", label: t("forcandidats.candidateherocard3p") },
               ].map((stat, index) => (
                 <div
                   key={index}
@@ -129,7 +135,7 @@ const HeroCandidate = () => {
         {/* Auto-scrolling clients */}
         <div className="mt-24 lg:mt-32 relative">
           <h3 className="text-center text-white text-xl mb-8 font-medium">
-            Trusted by leading companies worldwide
+            {t("forcandidats.partner")}
           </h3>
 
           <div className="relative overflow-hidden py-4">

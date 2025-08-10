@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaRocket,
   FaLock,
@@ -11,54 +12,47 @@ import { GiSkills, GiMoneyStack } from "react-icons/gi";
 import { IoMdTime } from "react-icons/io";
 
 const BenefitsSection = () => {
+  const { t } = useTranslation();
   const benefits = [
     {
       icon: <FaRocket className="text-4xl text-blue-500" />,
-      title: "Fast-Track Hiring",
-      description:
-        "Skip the queue with direct access to hiring managers and quick interview scheduling.",
+      title: t("forcandidats.whycandidatecard1h"),
+      description: t("forcandidats.whycandidatecard1p"),
     },
     {
       icon: <FaLock className="text-4xl text-purple-500" />,
-      title: "Exclusive Roles",
-      description:
-        "Access high-paying jobs that aren't advertised on public job boards.",
+      title: t("forcandidats.whycandidatecard2h"),
+      description: t("forcandidats.whycandidatecard2p"),
     },
     {
       icon: <GiSkills className="text-4xl text-green-500" />,
-      title: "Skill Matching",
-      description:
-        "Our AI matches you with roles that fit your exact skill set and career goals.",
+      title: t("forcandidats.whycandidatecard3h"),
+      description: t("forcandidats.whycandidatecard3p"),
     },
     {
       icon: <GiMoneyStack className="text-4xl text-yellow-500" />,
-      title: "Salary Boost",
-      description:
-        "Candidates using our platform earn 15-30% higher salaries on average.",
+      title: t("forcandidats.whycandidatecard4h"),
+      description: t("forcandidats.whycandidatecard4p"),
     },
     {
       icon: <IoMdTime className="text-4xl text-red-500" />,
-      title: "Time Savings",
-      description:
-        "Reduce job search time by 70% with our targeted matching system.",
+      title: t("forcandidats.whycandidatecard5h"),
+      description: t("forcandidats.whycandidatecard5p"),
     },
     {
       icon: <FaUserTie className="text-4xl text-indigo-500" />,
-      title: "Career Coaching",
-      description:
-        "Free 1:1 sessions with industry experts to polish your interview skills.",
+      title: t("forcandidats.whycandidatecard6h"),
+      description: t("forcandidats.whycandidatecard6p"),
     },
     {
       icon: <FaChartLine className="text-4xl text-teal-500" />,
-      title: "Career Growth",
-      description:
-        "Access to upskilling resources and promotion-track positions.",
+      title: t("forcandidats.whycandidatecard7h"),
+      description: t("forcandidats.whycandidatecard7p"),
     },
     {
       icon: <FaHandshake className="text-4xl text-orange-500" />,
-      title: "Better Culture Fit",
-      description:
-        "We match you with companies that align with your values and work style.",
+      title: t("forcandidats.whycandidatecard8h"),
+      description: t("forcandidats.whycandidatecard8p"),
     },
   ];
 
@@ -68,11 +62,14 @@ const BenefitsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why <span className="text-blue-600">Candidates</span> Choose Us
+            {t("forcandidats.whychosech1")}
+            <span className="text-blue-600">
+              {t("forcandidats.whychosech2")}
+            </span>
+            {t("forcandidats.whychosech3")}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We've redefined the job search experience with candidate-first
-            features that deliver real results.
+            {t("forcandidats.whychosecp")}
           </p>
         </div>
 
@@ -120,10 +117,10 @@ const BenefitsSection = () => {
         <div className="mt-20 bg-blue-600 rounded-2xl p-8 md:p-12 text-white shadow-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "3x", label: "Faster Hiring Process" },
-              { value: "80%", label: "Interview Success Rate" },
-              { value: "25%", label: "Higher Salaries" },
-              { value: "10K+", label: "Candidates Placed" },
+              { value: "3x", label: t("forcandidats.whyprorate1") },
+              { value: "80%", label: t("forcandidats.whyprorate2") },
+              { value: "25%", label: t("forcandidats.whyprorate3") },
+              { value: "10K+", label: t("forcandidats.whyprorate4") },
             ].map((stat, index) => (
               <div key={index} className="p-4">
                 <p className="text-4xl md:text-5xl font-bold mb-2">

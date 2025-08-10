@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaComment, FaTimes } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaComment, FaTimes, FaPhone } from "react-icons/fa";
 import contact from "../../assets/home/contact.jpg";
 import { useTranslation } from "react-i18next";
 
@@ -10,6 +10,7 @@ const ContactHelp = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
@@ -269,6 +270,13 @@ const ContactHelp = () => {
                   label: t("contact.eamil"),
                   type: "email",
                   placeholder: "john@example.com",
+                },
+                {
+                  icon: <FaPhone />,
+                  id: "phone",
+                  label: t("contact.phone"),
+                  type: "tel",
+                  placeholder: "+4534-453443",
                 },
                 {
                   icon: <FaComment />,

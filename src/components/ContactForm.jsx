@@ -1,11 +1,20 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { FiCheckCircle, FiMail, FiMessageSquare, FiUser } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import {
+  FiCheckCircle,
+  FiMail,
+  FiMessageSquare,
+  FiPhone,
+  FiUser,
+} from "react-icons/fi";
 
 const ContactForm = ({ show, onClose, onSubmit }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -20,10 +29,9 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
     onSubmit(formData);
     setFormSubmitted(true);
 
-    // Reset after 3 seconds
     setTimeout(() => {
       setFormSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "" });
       onClose();
     }, 3000);
   };
@@ -47,7 +55,7 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
             {!formSubmitted ? (
               <>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Contact Us
+                  {t("modelContact.headContact")}
                 </h3>
                 <form onSubmit={handleSubmit}>
                   <div className="space-y-4">
@@ -55,7 +63,7 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
                       <div className="flex items-center mb-2">
                         <FiUser className="text-gray-500 mr-2" />
                         <label htmlFor="name" className="text-gray-700">
-                          Your Name
+                          {t("modelContact.ourName")}
                         </label>
                       </div>
                       <input
@@ -72,7 +80,7 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
                       <div className="flex items-center mb-2">
                         <FiMail className="text-gray-500 mr-2" />
                         <label htmlFor="email" className="text-gray-700">
-                          Your Email
+                          {t("modelContact.ourEmail")}
                         </label>
                       </div>
                       <input
@@ -87,9 +95,26 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
                     </div>
                     <div>
                       <div className="flex items-center mb-2">
+                        <FiPhone className="text-gray-500 mr-2" />
+                        <label htmlFor="number" className="text-gray-700">
+                          {t("modelContact.ourphone")}
+                        </label>
+                      </div>
+                      <input
+                        type="tel"
+                        id="number"
+                        name="number"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <div className="flex items-center mb-2">
                         <FiMessageSquare className="text-gray-500 mr-2" />
                         <label htmlFor="message" className="text-gray-700">
-                          Message
+                          {t("modelContact.ourmesssage")}
                         </label>
                       </div>
                       <textarea
@@ -108,14 +133,14 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
                       type="submit"
                       className="flex-1 bg-[#00BCFF] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg"
                     >
-                      Send Message
+                      {t("modelContact.ourbtn1")}
                     </button>
                     <button
                       type="button"
                       onClick={onClose}
                       className="flex-1 bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
                     >
-                      Cancel
+                      {t("modelContact.ourbtn2")}
                     </button>
                   </div>
                 </form>

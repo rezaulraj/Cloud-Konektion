@@ -17,7 +17,7 @@ function App() {
           <Route path="for-employers" element={<EmployeePage />} />
           <Route path="about-us" element={<AboutPage />} />
           <Route path="for-candidates" element={<CandidatePage />} />
-          <Route path="join-us" element={<JoinUsPage />} />
+          <Route path="join-as-partner" element={<JoinUsPage />} />
           <Route path="services" element={<ServicePage />} />
           <Route path="*" element={<NotFound />} />
         </Route>

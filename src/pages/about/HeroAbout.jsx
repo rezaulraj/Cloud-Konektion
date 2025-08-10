@@ -9,8 +9,10 @@ import client5 from "../../assets/about/cl5.png?url";
 import client6 from "../../assets/about/cl6.png?url";
 import client7 from "../../assets/about/cl7.png?url";
 import client8 from "../../assets/about/cl8.png?url";
+import { useTranslation } from "react-i18next";
 
 const HeroAbout = () => {
+  const { t } = useTranslation();
   const clients = [
     client1,
     client2,
@@ -79,15 +81,15 @@ const HeroAbout = () => {
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-lg mb-6">
             <FaHandshake className="mr-2" />
-            <span>Who We Are</span>
+            <span>{t("aboutus.aboutusherob")}</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Partner with <span className="text-[#00BCFF]">Cloud Konektion</span>{" "}
-            today
+            {t("aboutus.aboutusheroh1")}
+            <span className="text-[#00BCFF]">{t("aboutus.aboutusheroh2")}</span>
+            {t("aboutus.aboutusheroh3")}
           </h1>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Build a high-performing team tailored to your organization’s vision
-            and goals.
+            {t("aboutus.aboutusherop")}
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaSearch,
   FaUserFriends,
@@ -7,26 +8,27 @@ import {
 } from "react-icons/fa";
 
 const HowWeWork = () => {
+  const { t } = useTranslation();
   const steps = [
     {
       icon: <FaSearch className="text-2xl text-[#00BCFF]" />,
-      title: "Discover",
-      description: "We align with your goals, culture, and hiring needs.",
+      title: t("foremployee.hwwrescard1h"),
+      description: t("foremployee.hwwrescard1p"),
     },
     {
       icon: <FaUserFriends className="text-2xl text-[#00BCFF]" />,
-      title: "Source",
-      description: "We identify top talent through targeted outreach and our global network.",
+      title: t("foremployee.hwwrescard2h"),
+      description: t("foremployee.hwwrescard2p"),
     },
     {
       icon: <FaComments className="text-2xl text-[#00BCFF]" />,
-      title: "Interview",
-      description: "We manage the entire interview process for speed and efficiency.",
+      title: t("foremployee.hwwrescard3h"),
+      description: t("foremployee.hwwrescard3p"),
     },
     {
       icon: <FaHandshake className="text-2xl text-[#00BCFF]" />,
-      title: "Hire & Support",
-      description: "We assist with offer negotiation and ensure smooth onboarding and retention.",
+      title: t("foremployee.hwwrescard4h"),
+      description: t("foremployee.hwwrescard4p"),
     },
   ];
 
@@ -36,11 +38,14 @@ const HowWeWork = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            How we <span className="text-[#00BCFF]">Work</span>
+            {t("foremployee.howweworkh1")}{" "}
+            <span className="text-[#00BCFF]">
+              {t("foremployee.howweworkh2")}
+            </span>
           </h2>
           <div className="w-20 h-1 bg-[#00BCFF] mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Learn more about our working process
+            {t("foremployee.howweworkp")}
           </p>
         </div>
 
@@ -49,18 +54,12 @@ const HowWeWork = () => {
           {/* Left Text */}
           <div className="lg:pt-10">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Our Expertise
+              {t("foremployee.howweworkexph")}
             </h3>
             <p className="text-gray-600 mb-4">
-              We are team of experienced recruiters, researchers, and account
-              managers with extensive experience in HR and Tech consulting, and
-              an impressive track record of successful placements.
+              {t("foremployee.howweworkexpp1")}
             </p>
-            <p className="text-gray-600">
-              Our process begins with a thorough understanding of your business
-              goals, vision, and culture, as well as an analysis of your current
-              and future tech talent needs and challenges.
-            </p>
+            <p className="text-gray-600">{t("foremployee.howweworkexpp2")}</p>
           </div>
 
           {/* Center Steps with Connecting Dots */}
@@ -93,21 +92,15 @@ const HowWeWork = () => {
           {/* Right Text */}
           <div className="lg:pt-10">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Personalized Approach
+              {t("foremployee.howweworkperh")}
             </h3>
             <p className="text-gray-600 mb-4">
-              Based on our analysis, we create a personalized recruitment plan
-              that aligns with your objectives and budget.
+              {t("foremployee.howweworkperp1")}
             </p>
             <p className="text-gray-600 mb-4">
-              After identifying top candidates, we present their profiles,
-              resumes, and notes to you, along with our expert insights and
-              recommendations.
+              {t("foremployee.howweworkperp2")}
             </p>
-            <p className="text-gray-600">
-              We assist with offer negotiation and provide post-hire support to
-              ensure smooth onboarding and long-term retention.
-            </p>
+            <p className="text-gray-600">{t("foremployee.howweworkperp3")}</p>
           </div>
         </div>
       </div>

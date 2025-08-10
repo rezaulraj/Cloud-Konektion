@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaUserTie,
   FaGlobe,
@@ -15,6 +16,7 @@ import {
 } from "react-icons/fa";
 
 const TalentExperts = () => {
+  const { t } = useTranslation();
   const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     company: "",
@@ -130,14 +132,14 @@ const TalentExperts = () => {
           <div className="space-y-12">
             <div className="text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                <span className="text-[#00BCFF]">Talent</span> Acquisition
-                Experts
+                <span className="text-[#00BCFF]">
+                  {t("foremployee.emtalh1")}
+                </span>{" "}
+                {t("foremployee.emtalh2")}
               </h2>
               <div className="w-20 h-1 bg-[#00BCFF] mx-auto lg:mx-0 mb-8"></div>
               <p className="text-lg text-gray-600 mb-6">
-                We bridge the gap between exceptional talent and
-                forward-thinking companies, creating perfect matches that drive
-                business success.
+                {t("foremployee.emtalp")}
               </p>
             </div>
 
@@ -149,22 +151,20 @@ const TalentExperts = () => {
                   <FaUserTie className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Executive & Specialized Hiring
+                  {t("foremployee.emtcard1h")}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Our proprietary methodology identifies top-tier candidates for
-                  leadership and hard-to-fill technical roles through
-                  comprehensive vetting and competency-based assessments.
+                  {t("foremployee.emtcard1p")}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    C-level placements
+                    {t("foremployee.emtcard1l1")}
                   </span>
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    Technical specialists
+                    {t("foremployee.emtcard1l2")}
                   </span>
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    Cultural alignment
+                    {t("foremployee.emtcard1l3")}
                   </span>
                 </div>
               </div>
@@ -175,22 +175,20 @@ const TalentExperts = () => {
                   <FaGlobe className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Global Talent Network
+                  {t("foremployee.emtcard2h")}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Access our curated database of pre-vetted professionals across
-                  20+ countries, with specialized knowledge of regional markets
-                  and compliance requirements.
+                  {t("foremployee.emtcard2p")}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    International hiring
+                    {t("foremployee.emtcard2l1")}
                   </span>
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    Local market expertise
+                    {t("foremployee.emtcard2l2")}
                   </span>
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    Visa/immigration support
+                    {t("foremployee.emtcard2l3")}
                   </span>
                 </div>
               </div>
@@ -201,22 +199,20 @@ const TalentExperts = () => {
                   <FaClock className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 pl-8">
-                  Rapid Placement Solutions
+                  {t("foremployee.emtcard3h")}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Our expedited recruitment process delivers qualified
-                  candidates in as little as 72 hours for urgent roles, with a
-                  90-day replacement guarantee.
+                  {t("foremployee.emtcard3p")}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    Time-to-fill: 10 days avg.
+                    {t("foremployee.emtcard3l1")}
                   </span>
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    Temp-to-perm options
+                    {t("foremployee.emtcard3l2")}
                   </span>
                   <span className="px-3 py-1 bg-[#00BCFF]/10 text-[#00BCFF] rounded-full text-sm">
-                    Guaranteed placements
+                    {t("foremployee.emtcard3l3")}
                   </span>
                 </div>
               </div>
@@ -229,27 +225,24 @@ const TalentExperts = () => {
               <div className="text-center mb-8">
                 <div className="inline-flex items-center px-6 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-medium mb-4">
                   <FaHandshake className="mr-2" />
-                  Talent Solutions
+                  {t("foremployee.emtformbatch")}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Build Your Dream Team
+                  {t("foremployee.emtformh")}
                 </h3>
-                <p className="text-gray-600">
-                  Complete this form to access our exclusive talent pool and
-                  receive:
-                </p>
+                <p className="text-gray-600">{t("foremployee.emformp1")}</p>
                 <ul className="mt-4 space-y-2 text-left text-gray-600">
                   <li className="flex items-start">
                     <FaCheck className="text-[#00BCFF] mt-1 mr-2 flex-shrink-0" />
-                    <span>Customized candidate shortlists within 48 hours</span>
+                    <span>{t("foremployee.emformlist1")}</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="text-[#00BCFF] mt-1 mr-2 flex-shrink-0" />
-                    <span>Market salary benchmarking</span>
+                    <span>{t("foremployee.emformlist2")}</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="text-[#00BCFF] mt-1 mr-2 flex-shrink-0" />
-                    <span>Dedicated recruitment consultant</span>
+                    <span>{t("foremployee.emformlist3")}</span>
                   </li>
                 </ul>
               </div>
@@ -261,7 +254,7 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaBriefcase className="text-gray-400 mr-2 text-sm" />
-                    Company Name
+                    {t("foremployee.emformcname")}
                   </label>
                   <input
                     type="text"
@@ -280,7 +273,7 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaUser className="text-gray-400 mr-2 text-sm" />
-                    Your Name
+                    {t("foremployee.emfromname")}
                   </label>
                   <input
                     type="text"
@@ -299,7 +292,7 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaEnvelope className="text-gray-400 mr-2 text-sm" />
-                    Work Email
+                    {t("foremployee.emfromemail")}
                   </label>
                   <input
                     type="email"
@@ -318,7 +311,7 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaChartLine className="text-gray-400 mr-2 text-sm" />
-                    Hiring Needs
+                    {t("foremployee.emfromhneed")}
                   </label>
                   <select
                     id="hiring-needs"
@@ -327,12 +320,22 @@ const TalentExperts = () => {
                     value={formData["hiring-needs"]}
                     onChange={handleChange}
                   >
-                    <option value="">Select your hiring needs</option>
-                    <option value="executive">Executive/C-level</option>
-                    <option value="technical">Technical Specialists</option>
-                    <option value="professional">Professional Staff</option>
-                    <option value="contract">Contract/Temporary</option>
-                    <option value="multiple">Multiple Positions</option>
+                    <option value="">{t("foremployee.emfromhop1")}</option>
+                    <option value="executive">
+                      {t("foremployee.emfromhop2")}
+                    </option>
+                    <option value="technical">
+                      {t("foremployee.emfromhop3")}
+                    </option>
+                    <option value="professional">
+                      {t("foremployee.emfromhop4")}
+                    </option>
+                    <option value="contract">
+                      {t("foremployee.emfromhop5")}
+                    </option>
+                    <option value="multiple">
+                      {t("foremployee.emfromhop6")}
+                    </option>
                   </select>
                 </div>
 
@@ -342,13 +345,13 @@ const TalentExperts = () => {
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaComment className="text-gray-400 mr-2 text-sm" />
-                    Specific Requirements
+                    {t("foremployee.emfrommessage")}
                   </label>
                   <textarea
                     id="message"
                     rows="4"
                     className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                    placeholder="Tell us about your ideal candidates, required skills, timeline, etc."
+                    placeholder={t("foremployee.emformmessplas")}
                     value={formData.message}
                     onChange={handleChange}
                   ></textarea>
@@ -358,7 +361,7 @@ const TalentExperts = () => {
                   type="submit"
                   className="w-full bg-gradient-to-r from-[#00BCFF] to-[#0077FF] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
                 >
-                  <span>Request Talent Consultation</span>
+                  <span>{t("foremployee.emforbtn")}</span>
                   <FaSearch className="ml-2" />
                 </button>
               </form>

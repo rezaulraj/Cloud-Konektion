@@ -9,8 +9,10 @@ import client5 from "../../assets/about/cl5.png?url";
 import client6 from "../../assets/about/cl6.png?url";
 import client7 from "../../assets/about/cl7.png?url";
 import client8 from "../../assets/about/cl8.png?url";
+import { useTranslation } from "react-i18next";
 
 const HeroService = () => {
+  const { t } = useTranslation();
   const clients = [
     client1,
     client2,
@@ -65,23 +67,23 @@ const HeroService = () => {
   const services = [
     {
       icon: <FaSearch className="text-2xl md:text-3xl text-[#00BCFF]" />,
-      title: "Talent Acquisition",
-      description: "Find the perfect candidates for your open positions",
+      title: t("services.servicecheroh1"),
+      description: t("services.servicecherop1"),
     },
     {
       icon: <FaUsers className="text-2xl md:text-3xl text-[#00BCFF]" />,
-      title: "Executive Search",
-      description: "Connect with top-tier leadership talent",
+      title: t("services.servicecheroh2"),
+      description: t("services.servicecherop2"),
     },
     {
       icon: <FaChartLine className="text-2xl md:text-3xl text-[#00BCFF]" />,
-      title: "Workforce Planning",
-      description: "Strategic solutions for your organizational growth",
+      title: t("services.servicecheroh3"),
+      description: t("services.servicecherop3"),
     },
     {
       icon: <FaBriefcase className="text-2xl md:text-3xl text-[#00BCFF]" />,
-      title: "Contract Staffing",
-      description: "Flexible staffing solutions for project needs",
+      title: t("services.servicecheroh4"),
+      description: t("services.servicecherop4"),
     },
   ];
 
@@ -101,12 +103,13 @@ const HeroService = () => {
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-20 md:py-0">
         <div className="max-w-6xl mx-auto w-full px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
-            Transform Your Workforce with Our{" "}
-            <span className="text-[#00BCFF]">Cloud Konektion</span>
+            {t("services.serviceheroh1")}
+            <span className="text-[#00BCFF]">
+              {t("services.serviceheroh2")}
+            </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 md:mb-10 max-w-3xl mx-auto">
-            We deliver elite talent solutions customized to your business
-            goals—helping you build winning teams that accelerate growth.
+            {t("services.serviceherop")}
           </p>
 
           {/* Services Highlights */}

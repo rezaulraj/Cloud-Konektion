@@ -23,7 +23,6 @@ const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const languageDropdownRef = useRef(null);
 
-  // Supported languages
   const languages = [
     { code: "en", name: "English", countryCode: "US" },
     { code: "mt", name: "Malti", countryCode: "MT" },
@@ -60,12 +59,11 @@ const Header = () => {
     },
     {
       label: t("headers.joinus"),
-      path: "/join-us",
+      path: "/join-as-partner",
       icon: <TbUsersPlus className="text-xl" />,
     },
   ];
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -74,7 +72,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Set initial language
   useEffect(() => {
     const storedLanguage = localStorage.getItem("i18nextLng") || "en";
     const langObj =
@@ -82,7 +79,6 @@ const Header = () => {
     setSelectedLanguage(langObj.countryCode);
   }, [i18n.language]);
 
-  // Close language dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -127,7 +123,6 @@ const Header = () => {
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center">
             <a href="/">
               {scrolled ? (
@@ -138,7 +133,6 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden focus:outline-none p-2 rounded-full transition-all duration-300 hover:bg-gray-100 hover:bg-opacity-20"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -158,7 +152,6 @@ const Header = () => {
             )}
           </button>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
@@ -176,9 +169,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop Right Section */}
           <div className="hidden md:flex items-center space-x-6">
-            {/* Language Selector */}
             <div className="relative" ref={languageDropdownRef}>
               <button
                 className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
@@ -238,7 +229,6 @@ const Header = () => {
               )}
             </div>
 
-            {/* Contact Button */}
             <button
               onClick={() => setShowContactForm(true)}
               className={`flex items-center space-x-2 px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
@@ -253,7 +243,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white h-screen shadow-xl overflow-y-auto">
             <div className="container mx-auto px-4 py-2">

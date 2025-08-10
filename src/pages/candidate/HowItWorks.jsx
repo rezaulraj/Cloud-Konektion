@@ -8,35 +8,33 @@ import {
 } from "react-icons/fa";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { GiProgression } from "react-icons/gi";
+import { useTranslation } from "react-i18next";
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
   const steps = [
     {
       icon: <FaUserEdit className="text-4xl" />,
-      title: "Create Your Profile",
-      description:
-        "Build your professional profile in minutes with our easy wizard",
+      title: t("forcandidats.ourporcard1h"),
+      description: t("forcandidats.ourporcard1p"),
       accentColor: "from-blue-400 to-blue-600",
     },
     {
       icon: <FaSearch className="text-4xl" />,
-      title: "Intelligent Matching",
-      description:
-        "Our AI matches you with ideal jobs based on your skills and preferences",
+      title: t("forcandidats.ourporcard2h"),
+      description: t("forcandidats.ourporcard2p"),
       accentColor: "from-purple-400 to-purple-600",
     },
     {
       icon: <FaHandshake className="text-4xl" />,
-      title: "Receive Interview Requests",
-      description:
-        "Hiring managers reach out directly when your profile fits their role.",
+      title: t("forcandidats.ourporcard3h"),
+      description: t("forcandidats.ourporcard3p"),
       accentColor: "from-green-400 to-green-600",
     },
     {
       icon: <FaBriefcase className="text-4xl" />,
-      title: "Secure the Right Offer",
-      description:
-        "Accept job offers from top-tier companies with competitive pay and clear growth paths.",
+      title: t("forcandidats.ourporcard4h"),
+      description: t("forcandidats.ourporcard4p"),
       accentColor: "from-yellow-400 to-yellow-600",
     },
   ];
@@ -51,13 +49,16 @@ const HowItWorks = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full mb-4">
             <FaRocket className="animate-pulse" />
-            <span className="font-medium">Get Hired Faster</span>
+            <span className="font-medium">{t("forcandidats.hiredbatch")}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            How Our <span className="text-blue-600">Process Works</span>
+            {t("forcandidats.ourprocessh1")}
+            <span className="text-blue-600">
+              {t("forcandidats.ourprocessh2")}
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Simple steps to transform your career with our powerful platform
+            {t("forcandidats.ourprocessp")}
           </p>
         </div>
 
@@ -104,11 +105,10 @@ const HowItWorks = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="lg:w-1/2">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                  Ready to accelerate your career?
+                  {t("forcandidats.candiatejoinh1")}
                 </h3>
                 <p className="text-lg opacity-90">
-                  Join thousands of professionals who found better jobs faster
-                  with our platform
+                  {t("forcandidats.candiatejoinp1")}
                 </p>
               </div>
               <div className="lg:w-1/2 flex justify-center lg:justify-end">
@@ -120,7 +120,7 @@ const HowItWorks = () => {
                   className="flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   <GiProgression className="text-xl" />
-                  <span>Start Your Journey Now</span>
+                  <span>{t("forcandidats.candidatejurny")}</span>
                 </button>
               </div>
             </div>

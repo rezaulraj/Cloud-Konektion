@@ -12,102 +12,110 @@ import {
 import { GiGrowth, GiEarthAmerica } from "react-icons/gi";
 import { IoMdHeart } from "react-icons/io";
 import { FaCirclePlay } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const JoinUs = () => {
+  const { t } = useTranslation();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const coreValues = [
     {
       icon: <FaLightbulb className="text-4xl" />,
-      title: "Innovation",
-      description: "We challenge the status quo and pioneer new solutions",
+      title: t("joinus.joinvalueca1h"),
+      description: t("joinus.joinvalueca1p"),
     },
     {
       icon: <FaHandsHelping className="text-4xl" />,
-      title: "Collaboration",
-      description:
-        "Great things happen when we work together across disciplines",
+      title: t("joinus.joinvalueca2h"),
+      description: t("joinus.joinvalueca2p"),
     },
     {
       icon: <GiGrowth className="text-4xl" />,
-      title: "Growth",
-      description: "We invest in continuous learning and personal development",
+      title: t("joinus.joinvalueca3h"),
+      description: t("joinus.joinvalueca3p"),
     },
   ];
 
   const perks = [
     {
       icon: <FaChartLine className="text-3xl" />,
-      title: "Career Development",
-      items: ["Mentorship programs", "Leadership training", "Skill workshops"],
+      title: t("joinus.whylearncard1h"),
+      items: [
+        t("joinus.whylearncard1l1"),
+        t("joinus.whylearncard1l2"),
+        t("joinus.whylearncard1l3"),
+      ],
     },
     {
       icon: <FaLaugh className="text-3xl" />,
-      title: "Work Environment",
-      items: ["Flexible schedules", "Remote options", "Wellness programs"],
+      title: t("joinus.whylearncard2h"),
+      items: [
+        t("joinus.whylearncard2l1"),
+        t("joinus.whylearncard2l2"),
+        t("joinus.whylearncard2l3"),
+      ],
     },
     {
       icon: <GiEarthAmerica className="text-3xl" />,
-      title: "Global Impact",
-      items: ["International projects", "Diverse team", "Sustainability focus"],
+      title: t("joinus.whylearncard3h"),
+      items: [
+        t("joinus.whylearncard3l1"),
+        t("joinus.whylearncard3l2"),
+        t("joinus.whylearncard3l3"),
+      ],
     },
   ];
 
   return (
     <section
-      id="meet-team"
+      id="benefits"
       className="py-20 bg-gradient-to-b from-gray-50 to-white relative"
     >
       <div className="container mx-auto px-6">
-        {/* Hero Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-[#00BCFF] px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#00BCFF]/20 text-[#00BCFF] px-4 py-2 rounded-full mb-4">
             <FaUsers className="text-lg" />
-            <span className="font-medium">Be Part of Something Great</span>
+            <span className="font-medium">{t("joinus.joinpartners")}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Join Our <span className="text-[#00BCFF]">Mission</span>
+            {t("joinus.joinsubh1")}{" "}
+            <span className="text-[#00BCFF]">{t("joinus.joinsubh2")}</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're building the future of cloud technology with passionate,
-            creative minds
+            {t("joinus.joinsubp")}
           </p>
         </div>
 
-        {/* Culture Video Section */}
         <div className="mb-20 bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-8 md:p-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our <span className="text-[#00BCFF]">Culture</span>
+                {t("joinus.joinch1")}{" "}
+                <span className="text-[#00BCFF]">{t("joinus.joinch1")}</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                At Cloud Konektion, we've created an environment where
-                creativity thrives and people feel empowered to do their best
-                work. Watch our team in action:
-              </p>
+              <p className="text-lg text-gray-600 mb-8">{t("joinus.joincp")}</p>
               <button
                 onClick={() => setIsVideoOpen(true)}
-                className="flex items-center gap-2 px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00bbffe5] transition-colors"
+                className="flex items-center gap-2 px-6 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00BCFF]/90 transition-colors"
               >
                 <FaCirclePlay />
-                Play Culture Video
+                {t("joinus.joincbtn")}
               </button>
             </div>
             <div className="bg-gray-100 min-h-[300px] flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                alt="Team collaborating"
+                src="https://cdn.prod.website-files.com/62554f8964d8fe28a4ea9f70/6570a287282ea9ecf19de1a1_partnership-business.webp"
+                alt="Recruitment process"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
-        {/* Core Values */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Our <span className="text-[#00BCFF]">Core Values</span>
+            {t("joinus.joinvalueh1")}
+            <span className="text-[#00BCFF]">{t("joinus.joinvalueh2")}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {coreValues.map((value, index) => (
@@ -115,7 +123,7 @@ const JoinUs = () => {
                 key={index}
                 className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center"
               >
-                <div className="mx-auto mb-6 w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center text-[#00BCFF]">
+                <div className="mx-auto mb-6 w-20 h-20 rounded-full bg-purple-50 flex items-center justify-center text-[#00BCFF]">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -127,16 +135,16 @@ const JoinUs = () => {
           </div>
         </div>
 
-        {/* Employee Perks */}
-        <div className="mb-20 bg-blue-50 rounded-2xl p-8 md:p-12">
+        <div className="mb-20 bg-purple-50 rounded-2xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Why You'll <span className="text-[#00BCFF]">Love It Here</span>
+            {t("joinus.whylearnh1")}
+            <span className="text-[#00BCFF]">{t("joinus.whylearnh2")}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {perks.map((perk, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF]">
+                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-[#00BCFF]">
                     {perk.icon}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">
@@ -167,9 +175,27 @@ const JoinUs = () => {
             ))}
           </div>
         </div>
+
+        <div className="text-center bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            {t("joinus.readyToServeh1")}
+            <span className="text-[#00BCFF]">{t("joinus.readyToServeh2")}</span>
+            ?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            {t("joinus.readyToServep1")}
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button className="px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00BCFF]/90 transition-colors">
+              {t("joinus.readybtn1")}
+            </button>
+            <button className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
+              {t("joinus.readybtn2")}
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Video Modal */}
       <AnimatePresence>
         {isVideoOpen && (
           <motion.div

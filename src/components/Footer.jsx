@@ -16,26 +16,28 @@ import {
 } from "react-icons/fa";
 import logo3 from "/logowhite.png";
 import { FaXTwitter } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const quickLinks = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "For Employers", href: "/for-employers" },
-    { name: "For Candidates", href: "/for-candidates" },
-    { name: "About Us", href: "/about-us" },
-    { name: "Join Us", href: "/join-us" },
+    { name: t("footer.quickhome"), href: "/" },
+    { name: t("footer.quicklink2"), href: "/services" },
+    { name: t("footer.quicklink3"), href: "/for-employers" },
+    { name: t("footer.quicklink4"), href: "/for-candidates" },
+    { name: t("footer.quicklink5"), href: "/about-us" },
+    { name: t("footer.quicklink6"), href: "/join-as-partner" },
   ];
 
   const services = [
-    "Construction & Infrastructure",
-    "Manufacturing & Industrial",
-    "Logistics & Transportation",
-    "Facility Management & Maintenance",
-    "Hospitality & Service Roles",
-    "Woodwork & Carpentry Talent",
+    t("footer.ourservicelink1"),
+    t("footer.ourservicelink2"),
+    t("footer.ourservicelink3"),
+    t("footer.ourservicelink4"),
+    t("footer.ourservicelink5"),
+    t("footer.ourservicelink6"),
   ];
 
   const handleSubmit = (e) => {
@@ -57,15 +59,12 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
+          
           <div className="space-y-6 ">
             <a href="/">
               <img src={logo3} alt="" className="h-20" />
             </a>
-            <p className="text-gray-400 mt-4">
-              Partnering with ambitious organizations in Europe, APAC, and MENA
-              to build future-ready digital teams.
-            </p>
+            <p className="text-gray-400 mt-4">{t("footer.footerp")}</p>
             <div className="flex space-x-4">
               <a
                 href="https://www.linkedin.com/company/107980266/admin/dashboard/"
@@ -120,9 +119,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6">
+              {t("footer.quicklinkh")}
+            </h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -138,9 +139,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+         
           <div>
-            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
+            <h4 className="text-lg font-semibold mb-6">
+              {t("footer.quicklink2")}
+            </h4>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -156,16 +159,16 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+         
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-6">
+              {t("footer.contactus")}
+            </h4>
             <div className="space-y-4">
               <div className="flex items-start">
                 <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
                 <p className="text-gray-400">
-                  60, ST. JOSEPH STREET,
-                  <br />
-                  ISLA, Malta
+                  60, ST. JOSEPH STREET, ISLA, Malta
                 </p>
               </div>
               <div className="flex items-start">
@@ -204,10 +207,10 @@ const Footer = () => {
 
           <div className="max-w-3xl mx-auto text-center">
             <h4 className="text-xl font-semibold mb-4">
-              Subscribe to our Newsletter
+              {t("footer.subcribh")}
             </h4>
             <p className="text-gray-400 mb-6">
-              Stay updated with the latest industry trends and job opportunities
+              {t("footer.subcribp")}
             </p>
             <form
               onSubmit={handleSubmit}
@@ -217,7 +220,7 @@ const Footer = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
+                placeholder={t("footer.email")}
                 className="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00BCFF] placeholder-gray-400"
                 required
               />
@@ -255,7 +258,7 @@ const Footer = () => {
                     Sending...
                   </>
                 ) : (
-                  "Subscribe"
+                  t("footer.sabcrpbtn")
                 )}
               </button>
             </form>
@@ -263,11 +266,11 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+        <div className="border-t border-gray-800 pt-8 ">
+          <p className="text-gray-500 text-sm mb-4 md:mb-0 text-center">
             © {new Date().getFullYear()} Cloud Konektion. All rights reserved.
           </p>
-          <div className="flex space-x-6">
+          {/* <div className="flex space-x-6">
             <a
               href="#"
               className="text-gray-500 hover:text-[#00BCFF] text-sm transition-colors"
@@ -280,13 +283,7 @@ const Footer = () => {
             >
               Terms of Service
             </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-[#00BCFF] text-sm transition-colors"
-            >
-              Cookies Policy
-            </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

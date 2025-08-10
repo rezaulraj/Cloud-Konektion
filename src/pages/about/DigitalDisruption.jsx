@@ -1,8 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaRocket, FaUserTie, FaGlobe, FaLightbulb } from "react-icons/fa";
 
 const DigitalDisruption = () => {
-  // SVG dot pattern component
+  const { t } = useTranslation();
+
   const DotPattern = () => (
     <svg
       className="absolute inset-0 w-full h-full opacity-10 z-0"
@@ -24,37 +26,27 @@ const DigitalDisruption = () => {
 
   return (
     <div className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Dot Pattern Background */}
       <DotPattern />
 
-      {/* Floating elements */}
       <div className="absolute top-1/4 left-10 w-24 h-24 rounded-full bg-[#00BCFF]/10 blur-xl animate-float"></div>
       <div className="absolute bottom-1/4 right-10 w-32 h-32 rounded-full bg-[#0066FF]/10 blur-xl animate-float-delay"></div>
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-sm font-semibold mb-6">
-              Since 2015
+              {t("aboutus.aboutsceneba")}
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              <span className="text-[#00BCFF]">Spearheading</span> Digital
-              Disruption
+              <span className="text-[#00BCFF]">{t("aboutus.aboutsubh1")}</span>
+              {t("aboutus.aboutsubh2")}
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              At Cloud Konektion Hired, we’re a team of passionate professionals
-              and industry veterans dedicated to helping businesses find the
-              right talent to fuel their growth and success. Founded in 2015 by
-              a group of experienced leaders with decades of combined expertise
-              in recruitment and organizational development, Cloud Konektion
-              Hired has been a trusted name in executive and specialist hiring
-              from the very beginning.
+              {t("aboutus.aboutsubp")}
             </p>
 
-            {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
                 <div className="flex items-center space-x-3">
@@ -62,7 +54,7 @@ const DigitalDisruption = () => {
                   <span className="text-2xl font-bold text-gray-900">500+</span>
                 </div>
                 <p className="text-sm text-gray-500 mt-2">
-                  Successful Placements
+                  {t("aboutus.aboutcard1t")}
                 </p>
               </div>
 
@@ -71,7 +63,7 @@ const DigitalDisruption = () => {
                   <FaUserTie className="text-2xl text-[#00BCFF]" />
                   <span className="text-2xl font-bold text-gray-900">15+</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">Years Experience</p>
+                <p className="text-sm text-gray-500 mt-2">{t("aboutus.aboutcard2t")}</p>
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
@@ -79,7 +71,7 @@ const DigitalDisruption = () => {
                   <FaGlobe className="text-2xl text-[#00BCFF]" />
                   <span className="text-2xl font-bold text-gray-900">40+</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">Countries</p>
+                <p className="text-sm text-gray-500 mt-2">{t("aboutus.aboutcard3t")}</p>
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
@@ -87,28 +79,25 @@ const DigitalDisruption = () => {
                   <FaLightbulb className="text-2xl text-[#00BCFF]" />
                   <span className="text-2xl font-bold text-gray-900">95%</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">Success Rate</p>
+                <p className="text-sm text-gray-500 mt-2">{t("aboutus.aboutcard4t")}</p>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Image Placeholder */}
           <div className="relative h-96 bg-gradient-to-br from-[#00BCFF]/10 to-[#0066FF]/10 rounded-2xl overflow-hidden flex items-center justify-center">
             <div className="text-center p-8 backdrop-blur-sm bg-white/80 rounded-xl max-w-md mx-auto border border-white/20">
               <FaRocket className="text-5xl text-[#00BCFF] mx-auto mb-4 animate-pulse" />
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Leaders in High-Impact Talent Acquisition
+                {t("aboutus.aboutcardrh")}
               </h3>
               <p className="text-gray-600">
-                We help businesses grow by finding the right people for the
-                roles that matter most.
+                {t("aboutus.aboutcardrp")}
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Animation styles */}
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,
