@@ -152,7 +152,7 @@ const Header = () => {
             )}
           </button>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-5">
             {navItems.map((item) => (
               <a
                 key={item.path}
