@@ -186,10 +186,22 @@ const JoinUs = () => {
             {t("joinus.readyToServep1")}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00BCFF]/90 transition-colors">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#contact");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00BCFF]/90 transition-colors"
+            >
               {t("joinus.readybtn1")}
             </button>
-            <button className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#contact");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+            >
               {t("joinus.readybtn2")}
             </button>
           </div>
