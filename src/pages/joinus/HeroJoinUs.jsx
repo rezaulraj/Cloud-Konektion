@@ -1,6 +1,6 @@
 import React from "react";
-import herojoin from "../../assets/join/heroj.webp";
-import join from "../../assets/join/join.jpeg";
+import herojoin from "../../assets/join/heroj.webp?url";
+import join from "../../assets/join/hand.jpg?url";
 import { useTranslation } from "react-i18next";
 
 const HeroJoinUs = () => {
@@ -38,7 +38,7 @@ const HeroJoinUs = () => {
                   const section = document.querySelector("#contact");
                   section?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex items-center gap-2 bg-[#00BCFF] text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="flex items-center gap-2 bg-[#00BCFF] text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
               >
                 {t("joinus.joinherobtn1")}
               </button>
@@ -47,7 +47,7 @@ const HeroJoinUs = () => {
                   const section = document.querySelector("#benefits");
                   section?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all duration-300 hover:shadow-lg"
+                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
                 {t("joinus.joinherobtn2")}
               </button>
@@ -77,7 +77,7 @@ const HeroJoinUs = () => {
               <img
                 src={join}
                 alt="Business partners collaborating"
-                className="rounded-2xl w-full border-4 border-white shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
+                className="rounded-2xl w-full shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
               />
 
               <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-400 rounded-full opacity-10 -z-10"></div>

@@ -13,6 +13,7 @@ import { GiGrowth, GiEarthAmerica } from "react-icons/gi";
 import { IoMdHeart } from "react-icons/io";
 import { FaCirclePlay } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const JoinUs = () => {
   const { t } = useTranslation();
@@ -186,21 +187,18 @@ const JoinUs = () => {
             {t("joinus.readyToServep1")}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button
-              onClick={() => {
-                const section = document.querySelector("#contact");
-                section?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00BCFF]/90 transition-colors"
+            <Link
+              to={"/for-candidates"}
+              className="px-8 py-3 bg-[#00BCFF] text-white rounded-lg font-medium hover:bg-[#00BCFF]/90 transition-colors cursor-pointer"
             >
               {t("joinus.readybtn1")}
-            </button>
+            </Link>
             <button
               onClick={() => {
                 const section = document.querySelector("#contact");
                 section?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+              className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors cursor-pointer"
             >
               {t("joinus.readybtn2")}
             </button>
