@@ -10,7 +10,6 @@ import {
 import bgimage from "../../assets/home/dot.svg?url";
 import { useTranslation } from "react-i18next";
 
-// Animated DotPattern component
 const DotPattern = () => (
   <motion.svg
     className="absolute inset-0 w-full h-full opacity-10 z-0"
@@ -68,7 +67,6 @@ const CompanyOverview = () => {
     },
   ];
 
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -149,7 +147,6 @@ const CompanyOverview = () => {
 
       <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column */}
           <motion.div className="space-y-8" variants={container}>
             <motion.div className="flex items-center space-x-3" variants={item}>
               <div className="w-12 h-1 bg-[#00BCFF]"></div>
@@ -174,7 +171,6 @@ const CompanyOverview = () => {
               {t("homepage.contryp1")} <br /> {t("homepage.contryp2")}
             </motion.p>
 
-            {/* Stats */}
             <motion.div
               className="grid grid-cols-2 gap-6 mt-8"
               variants={container}
@@ -205,14 +201,12 @@ const CompanyOverview = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Visual */}
           <motion.div className="relative" variants={slideIn}>
             <motion.div
               className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-50 to-cyan-50"
               whileInView={{ scale: [0.95, 1] }}
               transition={{ duration: 0.8 }}
             >
-              {/* Abstract SVG inside box */}
               <div className="absolute inset-0 opacity-30">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
                   {[...Array(20)].map((_, i) => (
@@ -268,7 +262,6 @@ const CompanyOverview = () => {
               </motion.div>
             </motion.div>
 
-            {/* Floating Blur Elements */}
             <motion.div
               className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-[#00BCFF]/10 blur-xl"
               variants={float}

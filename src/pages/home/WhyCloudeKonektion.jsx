@@ -71,7 +71,6 @@ const WhyCloudKonektion = () => {
     },
   ];
 
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -124,7 +123,6 @@ const WhyCloudKonektion = () => {
 
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Floating background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -145,7 +143,6 @@ const WhyCloudKonektion = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto">
-        {/* Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -174,7 +171,6 @@ const WhyCloudKonektion = () => {
           </motion.p>
         </motion.div>
 
-        {/* Reasons List */}
         <motion.div
           className="space-y-24"
           variants={container}
@@ -189,7 +185,6 @@ const WhyCloudKonektion = () => {
                 reason.imageRight ? "lg:flex-row-reverse" : "lg:flex-row"
               } gap-8 items-center`}
             >
-              {/* Image Column */}
               {reason.imageUrl && (
                 <motion.div
                   className="lg:w-1/2 h-96 rounded-xl overflow-hidden shadow-lg"
@@ -204,7 +199,6 @@ const WhyCloudKonektion = () => {
                 </motion.div>
               )}
 
-              {/* Text Column */}
               <motion.div
                 className={`lg:w-1/2 ${
                   reason.imageRight ? "lg:pr-12" : "lg:pl-12"
@@ -240,7 +234,6 @@ const WhyCloudKonektion = () => {
                   </motion.p>
                 ))}
 
-                {/* Features/Highlights/Benefits */}
                 <motion.div
                   className="mt-6 grid grid-cols-2 gap-4"
                   initial={{ opacity: 0 }}

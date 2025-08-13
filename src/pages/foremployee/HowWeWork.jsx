@@ -35,7 +35,6 @@ const HowWeWork = () => {
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="relative max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             {t("foremployee.howweworkh1")}{" "}
@@ -49,9 +48,7 @@ const HowWeWork = () => {
           </p>
         </div>
 
-        {/* Three Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          {/* Left Text */}
           <div className="lg:pt-10">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
               {t("foremployee.howweworkexph")}
@@ -62,17 +59,14 @@ const HowWeWork = () => {
             <p className="text-gray-600">{t("foremployee.howweworkexpp2")}</p>
           </div>
 
-          {/* Center Steps with Connecting Dots */}
           <div className="relative my-8 lg:my-0">
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#00BCFF] transform -translate-x-1/2"></div>
 
             <div className="space-y-10">
               {steps.map((step, index) => (
                 <div key={index} className="relative group">
-                  {/* Connecting Dot */}
                   <div className="hidden lg:block absolute left-1/2 top-5 w-4 h-4 rounded-full bg-[#00BCFF] transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
 
-                  {/* Step Card */}
                   <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 lg:ml-10 lg:mr-10">
                     <div className="flex flex-col items-center text-center">
                       <div className="w-16 h-16 rounded-full bg-[#00BCFF]/10 flex items-center justify-center mb-4">
@@ -89,7 +83,6 @@ const HowWeWork = () => {
             </div>
           </div>
 
-          {/* Right Text */}
           <div className="lg:pt-10">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
               {t("foremployee.howweworkperh")}

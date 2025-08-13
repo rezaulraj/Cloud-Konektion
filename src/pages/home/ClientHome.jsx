@@ -24,7 +24,6 @@ const ClientHome = () => {
     client8,
   ];
 
-  // Duplicate the array to create seamless looping
   const duplicatedClients = [...clients, ...clients];
   const marqueeRef = useRef(null);
   const containerRef = useRef(null);
@@ -36,14 +35,13 @@ const ClientHome = () => {
     if (!marquee) return;
 
     let animationFrame;
-    let speed = 1; // pixels per frame
+    let speed = 1;
     let position = 0;
     const marqueeWidth = marquee.scrollWidth / 2;
 
     const animate = () => {
       position -= speed;
 
-      // Reset position when half of marquee has scrolled
       if (position <= -marqueeWidth) {
         position = 0;
       }
@@ -54,7 +52,6 @@ const ClientHome = () => {
 
     animationFrame = requestAnimationFrame(animate);
 
-    // Pause on hover
     const handleMouseEnter = () => {
       speed = 0.2;
     };
@@ -72,7 +69,6 @@ const ClientHome = () => {
     };
   }, []);
 
-  // Scroll animation trigger
   useEffect(() => {
     if (isInView) {
       controls.start("visible");
@@ -81,7 +77,6 @@ const ClientHome = () => {
     }
   }, [isInView, controls]);
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -128,7 +123,6 @@ const ClientHome = () => {
           className="relative h-32 overflow-hidden"
           variants={itemVariants}
         >
-          {/* Marquee Container */}
           <motion.div
             ref={marqueeRef}
             className="absolute top-0 left-0 flex items-center h-full will-change-transform"
@@ -157,7 +151,6 @@ const ClientHome = () => {
             ))}
           </motion.div>
 
-          {/* Gradient Fades */}
           <motion.div
             className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"
             initial={{ opacity: 0 }}

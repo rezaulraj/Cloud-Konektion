@@ -59,7 +59,6 @@ const BenefitsSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t("forcandidats.whychosech1")}
@@ -73,14 +72,12 @@ const BenefitsSection = () => {
           </p>
         </div>
 
-        {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <div
               key={index}
               className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-100 group"
             >
-              {/* Icon Container with Gradient Background */}
               <div className="mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-white flex items-center justify-center group-hover:rotate-6 transition-transform duration-500">
                 {benefit.icon}
               </div>
@@ -92,7 +89,6 @@ const BenefitsSection = () => {
                 {benefit.description}
               </p>
 
-              {/* Animated Arrow (Appears on Hover) */}
               <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg
                   className="w-6 h-6 text-blue-500 animate-bounce-horizontal"
@@ -113,7 +109,6 @@ const BenefitsSection = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
         <div className="mt-20 bg-blue-600 rounded-2xl p-8 md:p-12 text-white shadow-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[

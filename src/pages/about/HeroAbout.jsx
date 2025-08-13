@@ -66,7 +66,6 @@ const HeroAbout = () => {
 
   return (
     <div className="relative h-screen min-h-[500px] w-full overflow-hidden">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={bgimage}
@@ -76,7 +75,6 @@ const HeroAbout = () => {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-lg mb-6">
@@ -93,20 +91,17 @@ const HeroAbout = () => {
           </p>
         </div>
 
-        {/* Client Logos Marquee */}
         <div className="absolute bottom-8 left-0 right-0 bg-white/10 backdrop-blur-sm py-8 overflow-hidden">
           <div
             ref={marqueeRef}
             className="flex items-center w-max will-change-transform"
           >
-            {/* Duplicate clients array for seamless looping */}
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={index}
                 className="mx-8 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:opacity-100"
                 style={{
                   opacity: 0.8,
-                  // filter: "grayscale(100%) brightness(0) invert(1)",
                 }}
               >
                 <img

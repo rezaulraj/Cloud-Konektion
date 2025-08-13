@@ -157,7 +157,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">
+            <h4 className="text-lg font-semibold mb-6 text-center">
               {t("footer.contactus")}
             </h4>
             <div className="space-y-4">
@@ -174,7 +174,7 @@ const Footer = () => {
                   - Al Qusais - Al Qusais 2 - Dubai - UAE
                 </p>
               </div>
-              <div className="flex items-start">
+              <div className="flex items-center justify-center">
                 <div className="flex-shrink-0 mt-1">
                   <FaCalendar className="h-5 w-5 text-[#00BCFF]" />
                 </div>
@@ -182,7 +182,7 @@ const Footer = () => {
                   <p className="text-gray-400">Mon-Fri, 9am-5pm PST</p>
                 </div>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <FaEnvelope className="text-[#00BCFF] mr-3" />
                 <a
                   href="mailto:info@cloudkonektion.com"
@@ -195,7 +195,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter */}
+       
         <div className="bg-gray-800 rounded-xl p-8 mb-12 relative overflow-hidden">
           <div
             className={`absolute top-0 left-0 right-0 bg-green-600/90 text-white transition-all duration-500 ease-in-out ${
@@ -266,7 +266,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
+        
         <div className="border-t border-gray-800 pt-8 ">
           <p className="text-gray-500 text-sm mb-4 md:mb-0 text-center">
             © {new Date().getFullYear()} Cloud Konektion. All rights reserved.

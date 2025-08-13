@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import {
   FaPaperclip,
@@ -7,7 +7,6 @@ import {
   FaPhone,
   FaFileAlt,
   FaLinkedin,
-  FaGithub,
   FaPinterest,
   FaYoutube,
   FaTiktok,
@@ -18,9 +17,11 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineWork, MdOutlineMessage } from "react-icons/md";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const ContactPageCandidate = () => {
   const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,6 +34,8 @@ const ContactPageCandidate = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,21 +57,25 @@ const ContactPageCandidate = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      setShowPopup(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-        cv: null,
-        motivationLetter: null,
-      });
-    }, 1500);
+      if (formRef.current) {
+        formRef.current.submit();
+      }
+    }, 100);
+  };
+
+  const handleFormSubmitSuccess = () => {
+    setIsSubmitting(false);
+    setShowPopup(true);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+      cv: null,
+      motivationLetter: null,
+    });
   };
 
   const closePopup = () => {
@@ -80,7 +87,6 @@ const ContactPageCandidate = () => {
       id="get-in-touch"
       className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8"
     >
-      {/* Success Popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
@@ -117,15 +123,6 @@ const ContactPageCandidate = () => {
                 >
                   Close
                 </button>
-                <button
-                  onClick={() => {
-                    console.log("Cancelled");
-                    closePopup();
-                  }}
-                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition"
-                >
-                  Cancel
-                </button>
               </div>
             </div>
           </div>
@@ -133,7 +130,6 @@ const ContactPageCandidate = () => {
       )}
 
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t("forcandidats.candicontacth1")}
@@ -147,7 +143,7 @@ const ContactPageCandidate = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+        
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="p-8 sm:p-10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
@@ -155,65 +151,60 @@ const ContactPageCandidate = () => {
                 {t("forcandidats.contactfromh")}
               </h2>
 
-              <form onSubmit={handleSubmit}>
+              <form
+                ref={formRef}
+                action="https://formsubmit.co/help@cloudkonektion.eu"
+                method="POST"
+                encType="multipart/form-data"
+                onSubmit={handleSubmit}
+              >
                 <div className="grid grid-cols-1 gap-6">
-                  {/* Name */}
+             
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FaUser className="text-gray-400" />
-                    </div>
+                    <FaUser className="absolute inset-y-0 left-3 text-gray-400 my-auto" />
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder={t("forcandidats.contactname")}
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
 
-                  {/* Email */}
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FaEnvelope className="text-gray-400" />
-                    </div>
+                    <FaEnvelope className="absolute inset-y-0 left-3 text-gray-400 my-auto" />
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder={t("forcandidats.contactemail")}
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
 
-                  {/* Phone */}
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FaPhone className="text-gray-400" />
-                    </div>
+                    <FaPhone className="absolute inset-y-0 left-3 text-gray-400 my-auto" />
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder={t("forcandidats.contactphone")}
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
 
-                  {/* Subject */}
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <MdOutlineWork className="text-gray-400" />
-                    </div>
+                    <MdOutlineWork className="absolute inset-y-0 left-3 text-gray-400 my-auto" />
                     <select
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none bg-white"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg"
                       required
                     >
                       <option value="">
@@ -231,33 +222,27 @@ const ContactPageCandidate = () => {
                     </select>
                   </div>
 
-                  {/* Message */}
-                  <div>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows="4"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder={t("forcandidats.contactmessage")}
-                      required
-                    ></textarea>
-                  </div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="4"
+                    placeholder={t("forcandidats.contactmessage")}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    required
+                  ></textarea>
 
-                  {/* CV Upload */}
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                     <label className="cursor-pointer">
-                      <div className="flex flex-col items-center justify-center">
-                        <FaFileAlt className="text-3xl text-blue-500 mb-2" />
-                        <p className="text-sm text-gray-600 mb-1">
-                          {formData.cv
-                            ? formData.cv.name
-                            : t("forcandidats.contactcv")}
-                        </p>
-                        <span className="text-sm text-blue-600 font-medium">
-                          {t("forcandidats.clickcandidate")}
-                        </span>
-                      </div>
+                      <FaFileAlt className="text-3xl text-blue-500 mb-2" />
+                      <p className="text-sm text-gray-600 mb-1">
+                        {formData.cv
+                          ? formData.cv.name
+                          : t("forcandidats.contactcv")}
+                      </p>
+                      <span className="text-sm text-blue-600 font-medium">
+                        {t("forcandidats.clickcandidate")}
+                      </span>
                       <input
                         type="file"
                         name="cv"
@@ -269,20 +254,17 @@ const ContactPageCandidate = () => {
                     </label>
                   </div>
 
-                  {/* Motivation Letter Upload */}
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                     <label className="cursor-pointer">
-                      <div className="flex flex-col items-center justify-center">
-                        <FaFileAlt className="text-3xl text-blue-500 mb-2" />
-                        <p className="text-sm text-gray-600 mb-1">
-                          {formData.motivationLetter
-                            ? formData.motivationLetter.name
-                            : "Upload Motivation Letter (Optional)"}
-                        </p>
-                        <span className="text-sm text-blue-600 font-medium">
-                          {t("forcandidats.clickcandidate")}
-                        </span>
-                      </div>
+                      <FaFileAlt className="text-3xl text-blue-500 mb-2" />
+                      <p className="text-sm text-gray-600 mb-1">
+                        {formData.motivationLetter
+                          ? formData.motivationLetter.name
+                          : "Upload Motivation Letter (Optional)"}
+                      </p>
+                      <span className="text-sm text-blue-600 font-medium">
+                        {t("forcandidats.clickcandidate")}
+                      </span>
                       <input
                         type="file"
                         name="motivationLetter"
@@ -293,55 +275,35 @@ const ContactPageCandidate = () => {
                     </label>
                   </div>
 
-                  {/* Submit Button */}
-                  <div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={`w-full flex justify-center items-center px-6 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all ${
-                        isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-                      }`}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <svg
-                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
-                          Processing...
-                        </>
-                      ) : (
-                        <>
-                          <FaPaperclip className="mr-2" />
-                          {t("forcandidats.contactbtn")}
-                        </>
-                      )}
-                    </button>
-                  </div>
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+
+                  <input
+                    type="hidden"
+                    name="_next"
+                    value="https://cloudconektion.com/"
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full flex justify-center items-center px-6 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700"
+                  >
+                    {isSubmitting ? (
+                      <AiOutlineLoading3Quarters className="animate-spin text-xl" />
+                    ) : (
+                      <>
+                        <FaPaperclip className="mr-2" />
+                        {t("forcandidats.contactbtn")}
+                      </>
+                    )}
+                  </button>
                 </div>
               </form>
             </div>
           </div>
 
-          {/* Contact Info */}
           <div className="space-y-8">
-            {/* Office Info */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {t("forcandidats.ouroffice")}
@@ -370,8 +332,38 @@ const ContactPageCandidate = () => {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-gray-600">60, ST. JOSEPH STREET,</p>
-                    <p className="text-gray-600">ISLA, Malta</p>
+                    <p className="text-gray-600">
+                      112-116 Whitechapel Road, London, England, UK, E1 1JE
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <svg
+                      className="h-6 w-6 text-blue-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-600">
+                      RAG Global Business Hub, Al Hilal Bank Building - Al Nahda
+                      St - Al Qusais - Al Qusais 2 - Dubai - UAE
+                    </p>
                   </div>
                 </div>
 
@@ -395,7 +387,6 @@ const ContactPageCandidate = () => {
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {t("forcandidats.contactwus")}
@@ -460,10 +451,9 @@ const ContactPageCandidate = () => {
               </div>
             </div>
 
-            {/* Map Embed */}
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3231.8883193835154!2d14.513150775680367!3d35.90075081788424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x130e452977901537%3A0x18a22beaac790ffc!2s60%20St.Joseph&#39;s%20Street%2C%20Il-Belt%20Valletta%2C%20Malta!3m2!1d35.9007465!2d14.515725699999999!4m0!5e0!3m2!1sen!2sbd!4v1752040902403!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.7443026977767!2d-0.0666426241439849!3d51.51790690993682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ccc7c9cb58b%3A0x837ef31a0b99463!2s112-116%20Whitechapel%20Rd%2C%20Greater%2C%20London%20E1%201JE%2C%20UK!5e0!3m2!1sen!2sbd!4v1755061491245!5m2!1sen!2sbd"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

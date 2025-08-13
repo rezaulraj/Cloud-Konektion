@@ -2,7 +2,7 @@ import React from "react";
 import { FaBuilding, FaHandshake, FaSearch } from "react-icons/fa";
 import rosaliePhoto from "../../assets/about/about1.webp?url";
 import maximePhoto from "../../assets/about/about2.webp?url";
-import location from "../../assets/about/office2.jpg?url";
+import location from "../../assets/join/location.jpg?url";
 import { useTranslation } from "react-i18next";
 
 const AboutStory = () => {
@@ -66,13 +66,18 @@ const AboutStory = () => {
             <div className="w-20 h-1 bg-[#00BCFF]"></div>
             <div className="flex items-start space-x-4">
               <FaBuilding className="text-2xl text-[#00BCFF] mt-1" />
-              <div>
+              <div className="space-y-3">
                 <p className="text-lg font-medium text-gray-900">
                   {t("aboutus.officeloc")}
                 </p>
-                <p className="text-gray-600">60, ST. JOSEPH STREET, ISLA</p>
+                <p className="text-gray-600">
+                 📍 112-116 Whitechapel Road, London, England, UK, E1 1JE
+                </p>
 
-                <p className="text-gray-600">Malta</p>
+                <p className="text-gray-600">
+                 📍 RAG Global Business Hub, Al Hilal Bank Building - Al Nahda St
+                  - Al Qusais - Al Qusais 2 - Dubai - UAE
+                </p>
               </div>
             </div>
           </div>

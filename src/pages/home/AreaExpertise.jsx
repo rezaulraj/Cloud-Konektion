@@ -95,7 +95,6 @@ const AreaExpertise = () => {
   return (
     <div id="our-expertise" className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +112,6 @@ const AreaExpertise = () => {
           </p>
         </motion.div>
 
-        {/* Expertise Grid */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -128,9 +126,7 @@ const AreaExpertise = () => {
               className="relative h-80 rounded-lg overflow-hidden shadow-lg group perspective-1000"
               whileHover={{ y: -5 }}
             >
-              {/* Flip Card Container */}
               <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
-                {/* Front Side with Image */}
                 <div
                   className="absolute w-full h-full backface-hidden bg-cover bg-center flex items-end p-6"
                   style={{ backgroundImage: `url(${area.imageUrl})` }}
@@ -144,7 +140,6 @@ const AreaExpertise = () => {
                   </div>
                 </div>
 
-                {/* Back Side with Content and Image */}
                 <div
                   className="absolute w-full h-full backface-hidden rotate-y-180 bg-cover bg-center flex items-center p-6"
                   style={{ backgroundImage: `url(${area.backImage})` }}

@@ -82,13 +82,20 @@ const ContactHelp = () => {
     e.preventDefault();
 
     try {
-      await fetch("https://formsubmit.co/ajax/rezaul.coderpro@gmail.com", {
+      await fetch("https://formsubmit.co/ajax/help@cloudkonektion.eu", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _captcha: false,
+          _next: "https://cloudconektion.com/thank-you",
+        }),
       });
 
       setShowPopup(true);
@@ -112,7 +119,6 @@ const ContactHelp = () => {
       id="contact"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Success Popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <motion.div

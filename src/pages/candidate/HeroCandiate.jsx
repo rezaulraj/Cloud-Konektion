@@ -3,7 +3,6 @@ import heroImage from "../../assets/candidate/heroc.jpg";
 import candidateImage from "../../assets/candidate/candidiate.jpg";
 import { FaHandshake, FaArrowRight } from "react-icons/fa";
 
-// Import all client images
 import client1 from "../../assets/about/cl1.png?url";
 import client2 from "../../assets/about/cl2.png?url";
 import client3 from "../../assets/about/cl3.png?url";
@@ -27,12 +26,11 @@ const HeroCandidate = () => {
     client8,
   ];
 
-  // Auto-scrolling effect for clients
   useEffect(() => {
     const scrollContainer = document.querySelector(".client-scroll");
     if (scrollContainer) {
       let scrollAmount = 0;
-      const scrollSpeed = 1; // Adjust speed here
+      const scrollSpeed = 1;
 
       const scroll = () => {
         scrollAmount += scrollSpeed;
@@ -49,7 +47,6 @@ const HeroCandidate = () => {
 
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center">
-      {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
@@ -59,10 +56,8 @@ const HeroCandidate = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800/90 to-gray-600/60"></div>
       </div>
 
-      {/* Content container */}
       <div className="relative z-10 container mx-auto px-6 py-24 lg:py-32">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Left side - Text content */}
           <div className="lg:w-1/2 text-white">
             <div className="flex items-center gap-3 mb-6">
               <FaHandshake className="text-[#00BCFF] text-3xl" />
@@ -94,7 +89,6 @@ const HeroCandidate = () => {
               </button>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-md">
               {[
                 {
@@ -117,7 +111,6 @@ const HeroCandidate = () => {
             </div>
           </div>
 
-          {/* Right side - Image with hover effect */}
           <div className="lg:w-1/2 relative mt-12 lg:mt-0">
             <div className="relative w-full max-w-xl mx-auto overflow-hidden">
               <img
@@ -132,20 +125,16 @@ const HeroCandidate = () => {
           </div>
         </div>
 
-        {/* Auto-scrolling clients */}
         <div className="mt-24 lg:mt-32 relative">
           <h3 className="text-center text-white text-xl mb-8 font-medium">
             {t("forcandidats.partner")}
           </h3>
 
           <div className="relative overflow-hidden py-4">
-            {/* Gradient fade effect */}
             <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-900/70 to-transparent z-20"></div>
             <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-900/70 to-transparent z-20"></div>
 
-            {/* Infinite scrolling clients */}
             <div className="client-scroll flex items-center gap-12 w-max bg-[#00BCFF]/20">
-              {/* Double the array for seamless looping */}
               {[...clients, ...clients].map((client, index) => (
                 <div
                   key={index}

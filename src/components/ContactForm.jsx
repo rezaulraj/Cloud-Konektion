@@ -27,10 +27,10 @@ const ContactForm = ({ show, onClose }) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // stop normal HTML submit
+    e.preventDefault();
     setIsLoading(true);
     try {
-      await fetch("https://formsubmit.co/ajax/rezaul.coderpro@gmail.com", {
+      await fetch("https://formsubmit.co/ajax/help@cloudkonektion.eu", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const ContactForm = ({ show, onClose }) => {
           phone: formData.phone,
           message: formData.message,
           _captcha: false,
-          _next: "https://cloud-konektion-ltd.netlify.app/thank-you",
+          _next: "https://cloudconektion.com/thank-you",
         }),
       });
 
@@ -82,7 +82,6 @@ const ContactForm = ({ show, onClose }) => {
                   {t("modelContact.headContact")}
                 </h3>
                 <form onSubmit={handleSubmit}>
-                  {/* Name */}
                   <div>
                     <div className="flex items-center mb-2">
                       <FiUser className="text-gray-500 mr-2" />
@@ -101,7 +100,6 @@ const ContactForm = ({ show, onClose }) => {
                     />
                   </div>
 
-                  {/* Email */}
                   <div>
                     <div className="flex items-center mb-2">
                       <FiMail className="text-gray-500 mr-2" />
@@ -120,7 +118,6 @@ const ContactForm = ({ show, onClose }) => {
                     />
                   </div>
 
-                  {/* Phone */}
                   <div>
                     <div className="flex items-center mb-2">
                       <FiPhone className="text-gray-500 mr-2" />
@@ -139,7 +136,6 @@ const ContactForm = ({ show, onClose }) => {
                     />
                   </div>
 
-                  {/* Message */}
                   <div>
                     <div className="flex items-center mb-2">
                       <FiMessageSquare className="text-gray-500 mr-2" />
@@ -158,7 +154,6 @@ const ContactForm = ({ show, onClose }) => {
                     ></textarea>
                   </div>
 
-                  {/* Buttons */}
                   <div className="mt-8 flex space-x-4">
                     <button
                       type="submit"

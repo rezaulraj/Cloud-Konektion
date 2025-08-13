@@ -15,7 +15,6 @@ import {
   FaHammer,
 } from "react-icons/fa";
 
-// Service images
 import constructionImg from "../../assets/service/construction.jpg";
 import manufacturingImg from "../../assets/service/manufacturing.jpg";
 import logisticsImg from "../../assets/service/logistics.jpg";
@@ -169,7 +168,6 @@ const AllServices = () => {
   return (
     <div className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -186,7 +184,6 @@ const AllServices = () => {
           </p>
         </motion.div>
 
-        {/* Services List */}
         <div className="space-y-28">
           {services.map((service, index) => (
             <motion.div
@@ -199,7 +196,6 @@ const AllServices = () => {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } gap-12 items-center`}
             >
-              {/* Text Content */}
               <div className="md:w-1/2">
                 <div className="flex items-center mb-6 gap-3">
                   <div className="flex gap-2">
@@ -260,7 +256,6 @@ const AllServices = () => {
                 </button>
               </div>
 
-              {/* Image */}
               <div className="md:w-1/2">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -285,7 +280,6 @@ const AllServices = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -294,7 +288,7 @@ const AllServices = () => {
           className="mt-28 bg-gradient-to-r from-[#00BCFF] to-[#0077FF] rounded-2xl p-12 text-center text-white shadow-xl"
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6">
-           {t("services.customservicesh")}
+            {t("services.customservicesh")}
           </h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             {t("services.customservicesp")}

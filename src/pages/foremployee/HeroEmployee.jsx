@@ -7,7 +7,6 @@ const HeroEmployee = () => {
   const { t } = useTranslation();
   return (
     <div className="relative h-[100vh] min-h-[400px] w-full overflow-hidden">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
@@ -17,7 +16,6 @@ const HeroEmployee = () => {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -44,7 +42,6 @@ const HeroEmployee = () => {
         </div>
       </div>
 
-      {/* Stats Bar */}
       <div className="absolute bottom-0 left-0 right-0 bg-black/70 py-4">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 gap-4 text-center text-white">
@@ -67,11 +64,9 @@ const HeroEmployee = () => {
         </div>
       </div>
 
-      {/* Floating Elements */}
       <div className="absolute bottom-10 left-10 w-24 h-24 rounded-full bg-[#00BCFF]/10 blur-xl animate-float"></div>
       <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-[#0066FF]/10 blur-xl animate-float-delay"></div>
 
-      {/* Animation styles */}
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,

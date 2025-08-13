@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 const Consultation = () => {
   const { t } = useTranslation();
-  // Animation variants
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -64,7 +64,6 @@ const Consultation = () => {
 
   return (
     <div className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Image with Overlay */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: `url(${bgimage})` }}
@@ -80,7 +79,6 @@ const Consultation = () => {
         />
       </motion.div>
 
-      {/* Content */}
       <motion.div
         className="relative z-10 max-w-7xl mx-auto"
         initial="hidden"
@@ -107,7 +105,6 @@ const Consultation = () => {
           </motion.p>
         </motion.div>
 
-        {/* Consultation Card */}
         <motion.div
           className="bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden max-w-2xl mx-auto"
           variants={item}
@@ -130,7 +127,6 @@ const Consultation = () => {
               {t("homepage.freech1")}
             </motion.h3>
 
-            {/* Contact Options */}
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
               variants={container}
@@ -167,7 +163,6 @@ const Consultation = () => {
               ))}
             </motion.div>
 
-            {/* CTA Button */}
             <motion.button
               onClick={() => {
                 const section = document.querySelector("#contact");
@@ -184,7 +179,6 @@ const Consultation = () => {
         </motion.div>
       </motion.div>
 
-      {/* Floating Elements */}
       <motion.div
         className="absolute top-1/4 left-10 w-24 h-24 rounded-full bg-[#00BCFF]/10 blur-xl"
         variants={float}

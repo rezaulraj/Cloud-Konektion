@@ -295,6 +295,7 @@
     "emformplas": "Your organization",
     "emfromname": "Your Name",
     "emfromemail": "Work Email",
+    "emfromphone": "Work Phone",
     "emfromhneed": "Hiring Needs",
     "emfromhop1": "Select your hiring needs",
     "emfromhop2": "Executive/C-level",
@@ -446,7 +447,7 @@
     "aboutperosonbtn": "Learn more about our processes",
 
     "ouroffice": "Our Office",
-    "officeloc": "Cloud Konektion Hired Malta",
+    "officeloc": "Cloud Konektion Hired Worldwide",
     "offc": "Office Location"
   },
   "joinus": {
