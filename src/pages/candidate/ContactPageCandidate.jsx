@@ -279,7 +279,7 @@ const ContactPageCandidate = () => {
                   <input
                     type="hidden"
                     name="_next"
-                    value="https://cloud-konektion-ltd.netlify.app/thank-you"
+                    value="https://cloudconektion.com/thank-you"
                   />
 
                   <button

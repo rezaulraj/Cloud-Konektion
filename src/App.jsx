@@ -8,6 +8,7 @@ import AboutPage from "./pages/about/AboutPage";
 import CandidatePage from "./pages/candidate/CandidatePage";
 import JoinUsPage from "./pages/joinus/JoinUsPage";
 import ServicePage from "./pages/service/ServicePage";
+import ThankYouPage from "./components/ThankYouPage";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
           <Route path="for-candidates" element={<CandidatePage />} />
           <Route path="join-as-partner" element={<JoinUsPage />} />
           <Route path="services" element={<ServicePage />} />
+          <Route path="thank-you" element={<ThankYouPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -62,7 +62,7 @@ const TalentExperts = () => {
             hiringNeeds: formData.hiringNeeds,
             message: formData.message,
             _captcha: false,
-            _next: "https://cloud-konektion-ltd.netlify.app/thank-you",
+            _next: "https://cloudconektion.com/thank-you",
           }),
         }
       );

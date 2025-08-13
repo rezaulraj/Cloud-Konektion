@@ -44,7 +44,7 @@ const ContactForm = ({ show, onClose }) => {
             phone: formData.phone,
             message: formData.message,
             _captcha: false,
-            _next: "https://cloud-konektion-ltd.netlify.app/thank-you",
+            _next: "https://cloudconektion.com/thank-you",
           }),
         }
       );
