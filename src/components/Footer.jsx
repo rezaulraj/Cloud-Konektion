@@ -59,7 +59,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
           <div className="space-y-6 ">
             <a href="/">
               <img src={logo3} alt="" className="h-20" />
@@ -119,7 +118,6 @@ const Footer = () => {
             </div>
           </div>
 
-          
           <div>
             <h4 className="text-lg font-semibold mb-6">
               {t("footer.quicklinkh")}
@@ -139,7 +137,6 @@ const Footer = () => {
             </ul>
           </div>
 
-         
           <div>
             <h4 className="text-lg font-semibold mb-6">
               {t("footer.quicklink2")}
@@ -159,16 +156,22 @@ const Footer = () => {
             </ul>
           </div>
 
-         
           <div>
             <h4 className="text-lg font-semibold mb-6">
               {t("footer.contactus")}
             </h4>
             <div className="space-y-4">
-              <div className="flex items-start">
+              <div className="flex flex-col items-center text-center">
                 <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
                 <p className="text-gray-400">
-                  60, ST. JOSEPH STREET, ISLA, Malta
+                  112-116 Whitechapel Road, London, England, UK, E1 1JE
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
+                <p className="text-gray-400">
+                  RAG Global Business Hub, Al Hilal Bank Building - Al Nahda St
+                  - Al Qusais - Al Qusais 2 - Dubai - UAE
                 </p>
               </div>
               <div className="flex items-start">
@@ -209,9 +212,7 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-4">
               {t("footer.subcribh")}
             </h4>
-            <p className="text-gray-400 mb-6">
-              {t("footer.subcribp")}
-            </p>
+            <p className="text-gray-400 mb-6">{t("footer.subcribp")}</p>
             <form
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"

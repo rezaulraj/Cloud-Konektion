@@ -18,6 +18,7 @@ const ContactForm = ({ show, onClose }) => {
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +27,7 @@ const ContactForm = ({ show, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // stop normal HTML submit
-
+    setIsLoading(true);
     try {
       await fetch("https://formsubmit.co/ajax/rezaul.coderpro@gmail.com", {
         method: "POST",
@@ -51,8 +52,10 @@ const ContactForm = ({ show, onClose }) => {
         setFormData({ name: "", email: "", phone: "", message: "" });
         onClose();
       }, 3000);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error sending form:", error);
+      setIsLoading(false);
     }
   };
 
@@ -167,7 +170,11 @@ const ContactForm = ({ show, onClose }) => {
                       onClick={onClose}
                       className="flex-1 bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
                     >
-                      {t("modelContact.ourbtn2")}
+                      {isLoading ? (
+                        <AiOutlineLoading3Quarters className="size-8 animate-spin" />
+                      ) : (
+                        t("modelContact.ourbtn2")
+                      )}
                     </button>
                   </div>
                 </form>

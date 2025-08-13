@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaComment, FaTimes, FaPhone } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaComment,
+  FaTimes,
+  FaPhone,
+} from "react-icons/fa";
 import contact from "../../assets/home/contact.jpg";
 import { useTranslation } from "react-i18next";
 
@@ -72,15 +78,29 @@ const ContactHelp = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setShowPopup(true);
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+
+    try {
+      await fetch("https://formsubmit.co/ajax/rezaul.coderpro@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      setShowPopup(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending form:", error);
+    }
   };
 
   const closePopup = () => {
