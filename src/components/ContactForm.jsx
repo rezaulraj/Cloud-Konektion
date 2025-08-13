@@ -57,77 +57,96 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
                   {t("modelContact.headContact")}
                 </h3>
-                <form onSubmit={handleSubmit}>
-                  <div className="space-y-4">
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <FiUser className="text-gray-500 mr-2" />
-                        <label htmlFor="name" className="text-gray-700">
-                          {t("modelContact.ourName")}
-                        </label>
-                      </div>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                        required
-                      />
+                <form
+                  action="https://formsubmit.co/rezaul.coderpro@gmail.com"
+                  method="POST"
+                  onSubmit={handleSubmit}
+                >
+                  {/* Hidden FormSubmit settings */}
+                  <input
+                    type="hidden"
+                    name="_next"
+                    value="https://cloud-konektion-ltd.netlify.app/thank-you"
+                  />
+                  <input type="hidden" name="_captcha" value="false" />
+
+                  {/* Name */}
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <FiUser className="text-gray-500 mr-2" />
+                      <label htmlFor="name" className="text-gray-700">
+                        {t("modelContact.ourName")}
+                      </label>
                     </div>
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <FiMail className="text-gray-500 mr-2" />
-                        <label htmlFor="email" className="text-gray-700">
-                          {t("modelContact.ourEmail")}
-                        </label>
-                      </div>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <FiPhone className="text-gray-500 mr-2" />
-                        <label htmlFor="number" className="text-gray-700">
-                          {t("modelContact.ourphone")}
-                        </label>
-                      </div>
-                      <input
-                        type="tel"
-                        id="number"
-                        name="number"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <FiMessageSquare className="text-gray-500 mr-2" />
-                        <label htmlFor="message" className="text-gray-700">
-                          {t("modelContact.ourmesssage")}
-                        </label>
-                      </div>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows="4"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                        required
-                      ></textarea>
-                    </div>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
+                    />
                   </div>
+
+                  {/* Email */}
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <FiMail className="text-gray-500 mr-2" />
+                      <label htmlFor="email" className="text-gray-700">
+                        {t("modelContact.ourEmail")}
+                      </label>
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <FiPhone className="text-gray-500 mr-2" />
+                      <label htmlFor="phone" className="text-gray-700">
+                        {t("modelContact.ourphone")}
+                      </label>
+                    </div>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <FiMessageSquare className="text-gray-500 mr-2" />
+                      <label htmlFor="message" className="text-gray-700">
+                        {t("modelContact.ourmesssage")}
+                      </label>
+                    </div>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows="4"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
+                    ></textarea>
+                  </div>
+
+                  {/* Buttons */}
                   <div className="mt-8 flex space-x-4">
                     <button
                       type="submit"
