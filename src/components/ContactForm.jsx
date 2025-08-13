@@ -9,7 +9,7 @@ import {
   FiUser,
 } from "react-icons/fi";
 
-const ContactForm = ({ show, onClose, onSubmit }) => {
+const ContactForm = ({ show, onClose }) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
@@ -24,16 +24,36 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
-    setFormSubmitted(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // stop normal HTML submit
 
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      onClose();
-    }, 3000);
+    try {
+      await fetch("https://formsubmit.co/ajax/rezaul.coderpro@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _captcha: false,
+          _next: "https://cloud-konektion-ltd.netlify.app/thank-you",
+        }),
+      });
+
+      setFormSubmitted(true);
+
+      setTimeout(() => {
+        setFormSubmitted(false);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        onClose();
+      }, 3000);
+    } catch (error) {
+      console.error("Error sending form:", error);
+    }
   };
 
   return (
@@ -57,19 +77,7 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
                   {t("modelContact.headContact")}
                 </h3>
-                <form
-                  action="https://formsubmit.co/rezaul.coderpro@gmail.com"
-                  method="POST"
-                  onSubmit={handleSubmit}
-                >
-                  {/* Hidden FormSubmit settings */}
-                  <input
-                    type="hidden"
-                    name="_next"
-                    value="https://cloud-konektion-ltd.netlify.app/thank-you"
-                  />
-                  <input type="hidden" name="_captcha" value="false" />
-
+                <form onSubmit={handleSubmit}>
                   {/* Name */}
                   <div>
                     <div className="flex items-center mb-2">
@@ -186,4 +194,5 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
     </AnimatePresence>
   );
 };
+
 export default ContactForm;
