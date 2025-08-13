@@ -82,21 +82,24 @@ const ContactHelp = () => {
     e.preventDefault();
 
     try {
-      await fetch("https://formsubmit.co/ajax/help@cloudkonektion.eu", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          _captcha: false,
-          _next: "https://cloudconektion.com/thank-you",
-        }),
-      });
+      await fetch(
+        "https://formsubmit.co/ajax/f168c77342dba22aebfaa8e411f0b904",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            _captcha: false,
+            _next: "https://cloud-konektion-ltd.netlify.app/thank-you",
+          }),
+        }
+      );
 
       setShowPopup(true);
       setFormData({

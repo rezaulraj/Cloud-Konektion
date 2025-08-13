@@ -47,7 +47,7 @@ const TalentExperts = () => {
 
     try {
       const res = await fetch(
-        "https://formsubmit.co/ajax/help@cloudkonektion.eu",
+        "https://formsubmit.co/ajax/f168c77342dba22aebfaa8e411f0b904",
         {
           method: "POST",
           headers: {
@@ -62,7 +62,7 @@ const TalentExperts = () => {
             hiringNeeds: formData.hiringNeeds,
             message: formData.message,
             _captcha: false,
-            _next: "https://cloudconektion.com/thank-you",
+            _next: "https://cloud-konektion-ltd.netlify.app/thank-you",
           }),
         }
       );

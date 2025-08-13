@@ -143,7 +143,6 @@ const ContactPageCandidate = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="p-8 sm:p-10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
@@ -153,13 +152,12 @@ const ContactPageCandidate = () => {
 
               <form
                 ref={formRef}
-                action="https://formsubmit.co/help@cloudkonektion.eu"
+                action="https://formsubmit.co/f168c77342dba22aebfaa8e411f0b904"
                 method="POST"
                 encType="multipart/form-data"
                 onSubmit={handleSubmit}
               >
                 <div className="grid grid-cols-1 gap-6">
-             
                   <div className="relative">
                     <FaUser className="absolute inset-y-0 left-3 text-gray-400 my-auto" />
                     <input
@@ -281,7 +279,7 @@ const ContactPageCandidate = () => {
                   <input
                     type="hidden"
                     name="_next"
-                    value="https://cloudconektion.com/"
+                    value="https://cloud-konektion-ltd.netlify.app/thank-you"
                   />
 
                   <button
