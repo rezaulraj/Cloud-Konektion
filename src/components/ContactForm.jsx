@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import {
   FiCheckCircle,
   FiMail,
@@ -163,18 +164,18 @@ const ContactForm = ({ show, onClose }) => {
                       type="submit"
                       className="flex-1 bg-[#00BCFF] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg"
                     >
-                      {t("modelContact.ourbtn1")}
+                      {isLoading ? (
+                        <AiOutlineLoading3Quarters className="size-8 animate-spin" />
+                      ) : (
+                        t("modelContact.ourbtn1")
+                      )}
                     </button>
                     <button
                       type="button"
                       onClick={onClose}
                       className="flex-1 bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
                     >
-                      {isLoading ? (
-                        <AiOutlineLoading3Quarters className="size-8 animate-spin" />
-                      ) : (
-                        t("modelContact.ourbtn2")
-                      )}
+                      {t("modelContact.ourbtn2")}
                     </button>
                   </div>
                 </form>
