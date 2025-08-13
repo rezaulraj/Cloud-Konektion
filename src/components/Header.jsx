@@ -262,7 +262,7 @@ const Header = () => {
 
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <h4 className="text-gray-500 text-xl mb-4 font-medium">
-                  {t("select_language")}
+                  Select Language
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
                   {languages.map((language) => (
@@ -298,7 +298,7 @@ const Header = () => {
                 className="w-full mt-2 px-6 py-4 bg-[#00BCFF] text-white rounded-xl text-xl font-medium flex items-center justify-center space-x-3 hover:bg-blue-600 transition-colors duration-300"
               >
                 <FiMail className="text-2xl" />
-                <span>{t("headers.contact_us")}</span>
+                <span>{t("headers.contact")}</span>
               </button>
             </div>
           </div>
