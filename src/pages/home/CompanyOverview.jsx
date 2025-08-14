@@ -47,7 +47,7 @@ const CompanyOverview = () => {
   const stats = [
     {
       icon: <FaGlobeAsia className="text-3xl text-[#00BCFF]" />,
-      value: "1",
+      value: "6",
       label: t("homepage.contryn1"),
     },
     {
@@ -62,7 +62,7 @@ const CompanyOverview = () => {
     },
     {
       icon: <FaLightbulb className="text-3xl text-[#00BCFF]" />,
-      value: "10+",
+      value: "15+",
       label: t("homepage.contryn4"),
     },
   ];

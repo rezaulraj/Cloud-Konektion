@@ -115,8 +115,12 @@ const PartnerHome = () => {
             whileHover={{ scale: 1.01 }}
           >
             {t("homepage.cpheading1")}
-            <br className="hidden lg:block" /> {t("homepage.cpheading2")}
-            <span className="text-[#00BCFF]">{t("homepage.cpheading3")}</span>
+            <br className="hidden lg:block" />
+            <span className="text-[#00BCFF]">
+              {t("homepage.cpheading2")}
+            </span>{" "}
+            <br />
+            <span className="">{t("homepage.cpheading3")}</span>
           </motion.h1>
 
           <motion.p
@@ -164,8 +168,8 @@ const PartnerHome = () => {
 
         <motion.div className="text-center" variants={item}>
           <motion.a
-            href="about-us"
-            className="group inline-flex items-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg text-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg"
+            href="/join-as-partner"
+            className="group inline-flex items-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg text-lg font-semibold hover:bg-[#00BCFF]/90 transition-all duration-300 hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

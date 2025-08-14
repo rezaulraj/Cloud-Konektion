@@ -106,7 +106,7 @@ const Consultation = () => {
         </motion.div>
 
         <motion.div
-          className="bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden max-w-2xl mx-auto"
+          className="bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden max-w-4xl mx-auto"
           variants={item}
           whileHover={{
             y: -5,
@@ -128,7 +128,7 @@ const Consultation = () => {
             </motion.h3>
 
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
               variants={container}
             >
               {[
@@ -140,7 +140,12 @@ const Consultation = () => {
                 {
                   icon: <FaMapMarkerAlt />,
                   title: t("homepage.freecit3"),
-                  text: "60, ST. JOSEPH STREET,ISLA, Malta",
+                  text: "112-116 Whitechapel Road, London, England, UK, E1 1JE",
+                },
+                {
+                  icon: <FaMapMarkerAlt />,
+                  title: t("homepage.freecit3"),
+                  text: "RAG Global Business Hub, Al Hilal Bank Building - Al Nahda St - Al Qusais - Al Qusais 2 - Dubai - UAE",
                 },
               ].map((option, index) => (
                 <motion.div

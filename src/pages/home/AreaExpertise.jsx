@@ -10,6 +10,15 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import {
+  MdFoodBank,
+  MdOutlineAgriculture,
+  MdOutlineWarehouse,
+} from "react-icons/md";
+import { IoFastFoodOutline } from "react-icons/io5";
+import { LuPaintbrush } from "react-icons/lu";
+import { BsLightningFill } from "react-icons/bs";
+import { HiBuildingOffice2 } from "react-icons/hi2";
 
 const AreaExpertise = () => {
   const { t } = useTranslation();
@@ -67,6 +76,60 @@ const AreaExpertise = () => {
         "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       backImage:
         "https://images.unsplash.com/photo-1645651964715-d200ce0939cc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      icon: <MdOutlineWarehouse className="text-4xl text-white" />,
+      title: t("homepage.areaexpratch7"),
+      description: t("homepage.areaexpratcp7"),
+      imageUrl:
+        "https://images.unsplash.com/photo-1709804945989-c8be542e04db?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backImage:
+        "https://plus.unsplash.com/premium_photo-1682129645836-7334b684f0eb?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      icon: <MdFoodBank className="text-4xl text-white" />,
+      title: t("homepage.areaexpratch8"),
+      description: t("homepage.areaexpratcp8"),
+      imageUrl:
+        "https://images.unsplash.com/photo-1652211955967-99c892925469?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backImage:
+        "https://images.unsplash.com/photo-1634145897576-7ffcc5125a24?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      icon: <MdOutlineAgriculture className="text-4xl text-white" />,
+      title: t("homepage.areaexpratch9"),
+      description: t("homepage.areaexpratcp9"),
+      imageUrl:
+        "https://plus.unsplash.com/premium_photo-1661962692059-55d5a4319814?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backImage:
+        "https://plus.unsplash.com/premium_photo-1661495969007-06e175a86112?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      icon: <LuPaintbrush className="text-4xl text-white" />,
+      title: t("homepage.areaexpratch10"),
+      description: t("homepage.areaexpratcp10"),
+      imageUrl:
+        "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=831&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backImage:
+        "https://plus.unsplash.com/premium_photo-1680297036893-d6faac34ea94?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      icon: <BsLightningFill className="text-4xl text-white" />,
+      title: t("homepage.areaexpratch11"),
+      description: t("homepage.areaexpratcp11"),
+      imageUrl:
+        "https://plus.unsplash.com/premium_photo-1682086494759-b459f6eff2df?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backImage:
+        "https://images.unsplash.com/photo-1576446468729-7674e99608f5?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      icon: <HiBuildingOffice2 className="text-4xl text-white" />,
+      title: t("homepage.areaexpratch12"),
+      description: t("homepage.areaexpratcp12"),
+      imageUrl:
+        "https://images.unsplash.com/photo-1586534313131-8b27a31f9894?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      backImage:
+        "https://images.unsplash.com/photo-1709715357479-591f9971fb05?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 

@@ -115,8 +115,8 @@ const HeroHome = () => {
               transition={{ delay: 0.6 }}
             >
               <p className="text-lg md:text-xl text-white bg-black/40 px-4 py-2 rounded-lg inline-block">
-                {t("homepage.contry")}
-                <span className="font-bold text-[#00BCFF]">
+                {/* {t("homepage.contry")} */}
+                <span className="font-bold text-white">
                   {t("homepage.herotag2")}
                 </span>
               </p>
