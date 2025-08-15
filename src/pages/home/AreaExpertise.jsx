@@ -179,7 +179,7 @@ const AreaExpertise = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {expertiseAreas.map((area, index) => (
@@ -187,7 +187,7 @@ const AreaExpertise = () => {
               key={index}
               variants={item}
               className="relative h-80 rounded-lg overflow-hidden shadow-lg group perspective-1000"
-              whileHover={{ y: -5 }}
+              // whileHover={{ y: -5 }}
             >
               <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
                 <div

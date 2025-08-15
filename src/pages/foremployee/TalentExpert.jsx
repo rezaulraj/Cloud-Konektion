@@ -96,7 +96,10 @@ const TalentExperts = () => {
   };
 
   return (
-    <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div
+      id="meet-our-team"
+      className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <div

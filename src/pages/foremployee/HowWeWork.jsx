@@ -33,7 +33,10 @@ const HowWeWork = () => {
   ];
 
   return (
-    <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div
+      id="how-we-work"
+      className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">

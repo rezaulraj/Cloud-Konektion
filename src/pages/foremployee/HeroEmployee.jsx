@@ -32,10 +32,22 @@ const HeroEmployee = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-            <button className="flex items-center gap-2 bg-[#00BCFF] hover:bg-[#0095D9] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#how-we-work");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex items-center gap-2 bg-[#00BCFF] hover:bg-[#0095D9] text-white px-8 py-3 rounded-lg font-semibold transition-colors cursor-pointer"
+            >
               <FaSearch /> {t("foremployee.employeeherobtn1")}
             </button>
-            <button className="flex items-center gap-2 bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#meet-our-team");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex items-center gap-2 bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors cursor-pointer"
+            >
               <FaUserTie /> {t("foremployee.employeeherobtn2")}
             </button>
           </div>
