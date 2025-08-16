@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "../../assets/home/herohome.webp";
 import {
@@ -9,9 +9,11 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import Calendly from "../../components/Calendly";
 
 const HeroHome = () => {
   const { t } = useTranslation();
+  const [showCalendly, setShowCalendly] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -157,10 +159,7 @@ const HeroHome = () => {
               </motion.button>
 
               <motion.button
-                onClick={() => {
-                  const section = document.querySelector("#contact");
-                  section?.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={() => setShowCalendly(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="relative cursor-pointer overflow-hidden group px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:-translate-y-1"
@@ -233,6 +232,7 @@ const HeroHome = () => {
           </div>
         </motion.div> */}
       </div>
+      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
     </div>
   );
 };

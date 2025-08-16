@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaBuilding,
@@ -13,6 +13,19 @@ import {
   FaUtensils,
   FaTree,
   FaHammer,
+  FaBoxOpen,
+  FaClipboardList,
+  FaAppleAlt,
+  FaBlender,
+  FaTractor,
+  FaLeaf,
+  FaPaintRoller,
+  FaSprayCan,
+  FaBolt,
+  FaCogs,
+  FaLaptop,
+  FaPhone,
+  FaFileAlt,
 } from "react-icons/fa";
 
 import constructionImg from "../../assets/service/construction.jpg";
@@ -21,7 +34,14 @@ import logisticsImg from "../../assets/service/logistics.jpg";
 import facilityImg from "../../assets/service/facility.webp";
 import hospitalityImg from "../../assets/service/hospitality.avif";
 import woodworkImg from "../../assets/service/woodwork.avif";
+import warehouseImg from "../../assets/service/warehouse.jpg";
+import foodproductionImg from "../../assets/service/foodproduction.jpg";
+import agricultureImg from "../../assets/service/agriculture.jpg";
+import paintingImg from "../../assets/service/painting.jpg";
+import electricalImg from "../../assets/service/electrical.webp";
+import officeImg from "../../assets/service/office.jpg";
 import { useTranslation } from "react-i18next";
+import Calendly from "../../components/Calendly";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
@@ -36,6 +56,7 @@ const fadeIn = {
 };
 
 const AllServices = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
   const { t } = useTranslation();
   const services = [
     {
@@ -164,6 +185,132 @@ const AllServices = () => {
       ],
       image: woodworkImg,
     },
+    {
+      icons: [
+        <FaBoxOpen key="BoxOpen" className="text-3xl text-[#00BCFF]" />,
+        <FaClipboardList key="Clipboard" className="text-3xl text-[#00BCFF]" />,
+      ],
+      title: t("services.service7h1"),
+      highlights: [
+        t("services.service7hlist1"),
+        t("services.service7hlist2"),
+        t("services.service7hlist3"),
+        t("services.service7hlist4"),
+      ],
+      description: t("services.service7p"),
+      benefits: [
+        t("services.service7belist1"),
+        t("services.service7belist2"),
+        t("services.service7belist3"),
+        t("services.service7belist4"),
+      ],
+      image: warehouseImg,
+    },
+    {
+      icons: [
+        <FaAppleAlt key="BoxOpen" className="text-3xl text-[#00BCFF]" />,
+        <FaBlender key="Clipboard" className="text-3xl text-[#00BCFF]" />,
+      ],
+      title: t("services.service8h1"),
+      highlights: [
+        t("services.service8hlist1"),
+        t("services.service8hlist2"),
+        t("services.service8hlist3"),
+        t("services.service8hlist4"),
+      ],
+      description: t("services.service8p"),
+      benefits: [
+        t("services.service8belist1"),
+        t("services.service8belist2"),
+        t("services.service8belist3"),
+        t("services.service8belist4"),
+      ],
+      image: foodproductionImg,
+    },
+    {
+      icons: [
+        <FaTractor key="BoxOpen" className="text-3xl text-[#00BCFF]" />,
+        <FaLeaf key="Clipboard" className="text-3xl text-[#05af5a]" />,
+      ],
+      title: t("services.service9h1"),
+      highlights: [
+        t("services.service9hlist1"),
+        t("services.service9hlist2"),
+        t("services.service9hlist3"),
+        t("services.service9hlist4"),
+      ],
+      description: t("services.service9p"),
+      benefits: [
+        t("services.service9belist1"),
+        t("services.service9belist2"),
+        t("services.service9belist3"),
+        t("services.service9belist4"),
+      ],
+      image: agricultureImg,
+    },
+    {
+      icons: [
+        <FaPaintRoller key="BoxOpen" className="text-3xl text-[#00BCFF]" />,
+        <FaSprayCan key="Clipboard" className="text-3xl text-[#00BCFF]" />,
+      ],
+      title: t("services.service10h1"),
+      highlights: [
+        t("services.service10hlist1"),
+        t("services.service10hlist2"),
+        t("services.service10hlist3"),
+        t("services.service10hlist4"),
+      ],
+      description: t("services.service10p"),
+      benefits: [
+        t("services.service10belist1"),
+        t("services.service10belist2"),
+        t("services.service10belist3"),
+        t("services.service10belist4"),
+      ],
+      image: paintingImg,
+    },
+    {
+      icons: [
+        <FaBolt key="BoxOpen" className="text-3xl text-[#00BCFF]" />,
+        <FaCogs key="Clipboard" className="text-3xl text-[#00BCFF]" />,
+      ],
+      title: t("services.service11h1"),
+      highlights: [
+        t("services.service11hlist1"),
+        t("services.service11hlist2"),
+        t("services.service11hlist3"),
+        t("services.service11hlist4"),
+      ],
+      description: t("services.service11p"),
+      benefits: [
+        t("services.service11belist1"),
+        t("services.service11belist2"),
+        t("services.service11belist3"),
+        t("services.service11belist4"),
+      ],
+      image: electricalImg,
+    },
+    {
+      icons: [
+        <FaFileAlt key="BoxOpen" className="text-3xl text-[#00BCFF]" />,
+        <FaPhone key="Clipboard" className="text-3xl text-[#00BCFF]" />,
+      ],
+      title: t("services.service12h1"),
+      highlights: [
+        t("services.service12hlist1"),
+        t("services.service12hlist2"),
+        t("services.service12hlist3"),
+        t("services.service12hlist4"),
+      ],
+      description: t("services.service12p"),
+      benefits: [
+        t("services.service12belist1"),
+        t("services.service12belist2"),
+        t("services.service12belist3"),
+        t("services.service12belist4"),
+      ],
+      image: officeImg,
+    },
   ];
   return (
     <div className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
@@ -249,7 +396,7 @@ const AllServices = () => {
                     const section = document.querySelector("#contact");
                     section?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="px-6 py-3 bg-[#00BCFF] text-white font-medium rounded-lg hover:bg-[#0095D6] transition-colors duration-300 shadow-md"
+                  className="px-6 py-3 bg-[#00BCFF] text-white font-medium rounded-lg hover:bg-[#0095D6] transition-colors duration-300 shadow-md cursor-pointer"
                 >
                   {t("services.serviceRequest")} {service.title.split("&")[0]}{" "}
                   {t("services.serviceStaff")}
@@ -295,11 +442,8 @@ const AllServices = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
-              onClick={() => {
-                const section = document.querySelector("#contact");
-                section?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-8 py-4 bg-white text-[#00BCFF] font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md"
+              onClick={() => setShowCalendly(true)}
+              className="px-8 py-4 bg-white text-[#00BCFF] font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md cursor-pointer"
             >
               {t("services.customservicesbtn1")}
             </button>
@@ -309,6 +453,7 @@ const AllServices = () => {
           </div>
         </motion.div>
       </div>
+      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
     </div>
   );
 };

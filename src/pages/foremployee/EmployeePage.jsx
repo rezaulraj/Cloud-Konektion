@@ -11,8 +11,8 @@ const EmployeePage = () => {
     <div className="min-h-screen">
       <HeroEmployee />
       <TalentExperts />
-      <OurPartner />
       <HowWeWork />
+      <OurPartner />
       <FAQ />
       <ContactHelp />
     </div>

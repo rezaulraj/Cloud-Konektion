@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaPhoneAlt,
@@ -8,9 +8,11 @@ import {
 } from "react-icons/fa";
 import bgimage from "../../assets/home/map.avif";
 import { useTranslation } from "react-i18next";
+import Calendly from "../../components/Calendly";
 
 const Consultation = () => {
   const { t } = useTranslation();
+  const [showCalendly, setShowCalendly] = useState(false);
 
   const container = {
     hidden: { opacity: 0 },
@@ -169,11 +171,8 @@ const Consultation = () => {
             </motion.div>
 
             <motion.button
-              onClick={() => {
-                const section = document.querySelector("#contact");
-                section?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg"
+              onClick={() => setShowCalendly(true)}
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#00BCFF] text-white rounded-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -196,6 +195,7 @@ const Consultation = () => {
         initial="hidden"
         animate="animate"
       />
+      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
     </div>
   );
 };

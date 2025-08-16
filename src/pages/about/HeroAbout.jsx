@@ -77,7 +77,7 @@ const HeroAbout = () => {
 
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#00BCFF]/10 text-[#00BCFF] text-lg mb-6">
+          <div className="inline-flex items-center font-medium px-6 py-3 rounded-full bg-[#00BCFF]/20 text-[#00BCFF] text-lg mb-6">
             <FaHandshake className="mr-2" />
             <span>{t("aboutus.aboutusherob")}</span>
           </div>

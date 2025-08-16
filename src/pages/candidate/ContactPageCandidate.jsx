@@ -133,7 +133,7 @@ const ContactPageCandidate = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t("forcandidats.candicontacth1")}
-            <span className="text-blue-600">
+            <span className="text-[#00BCFF]">
               {t("forcandidats.candicontacth2")}
             </span>
           </h1>
@@ -146,7 +146,7 @@ const ContactPageCandidate = () => {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="p-8 sm:p-10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <MdOutlineMessage className="text-blue-500" />
+                <MdOutlineMessage className="text-[#00BCFF]" />
                 {t("forcandidats.contactfromh")}
               </h2>
 
@@ -166,7 +166,7 @@ const ContactPageCandidate = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder={t("forcandidats.contactname")}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF]"
                       required
                     />
                   </div>
@@ -179,7 +179,7 @@ const ContactPageCandidate = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder={t("forcandidats.contactemail")}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF]"
                       required
                     />
                   </div>
@@ -192,7 +192,7 @@ const ContactPageCandidate = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder={t("forcandidats.contactphone")}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF]"
                     />
                   </div>
 
@@ -226,19 +226,19 @@ const ContactPageCandidate = () => {
                     onChange={handleChange}
                     rows="4"
                     placeholder={t("forcandidats.contactmessage")}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF]"
                     required
                   ></textarea>
 
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                     <label className="cursor-pointer">
-                      <FaFileAlt className="text-3xl text-blue-500 mb-2" />
+                      <FaFileAlt className="text-3xl text-[#00BCFF] mb-2" />
                       <p className="text-sm text-gray-600 mb-1">
                         {formData.cv
                           ? formData.cv.name
                           : t("forcandidats.contactcv")}
                       </p>
-                      <span className="text-sm text-blue-600 font-medium">
+                      <span className="text-sm text-[#00BCFF] font-medium">
                         {t("forcandidats.clickcandidate")}
                       </span>
                       <input
@@ -254,13 +254,13 @@ const ContactPageCandidate = () => {
 
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                     <label className="cursor-pointer">
-                      <FaFileAlt className="text-3xl text-blue-500 mb-2" />
+                      <FaFileAlt className="text-3xl text-[#00BCFF] mb-2" />
                       <p className="text-sm text-gray-600 mb-1">
                         {formData.motivationLetter
                           ? formData.motivationLetter.name
                           : "Upload Motivation Letter (Optional)"}
                       </p>
-                      <span className="text-sm text-blue-600 font-medium">
+                      <span className="text-sm text-[#00BCFF] font-medium">
                         {t("forcandidats.clickcandidate")}
                       </span>
                       <input
@@ -285,7 +285,7 @@ const ContactPageCandidate = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex justify-center items-center px-6 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700"
+                    className="w-full flex justify-center items-center px-6 py-4 bg-[#00BCFF] text-white font-medium rounded-lg hover:bg-[#069fd6]"
                   >
                     {isSubmitting ? (
                       <AiOutlineLoading3Quarters className="animate-spin text-xl" />
@@ -310,7 +310,7 @@ const ContactPageCandidate = () => {
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
                     <svg
-                      className="h-6 w-6 text-blue-500"
+                      className="h-6 w-6 text-[#00BCFF]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -338,7 +338,7 @@ const ContactPageCandidate = () => {
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
                     <svg
-                      className="h-6 w-6 text-blue-500"
+                      className="h-6 w-6 text-[#00BCFF]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -367,7 +367,7 @@ const ContactPageCandidate = () => {
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <FaEnvelope className="h-5 w-5 text-blue-500" />
+                    <FaEnvelope className="h-5 w-5 text-[#00BCFF]" />
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-600">help@cloudkonektion.eu</p>
@@ -376,7 +376,7 @@ const ContactPageCandidate = () => {
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <FaCalendar className="h-5 w-5 text-blue-500" />
+                    <FaCalendar className="h-5 w-5 text-[#00BCFF]" />
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-600">Mon-Fri, 9am-5pm PST</p>
@@ -394,7 +394,7 @@ const ContactPageCandidate = () => {
                   href="https://www.linkedin.com/company/107980266/admin/dashboard/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF] hover:bg-blue-200 transition-colors"
                 >
                   <FaLinkedin className="text-xl" />
                 </a>
@@ -402,7 +402,7 @@ const ContactPageCandidate = () => {
                   href="https://x.com/cloudkonektion"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF] hover:bg-blue-200 transition-colors"
                 >
                   <FaXTwitter className="text-xl" />
                 </a>
@@ -410,7 +410,7 @@ const ContactPageCandidate = () => {
                   href="https://www.facebook.com/cloudkonektion/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF] hover:bg-blue-200 transition-colors"
                 >
                   <FaFacebook className="text-xl" />
                 </a>
@@ -418,7 +418,7 @@ const ContactPageCandidate = () => {
                   href="https://www.instagram.com/cloudkonektion/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF] hover:bg-blue-200 transition-colors"
                 >
                   <FaInstagram className="text-xl" />
                 </a>
@@ -426,7 +426,7 @@ const ContactPageCandidate = () => {
                   href="https://www.tiktok.com/@cloudkonektion"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF] hover:bg-blue-200 transition-colors"
                 >
                   <FaTiktok className="text-xl" />
                 </a>
@@ -434,7 +434,7 @@ const ContactPageCandidate = () => {
                   href="https://www.youtube.com/@cloudkonektion0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF] hover:bg-blue-200 transition-colors"
                 >
                   <FaYoutube className="text-xl" />
                 </a>
@@ -442,7 +442,7 @@ const ContactPageCandidate = () => {
                   href="https://www.pinterest.com/cloudkonektion/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#00BCFF] hover:bg-blue-200 transition-colors"
                 >
                   <FaPinterest className="text-xl" />
                 </a>

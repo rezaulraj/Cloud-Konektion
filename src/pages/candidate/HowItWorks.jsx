@@ -46,13 +46,13 @@ const HowItWorks = () => {
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-blue-100 text-[#00BCFF] px-4 py-2 rounded-full mb-4">
             <FaRocket className="animate-pulse" />
             <span className="font-medium">{t("forcandidats.hiredbatch")}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t("forcandidats.ourprocessh1")}
-            <span className="text-blue-600">
+            <span className="text-[#00BCFF]">
               {t("forcandidats.ourprocessh2")}
             </span>
           </h2>
@@ -92,7 +92,7 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white shadow-2xl overflow-hidden">
+        <div className="mt-20 bg-gradient-to-r from-[#0494c9] to-blue-600 rounded-2xl p-8 md:p-12 text-white shadow-2xl overflow-hidden">
           <div className="relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="lg:w-1/2">
@@ -109,7 +109,7 @@ const HowItWorks = () => {
                     const section = document.querySelector("#get-in-touch");
                     section?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="flex items-center gap-3 bg-white text-[#00BCFF] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   <GiProgression className="text-xl" />
                   <span>{t("forcandidats.candidatejurny")}</span>

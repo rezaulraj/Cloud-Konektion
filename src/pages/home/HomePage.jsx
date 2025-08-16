@@ -8,6 +8,7 @@ import Consultation from "./Consultation";
 import WhyCloudeKonektion from "./WhyCloudeKonektion";
 import OurPartner from "./OurPartner";
 import ContactHelp from "./ContactHelp";
+import EmployeeService from "./EmployeeService";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <CompanyOverview />
       <PartnerHome />
       <AreaExpertise />
+      <EmployeeService />
       <Consultation />
       <WhyCloudeKonektion />
       <OurPartner />

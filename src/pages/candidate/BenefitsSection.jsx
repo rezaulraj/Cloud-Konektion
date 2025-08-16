@@ -62,7 +62,7 @@ const BenefitsSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t("forcandidats.whychosech1")}
-            <span className="text-blue-600">
+            <span className="text-[#00BCFF]">
               {t("forcandidats.whychosech2")}
             </span>
             {t("forcandidats.whychosech3")}
@@ -109,7 +109,7 @@ const BenefitsSection = () => {
           ))}
         </div>
 
-        <div className="mt-20 bg-blue-600 rounded-2xl p-8 md:p-12 text-white shadow-xl">
+        <div className="mt-20 bg-[#0c8ebd] rounded-2xl p-8 md:p-12 text-white shadow-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: "3x", label: t("forcandidats.whyprorate1") },

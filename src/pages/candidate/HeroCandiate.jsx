@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import heroImage from "../../assets/candidate/heroc.jpg";
 import candidateImage from "../../assets/candidate/candidiate.jpg";
 import { FaHandshake, FaArrowRight } from "react-icons/fa";
@@ -12,8 +12,10 @@ import client6 from "../../assets/about/cl6.png?url";
 import client7 from "../../assets/about/cl7.png?url";
 import client8 from "../../assets/about/cl8.png?url";
 import { useTranslation } from "react-i18next";
+import Calendly from "../../components/Calendly";
 
 const HeroCandidate = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
   const { t } = useTranslation();
   const clients = [
     client1,
@@ -83,9 +85,15 @@ const HeroCandidate = () => {
                   const section = document.querySelector("#how-it-work");
                   section?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex items-center gap-2 bg-[#00BCFF] text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="flex items-center gap-2 bg-[#00BCFF] text-blue-950 px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
               >
                 {t("forcandidats.candidateherobtn")} <FaArrowRight />
+              </button>
+              <button
+                onClick={() => setShowCalendly(true)}
+                className="flex items-center gap-2 bg-[#00BCFF] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#00BCFF] transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+              >
+                Book A Meeting <FaArrowRight />
               </button>
             </div>
 
@@ -151,6 +159,7 @@ const HeroCandidate = () => {
           </div>
         </div>
       </div>
+      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
     </section>
   );
 };
