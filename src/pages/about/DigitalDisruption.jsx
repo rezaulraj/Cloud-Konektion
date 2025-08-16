@@ -51,7 +51,9 @@ const DigitalDisruption = () => {
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
                 <div className="flex items-center space-x-3">
                   <FaRocket className="text-2xl text-[#00BCFF]" />
-                  <span className="text-2xl font-bold text-gray-900">500+</span>
+                  <span className="text-2xl font-bold text-gray-900">
+                    5000+
+                  </span>
                 </div>
                 <p className="text-sm text-gray-500 mt-2">
                   {t("aboutus.aboutcard1t")}
@@ -63,7 +65,9 @@ const DigitalDisruption = () => {
                   <FaUserTie className="text-2xl text-[#00BCFF]" />
                   <span className="text-2xl font-bold text-gray-900">15+</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">{t("aboutus.aboutcard2t")}</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  {t("aboutus.aboutcard2t")}
+                </p>
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
@@ -71,7 +75,9 @@ const DigitalDisruption = () => {
                   <FaGlobe className="text-2xl text-[#00BCFF]" />
                   <span className="text-2xl font-bold text-gray-900">40+</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">{t("aboutus.aboutcard3t")}</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  {t("aboutus.aboutcard3t")}
+                </p>
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
@@ -79,7 +85,9 @@ const DigitalDisruption = () => {
                   <FaLightbulb className="text-2xl text-[#00BCFF]" />
                   <span className="text-2xl font-bold text-gray-900">95%</span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">{t("aboutus.aboutcard4t")}</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  {t("aboutus.aboutcard4t")}
+                </p>
               </div>
             </div>
           </div>
@@ -90,9 +98,7 @@ const DigitalDisruption = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 {t("aboutus.aboutcardrh")}
               </h3>
-              <p className="text-gray-600">
-                {t("aboutus.aboutcardrp")}
-              </p>
+              <p className="text-gray-600">{t("aboutus.aboutcardrp")}</p>
             </div>
           </div>
         </div>
