@@ -92,7 +92,7 @@ const JoinUs = () => {
             <div className="p-8 md:p-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 {t("joinus.joinch1")}{" "}
-                <span className="text-[#00BCFF]">{t("joinus.joinch1")}</span>
+                <span className="text-[#00BCFF]">{t("joinus.joinch2")}</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8">{t("joinus.joincp")}</p>
               <button

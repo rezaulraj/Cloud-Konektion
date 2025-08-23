@@ -71,12 +71,15 @@ const AboutStory = () => {
                   {t("aboutus.officeloc")}
                 </p>
                 <p className="text-gray-600">
-                 📍 112-116 Whitechapel Road, London, England, UK, E1 1JE
+                  📍 112-116 Whitechapel Road, London, England, UK, E1 1JE
+                </p>
+                <p className="text-gray-600">
+                  📍 50 Cambridge Rd, London IG11 8FG, United Kingdom
                 </p>
 
                 <p className="text-gray-600">
-                 📍 RAG Global Business Hub, Al Hilal Bank Building - Al Nahda St
-                  - Al Qusais - Al Qusais 2 - Dubai - UAE
+                  📍 RAG Global Business Hub, Al Hilal Bank Building - Al Nahda
+                  St - Al Qusais - Al Qusais 2 - Dubai - UAE
                 </p>
               </div>
             </div>

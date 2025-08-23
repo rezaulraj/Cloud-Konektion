@@ -116,6 +116,25 @@ const Footer = () => {
                 <FaPinterest className="text-xl" />
               </a>
             </div>
+            <div className="flex flex-col space-y-2">
+              <div className="flex ">
+                <div className="flex-shrink-0 mt-1">
+                  <FaCalendar className="h-5 w-5 text-[#00BCFF]" />
+                </div>
+                <div className="ml-3">
+                  <p className="text-gray-400">Mon-Fri, 9am-5pm PST</p>
+                </div>
+              </div>
+              <div className="flex">
+                <FaEnvelope className="h-5 w-5 text-[#00BCFF] mr-3" />
+                <a
+                  href="mailto:info@cloudkonektion.com"
+                  className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                >
+                  help@cloudkonektion.eu
+                </a>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -157,45 +176,33 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-center">
+            <h4 className="text-lg font-semibold mb-6">
               {t("footer.contactus")}
             </h4>
             <div className="space-y-4">
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col  ">
                 <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
                 <p className="text-gray-400">
                   112-116 Whitechapel Road, London, England, UK, E1 1JE
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col  ">
+                <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
+                <p className="text-gray-400">
+                  50 Cambridge Rd, London IG11 8FG, United Kingdom
+                </p>
+              </div>
+              <div className="flex flex-col ">
                 <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
                 <p className="text-gray-400">
                   RAG Global Business Hub, Al Hilal Bank Building - Al Nahda St
                   - Al Qusais - Al Qusais 2 - Dubai - UAE
                 </p>
               </div>
-              <div className="flex items-center justify-center">
-                <div className="flex-shrink-0 mt-1">
-                  <FaCalendar className="h-5 w-5 text-[#00BCFF]" />
-                </div>
-                <div className="ml-3">
-                  <p className="text-gray-400">Mon-Fri, 9am-5pm PST</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <FaEnvelope className="text-[#00BCFF] mr-3" />
-                <a
-                  href="mailto:info@cloudkonektion.com"
-                  className="text-gray-400 hover:text-[#00BCFF] transition-colors"
-                >
-                  help@cloudkonektion.eu
-                </a>
-              </div>
             </div>
           </div>
         </div>
 
-       
         <div className="bg-gray-800 rounded-xl p-8 mb-12 relative overflow-hidden">
           <div
             className={`absolute top-0 left-0 right-0 bg-green-600/90 text-white transition-all duration-500 ease-in-out ${
@@ -266,7 +273,6 @@ const Footer = () => {
           </div>
         </div>
 
-        
         <div className="border-t border-gray-800 pt-8 ">
           <p className="text-gray-500 text-sm mb-4 md:mb-0 text-center">
             © {new Date().getFullYear()} Cloud Konektion. All rights reserved.

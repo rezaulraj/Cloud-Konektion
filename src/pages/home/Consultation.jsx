@@ -143,6 +143,7 @@ const Consultation = () => {
                   icon: <FaMapMarkerAlt />,
                   title: t("homepage.freecit3"),
                   text: "112-116 Whitechapel Road, London, England, UK, E1 1JE",
+                  text2: "50 Cambridge Rd, London IG11 8FG, United Kingdom",
                 },
                 {
                   icon: <FaMapMarkerAlt />,
@@ -164,8 +165,14 @@ const Consultation = () => {
                       className: "text-[#00BCFF] text-xl",
                     })}
                   </motion.div>
+
                   <p className="font-medium text-gray-700">{option.title}</p>
-                  <p className="text-gray-600">{option.text}</p>
+                  <div className="space-y-2 ">
+                    <p className="text-gray-600 ">{option.text}</p>
+                    {option.text2 && (
+                      <p className="text-gray-600 border-dashed border-t">{option.text2}</p>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>

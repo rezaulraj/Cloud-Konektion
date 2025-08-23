@@ -359,6 +359,34 @@ const ContactPageCandidate = () => {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-600">
+                      50 Cambridge Rd, London IG11 8FG, United Kingdom
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <svg
+                      className="h-6 w-6 text-[#00BCFF]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-600">
                       RAG Global Business Hub, Al Hilal Bank Building - Al Nahda
                       St - Al Qusais - Al Qusais 2 - Dubai - UAE
                     </p>
